@@ -1,0 +1,231 @@
+/*
+|
+|-------------------------------------------------------------------------------
+|
+| @TODO: Finish Added Bootstrap Solutions and Add Snippets to Gists
+|
+|-------------------------------------------------------------------------------
+|
+| CSS Snippets — https://github.com/joshnh/CSS-Snippets/blob/master/README.md
+| http://www.cssflow.com/
+| Retina Images Support — http://www.retinajs.com
+|
+|-------------------------------------------------------------------------------
+| CHEATSHEET
+|-------------------------------------------------------------------------------
+| LESS
+|---------------------------------------
+|
+| 1) JavaScript
+| Use string interpolation and then escape from the string using ~:
+| @winheight:`$(window).height()`  // Keep backticks not single quotes
+| height: ~'@{winheight}px';
+|
+| CSS Expressions
+| property: ~'expression(…)';
+|
+| 2) @extend is a Less pseudo-class which merges the selector it is put on with
+| ones that match what it references.
+| .foo { color: red; }
+| .bar { &:extend(.foo); }
+| outputs:
+| .foo, .bar { color: red; }
+|
+|---------------------------------------
+| CSS
+|---------------------------------------
+|
+| E + F                         Selects all F elements that are placed immediately after E elements
+| E ~ F                         F element that is preceded by an E element
+|
+| E[att^="val"]                 Att attribute value begins with "val"
+| E[att$="val"]                 Att attribute value ends with "val"
+| E[att*="val"]                 Att attribute value contains the substring "val"
+|
+| E:first-child                 The first child of its parent
+| E:last-child                  The last child of its parent
+|
+| E:first-of-type               First sibling of its type
+| E:last-of-type                Last sibling of its type
+|
+| E:nth-child(n)                N-th child of its parent
+| E:nth-last-child(n)           LI:nth-child(3)
+|                               LI:nth-last-child(3)
+|                               TR:nth-child(odd)
+|                               LI:nth-child(3n) - Elements at regular intervals
+|                               LI:nth-child(4n+1) — ((4 × 0) + 1) - first, ((4 × 1) + 1) — 5th, ((4 × 2) + 1) - 9th etc
+|                               UL LI:nth-child(-n+4) — consecutive elements: first 4 im this case
+|
+| E:nth-of-type(n)              N-th sibling of its type
+| E:nth-last-of-type(n)         N-th sibling of its type, counting from the last sibling
+|
+| E:only-child                  The only child of its parent
+| E:only-of-type                The only sibling of its type
+|
+| E:empty                       Element that has no children (including text nodes)
+|
+| E:enabled
+| E:disabled
+| E:checked
+| E::selection
+|
+| E:not(s)                      Matches any E that does not match the simple selector s
+|                               div:not(.home) {…} | div *:not(p) em {…}
+|                               input:not([type="file"]) {…} | h2:not(.foo, .bar) {…}
+|
+| E:before
+| E:after
+|
+| E:target                      The target of the referring URL
+| E:focus
+|
+| E:first-letter
+| E:first-line
+|
+| E:lang(language)              p:lang(ru)
+|
+|---------------------------------------
+| clip: rect(<top>, <right>, <bottom>, <left>);
+| clip: rect(40px, auto, auto, 40px);
+| http://goo.gl/HzPbA
+|
+| border-image-source: url(border.png);
+| border-image-slice: 20px 40px 60px 40px; // the inward offsets of the image-border
+| border-image-width: 20px 40px 60px 40px;
+| border-image-repeat: round; // stretch (default), repeat, round
+|
+|    1 | top    2        | 3
+| ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+| left |                 | right
+|      |                 |
+|    4 |        5        | 6
+|      |                 |
+|      |                 |
+| ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+|    7 | bottom 8        | 9
+|
+|---------------------------------------
+|
+| http://caniuse.com/style-scoped — 13.19% end of 2013
+|
+| <style scoped="scoped">
+|      p { color: red; }
+|  </style>
+|
+|---------------------------------------
+|
+| CSS Shapes
+| http://css-tricks.com/examples/ShapesOfCSS/
+|
+|---------------------------------------
+|
+| IE bugfixing
+|
+| IE8 ignores the rules that use this pseudo-selectors.
+| So we should'not group common rules into one.
+| Wrong:
+| A, A:after { background: #ffc; }
+|
+| Right:
+| A { background: #ffc; }
+| A:after { background: #ffc; }
+|
+| *HTML, _property — IE6
+| *+HTML — IE7
+| *property — IE6, IE7
+| property: value\0/ — IE8
+| property: value \9 — IE6-9 | LESS - e('\9')
+|
+|-------------------------------------------------------------------------------
+| NAMING CONVENTION: prefixes in selectorsors
+|-------------------------------------------------------------------------------
+|
+| a — link
+| art — artcile
+| box — box
+| bnr — banner
+| btn — button
+| cbx — checkbox
+| doc — document
+| f — form
+| ftr — feature
+| gl - global
+| i — input
+| ico — icon
+| l - list
+| ln - line
+| m — menu
+| mob — mobile, i.e. smartphones
+| p — page
+| pc - desktop computer
+| plc - placeholder
+| rb — radio button
+| s — select
+| sec — page section, block
+| sl - slider
+| sm — submenu
+| ta — textarea
+| tbl — tablet
+| tbn — thumbnail
+| tsr — teaser
+| txt - text
+|
+*/
+
+/* Essentials */
+@import '01-essentials.less';
+@import '02-variables.less';
+@import '02-mixins.less';
+// @import '02-sprites.less';
+
+/* Basic Layout and UI */
+// @import '03-basic-layout.less'; // Grid and Conteiners
+// @import '03-basic-buttons.less';
+// @import '03-basic-forms.less';
+
+/* Layout */
+// @import '04-layout-header.less';
+// @import '07-wdg-flags.less';
+// @import '04-layout-footer.less';
+// @import '04-layout-sidebars.less';
+// @import '04-layout-boxes.less';
+// @import '04-layout-billboard.less';
+// @import '04-layout-bars.less';
+
+/* Navigation */
+// @import '05-nav-main-menu.less';
+// @import '05-nav-dropdowns.less';
+// @import '05-nav-secondary-menus.less';
+// @import '05-nav-tabs.less';
+// @import '05-nav-tags.less';
+
+/* System Input / Output */
+// @import '06-in-out-alerts.less';
+// @import '06-in-out-communication.less';
+// @import '06-in-out-filters.less';
+// @import '06-in-out-search.less'; //  in most cases the search is made in the  03-layout-header.less
+// @import '06-in-out-sign-in.less';
+// @import '06-in-out-sign-up.less';
+// @import '06-in-out-settings.less';
+
+/* Optional Widgets */
+// @import '07-wdg-calendar-datepicker.less';
+// @import '07-wdg-collapsibles.less';
+// @import '07-wdg-gallery-slideshow-carousel.less';
+// @import '07-wdg-modal.less';
+// @import '07-wdg-pager-pagination.less';
+// @import '07-wdg-sharing.less';
+// @import '07-wdg-tooltip.less';
+// @import '07-wdg-typeahead.less';
+// @import '07-wdg-wysiwyg.less';
+
+/* Customization */
+// @import '08-cstm-front.less';
+// @import '08-cstm-inner.less';
+// @import '08-cstm-blog.less';
+// @import '08-legacy.less';
+
+/* The Final Piece */
+// @import '09-utilities.less';
+// @import '09-responsive-utilities.less';
+@import '09-print.less';

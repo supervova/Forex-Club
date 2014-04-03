@@ -1,0 +1,57 @@
+@import '02-variables.less';
+@import '02-mixins.less';
+
+@sidebar:                       280px;
+
+/*
+ASIDE.doc-sidebar - A section of a page that consists of content that is
+tangentially related to an article.
+NAV.doc-sidebar - A section of a page that contains only the local menu.
+*/
+
+.doc-sidebar {
+    float: left;
+    font-size: @font-size-small;
+    line-height: @line-height-small; /* 2/3 baseline — every third line fir to grid */
+    width: @sidebar;
+}
+
+NAV.doc-sidebar {
+    margin-left: ;
+
+    .box UL { padding: ; }
+
+    A {
+        display: block;
+        padding: ;
+        position: relative; // For detail if it is set
+        width: 100%;
+        *zoom: 1;  // For detail if it is set
+    }
+
+        /* Hover state */
+        A.active, A:hover, A:focus {
+            color: ;
+            background: @dropdown-link-hover-bg !important;
+            text-decoration: none;
+            .pseudo-after();
+
+            &:after, .after { /* Detail if it is set */ }
+        }
+}
+
+
+/*
+|-------------------------------------------------------------------------------
+| PHONES & SMALL PORTRAIT TABLETS: up to 767px
+|-------------------------------------------------------------------------------
+*/
+
+@media only screen and (max-width: 767px) {
+
+    NAV.doc-sidebar { display: none; }
+
+    ASIDE.doc-sidebar {
+        float: none;
+        width: 100%; }
+}

@@ -1,0 +1,132 @@
+@import '02-variables.less';
+@import '02-mixins.less';
+
+@color-btn-label:           #fff;
+
+@c-btn-light:               #99f;
+@c-btn-dark:                #66c;
+@c-btn-brd-t:               darken(@c-btn-light, 5%);
+@c-btn-brd:                 darken(@c-btn-light, 10%);
+@c-btn-brd-b:               darken(@c-btn-dark, 5%);
+
+@c-btn-mob-header-light:    #5f6164;
+@c-btn-mob-header-dark:     #333538;
+@c-btn-mob-header-brd:      rgba(0, 0, 0, .64);
+
+/* @c-btn-info-light:
+    @c-btn-info:
+    @c-btn-info-dark:
+    @c-btn-success:
+    @c-btn-warning: */
+
+BUTTON, .btn {
+    -webkit-appearance: none; // Prevent webkit buttons styling
+    #gradient > .vertical(@c-btn-light, @c-btn-dark);
+    border: 1px solid darken(@c-btn-light, 10%);
+    *border: 0;
+    border-color: @c-btn-brd-t @c-btn-brd @c-btn-brd-b;
+    .border-radius(4px);
+    .box-shadow(inset 0 1px 0 rgba(255, 255, 255, 0.32), 0 1px 2px rgba(0, 0, 0, 0.16));
+    color: @color-btn-label;
+    cursor: pointer;
+    .inline-block;
+    font: inherit; // Correct font properties not being inherited
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, .44);
+    text-transform: none;
+    margin-top: -1/2*@baseline;
+    margin-bottom: 1.5*@baseline;
+    *margin-left: .3em;
+    &:first-child { *margin-left: 0; }
+    padding: (1/2*@baseline - 1/@b) 12px;
+    overflow: visible; // Address 'overflow' set to 'hidden' in IE 8/9/10
+    vertical-align: middle;
+
+    &:hover {
+        background-color: @c-btn-dark; // Gradient goes up to uncover its dark side
+        background-position: 0 -15px;
+        color: #fff;
+        text-decoration: none;
+        .transition(background-position 0.1s linear);
+    }
+
+    &:focus { .tab-focus; }
+
+    &:active, &.active { // Replace gradient with darker color. Add deep inner shade
+        background-color: @c-btn-dark;
+        background-image: none;
+        .box-shadow(inset 0 2px 4px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.12));
+        outline: 0;
+    }
+
+    &.disabled, &[disabled] {
+        background-color: darken(@body-bg, 10%);
+        background-image: none;
+        .box-shadow(none);
+        cursor: default;
+        .opacity(44);
+    }
+}
+
+BUTTON::-moz-focus-inner { // Inner padding and border oddities in FF3/4
+    border: 0;
+    padding: 0;
+}
+
+BUTTON[disabled] { cursor: default; }
+
+BUTTON { *padding: 11px 10px; } // Standart top and bottom padding -2px
+
+FORM BUTTON, FORM .btn {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.f-actions BUTTON, .f-actions .btn, .f-inline BUTTON, .f-inline .btn {
+    display: inline-block;
+    *display: inline;
+}
+
+.pressed { background-color: rgba(0, 0, 0, .7); /* An active button class for Mobile Boilerplate’s fastButton helper method */}
+
+// SNIPPET:lebtnclose — Close and Clear Buttons
+
+// SNIPPET:lebtnsizes — Button Sizes
+
+TABLE BUTTON, TABLE .btn { *overflow: auto; }
+
+/*
+|-------------------------------------------------------------------------------
+| PHONES & SMALL PORTRAIT TABLETS: up to 767px
+|-------------------------------------------------------------------------------
+*/
+
+@media only screen and (max-width: 767px) {
+
+    .page {
+        BUTTON, .btn {
+            display: block;
+            margin-top: -1em/@bm; /* Fine-tuning */
+            margin-bottom: 1.5*@baseline-mob - 1em/@bm;
+            padding: (1/2*@baseline-mob) 13px;
+            max-width: 50%; }
+
+        BUTTON + BUTTON, .btn + .btn { margin-top: @baseline-mob/2; }
+    }
+
+    // SNIPPET:lebtnmob — Mobile Version Header Buttons
+
+}
+
+/*
+|-------------------------------------------------------------------------------
+| PORTRAIT PHONES: up to 480px
+|-------------------------------------------------------------------------------
+*/
+
+@media only screen and (max-width: 480px) {
+    .doc-body {
+        BUTTON, .btn { max-width: none; }
+    }
+}

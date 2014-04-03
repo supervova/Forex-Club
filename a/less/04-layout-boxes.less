@@ -1,0 +1,73 @@
+@import '02-variables.less';
+@import '02-mixins.less';
+
+ASIDE.left, ASIDE.right {
+    width: 33.3333333%; /* 1/3 of body width - 320 in 960px layout */
+
+    ADDRESS, BLOCKQUOTE, DL, OL, UL, FIELDSET, PRE, P {
+        &:last-child { margin-bottom: 0; }
+        }
+
+    }
+
+    .doc-main ASIDE.left, .doc-main ASIDE.right, .doc-body > ASIDE.left, .doc-body > ASIDE.right { width: 44.44%; /* Still 1/3 of body width */ }
+
+    ASIDE.left { margin: 0 20px @baseline 0; }
+
+    ASIDE.right { margin: 0 0 @baseline 20px; }
+
+
+BLOCKQUOTE {
+    background: @gray-lighter;
+    margin: 0 0 @baseline;
+    padding: @baseline 20px;
+
+    CITE {
+        color: @gray-dark;
+        .pseudo-before;
+
+        &:before, &.before { content: '\2014 \00A0'; }
+    }
+}
+
+// SNIPPET:lebox — General Boxes: .box, .box-menu
+
+// SNIPPET:leboxtsr — Additional Boxes: .tsr, .coverline, .jumped
+
+
+DIV:focus { outline: none; }
+
+IFRAME {
+    border: 0 none;
+    margin-bottom: @baseline;
+    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-width: 100%; }
+
+// SNIPPET:leboxcse — Google Custom Search Results Iframe
+
+/*
+|-------------------------------------------------------------------------------
+| PHONES & SMALL PORTRAIT TABLETS: up to 767px
+|-------------------------------------------------------------------------------
+*/
+@media only screen and (max-width: 767px) {
+
+ASIDE.left, ASIDE.right {
+    margin: 0 0 2*@baseline-mob;
+    max-width: none;
+    width: auto !important; }
+
+BLOCKQUOTE {
+    margin: 0 0 @baseline-mob;
+    padding: @baseline-mob 20px; }
+
+.box, BLOCKQUOTE, .jumped, .tsr, .coverline {
+    UL {
+        padding-left: 20px;
+
+        UL { padding-right: 40px}
+        }
+    }
+}

@@ -1,0 +1,50 @@
+@import '02-variables.less';
+@import '02-mixins.less';
+
+/*
+Don't use default .box-sizing(border-box) and side padding or use they this
+inner wrapper to keep grid classes width percentage.
+*/
+.doc-footer {
+    text-align: ;
+    margin: 0 0 0 @content-box/2 + 0px;
+    *margin: 0 auto;
+    padding: ;
+    position: absolute;
+    *position: static;
+    bottom: 0;
+    left: 50%;
+    height: @footer-height + 0px;
+    width: @content-box + 0px;
+}
+
+
+/*
+|-------------------------------------------------------------------------------
+| PORTRAIT TABLETS: 768–979px
+|-------------------------------------------------------------------------------
+*/
+
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+
+.doc-footer {
+    margin: 0 0 0 -364px;
+    width: 728px; }
+}
+
+/*
+|-------------------------------------------------------------------------------
+| PHONES & SMALL PORTRAIT TABLETS: up to 767px
+|-------------------------------------------------------------------------------
+*/
+
+@media only screen and (max-width: 767px) {
+
+.doc-footer {
+    margin: 0 20px ;
+    position: static;
+    width: auto;
+
+    .line { display: block; }
+    }
+}

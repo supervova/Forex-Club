@@ -1,0 +1,190 @@
+@import '02-variables.less';
+@import '02-mixins.less';
+
+/*
+|---------------------------------------
+| Containers
+|---------------------------------------
+*/
+
+/*
+1) Use .row for full width blocks inside BODY, .doc-body and .doc-main.
+Use row-limited for centered nested blocks with limited width.
+Use .cfx for other purposes
+2) Remove first column gutter in old IE.
+Solution for modern browsers is :first-child margin-left: 0;
+*/
+.row { // 1
+    *margin-left: @grid-gutter-width/@content-box * 100%; // 2
+    width: 100%; }
+
+.row-limited {
+    display: block; // for link containers
+    margin: 0 auto;
+    padding: 0 50px;
+    width: @container-desktop; }
+
+.doc-body {
+    // position: relative;
+    // padding: 0 60px (@footer-height + 2*@bl + 0px);
+    // *padding-bottom: 2*@baseline !important;
+    // *zoom: 1;
+}
+
+/*
+|---------------------------------------
+| Columns
+|---------------------------------------
+*/
+
+// .row > [class*='col-'], .cfx > [class*='col-'] - die6
+.col-1of12, .col-2of12, .col-3of12, .col-4of12, .col-5of12, .col-6of12,
+.col-7of12, .col-8of12, .col-9of12, .col-10of12, .col-11of12,
+.col-1of6, .col-1of4, .col-1of3, .col-1of2, .col-2of3, .col-3of4, .col-5of6,
+.col-full {
+    display: block;
+    list-style: none; // Make columns of lists
+    list-style-image: none;
+    margin-bottom: 0;
+    position: relative;
+    min-height: 1px;
+    *zoom: 1;
+}
+
+.col-1of12, .col-2of12, .col-3of12, .col-4of12, .col-5of12, .col-6of12,
+.col-7of12, .col-8of12, .col-9of12, .col-10of12, .col-11of12,
+.col-1of6, .col-1of4, .col-1of3, .col-1of2, .col-2of3, .col-3of4, .col-5of6 {
+    float: left;
+    margin-left: @grid-gutter-width / @content-box * 100%;
+    *margin-left: (@grid-gutter-width - 1) / @content-box * 100%;
+}
+
+.row > [class*='col-']:first-child, .cfx > [class*='col-']:first-child {
+    margin-left: 0;
+}
+
+.col-1of12 { #grid > .col(1); }
+.col-2of12 { #grid > .col(2); } // sixth
+.col-3of12 { #grid > .col(3); } // quarter
+.col-4of12 { #grid > .col(4); } // third
+.col-5of12 { #grid > .col(5); }
+.col-6of12 { #grid > .col(6); } // half
+.col-7of12 { #grid > .col(7); }
+.col-8of12 { #grid > .col(8); } // two-thirds
+.col-9of12 { #grid > .col(9); } // three-quarter
+.col-10of12 { #grid > .col(10); } // five-sixths
+.col-11of12 { #grid > .col(11); }
+.col-full { width: 100%; }
+
+/*
+Webkit rounding bug. There are two solutions
+1) This is the first and the second is...
+2) .row > [class*='col-']:last-child { float: right; }
+*/
+.row > [class*='col-']:last-child, .cfx > [class*='col-']:last-child { // 1
+    float: none;
+    overflow: hidden;
+    width: auto;
+}
+
+/*
+|---------------------------------------
+| Nested columns
+|---------------------------------------
+*/
+.doc-main { width: @doc-main / @content-box * 100%; }
+
+.col-1of6 { #grid > .col-nested(6); } // sixth
+.col-1of4 { #grid > .col-nested(4); } // quarter
+.col-1of3 { #grid > .col-nested(3); } // third
+.col-1of2 { #grid > .col-nested(2); } // half
+.col-2of3 { #grid > .col-nested-grth(3); } // two-thirds
+.col-3of4 { #grid > .col-nested-grth(4); } // three-quarter
+.col-5of6 { #grid > .col-nested-grth(6); } // five-sixths
+
+/*
+|---------------------------------------
+| Extra padding
+|---------------------------------------
+*/
+.p20 {
+    padding-right: 20px;
+    padding-left: 20px; }
+.pr20 { padding-right: 20px; }
+.pl20 { padding-left: 20px; }
+
+.p40 {
+    padding-right: 40px;
+    padding-left: 40px; }
+.pr40 { padding-right: 40px; }
+.pl40 { padding-left: 40px; }
+
+.pr60 { padding-right: 60px; }
+.pl60 { padding-left: 60px; }
+
+.pr80 { padding-right: 80px; }
+.pl80 { padding-left: 80px; }
+
+// SNIPPET:leoffset — Offsets
+
+// SNIPPET:lesec — Article sections
+
+/*
+|---------------------------------------
+| Helpers
+|---------------------------------------
+*/
+
+.left, .coverline, .tsr { float: left; }
+.right { float: right; }
+
+/*
+|-------------------------------------------------------------------------------
+| PORTRAIT TABLETS: 768–979px
+|-------------------------------------------------------------------------------
+*/
+
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+
+    .doc-body { padding: 0 38px (@footer-height + 2*@bl + 0px); }
+    .row-limited { width: auto; }
+}
+
+/*
+|-------------------------------------------------------------------------------
+| PHONES & SMALL PORTRAIT TABLETS: up to 767px
+|-------------------------------------------------------------------------------
+*/
+
+@media only screen and (max-width: 767px) {
+
+    /*
+    Add on top 68px, fixed header space and remove space
+    for absolute positioned footer
+    */
+    .doc-body { padding: 44em/@bm 0 @baseline-mob; }
+    .doc-main { width: 100%; }
+
+    .left, .right { max-width: 50%; }
+
+    // .row > [class*='col-'], .cfx > [class*='col-'] - die6
+    .col, .col-1of12, .col-1of6, .col-1of4, .col-1of3,
+    .col-1of2, .col-2of3, .col-3of4 {
+        float: none;
+        width: 100%;
+
+        /*
+        // I think that it's a rudiment. But I could be wrong.
+        DL, H2, H3, OL, P, UL { padding-right: 0; }
+        DL, H2, H3, P { padding-left: 0; }
+        */
+    }
+
+    /* Only coverlines lay out in 2 columns */
+    .coverline {
+        float: left;
+        width: 100% * (360-1) / 2 / 360; }
+
+    .row .coverline:last-child { float: right; }
+
+}

@@ -1,0 +1,37 @@
+@import '02-variables.less';
+@import '02-mixins.less';
+
+@submenu-padding:           9px 19px;
+@submenu-link-color:        #9d8582;
+@submenu-link-hover-color:  @text-color;
+@submenu-link-hover-bg:     darken(@dropdown-bg, 4%);
+@submenu-link-padding:      5px 10px 6px;
+@submenu-link-border-radius: @border-radius-base;
+
+
+/*
+|---------------------------------------
+| Secondary Menus, Submenus
+|---------------------------------------
+*/
+
+.sm { // Secondary Menu
+
+    padding: @submenu-padding;
+
+    A, A:visited { // Dropdown menu links
+        .border-radius(@submenu-link-border-radius);
+        color: @submenu-link-color;
+        padding: @submenu-link-padding;
+
+        // Hover state
+        &:focus, &:hover {
+            background: @submenu-link-hover-bg;
+            color: @submenu-link-hover-color;
+            text-decoration: none;
+        }
+    }
+}
+
+// SNIPPET:lelocalmenu — Inline Menu for Archives etc
+

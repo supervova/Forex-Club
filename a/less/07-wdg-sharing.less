@@ -1,0 +1,63 @@
+@import '02-variables.less';
+@import '02-mixins.less';
+
+@share-bg:                  #292c30;
+@share-top:                 0;
+@share-left:                -80px;
+@share-width:               40px;
+
+@share-btn-padding:         10px 0 11px;
+@share-btn-color:           @gray-lighter;
+@share-btn-color-hover:     #fff;
+
+@share-btn-ico-dimension:   16px;
+
+@share-fb-bg-position:      0 -40px;
+@share-tw-bg-position:      0 -40px;
+@share-gp-bg-position:      0 -40px;
+@share-vk-bg-position:      0 -40px;
+@share-ma-bg-position:      0 -40px;
+
+// SNIPPET:lesharefooter — Sharing Widgets in Fixed Footer
+
+// SNIPPET:htshare — HTML of Sharing Widget
+
+.sec-share {
+    background: @share-bg;
+    .border-radius(@border-radius-base);
+    position: absolute;
+    top: @share-top;
+    left: @share-left;
+    width: @share-width;
+
+    UL {
+        list-style-image: none;
+        list-style-image: type;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    A {
+        color: @share-btn-color;
+        display: block;
+        padding: @share-btn-padding;
+
+        &:hover { color: @share-btn-color-hover; }
+
+        // SNIPPET:lesharedivider — Share Buttons Divider
+    }
+
+    I.co {
+        .ir;
+        margin: 0 auto;
+        height: @share-btn-ico-dimension;
+        width: @share-btn-ico-dimension;
+    }
+}
+
+.sec-share-fb I.co { background-position: @share-fb-bg-position; }
+.sec-share-tw I.co { background-position: @share-tw-bg-position; }
+.sec-share-gp I.co { background-position: @share-gp-bg-position; }
+.sec-share-vk I.co { background-position: @share-vk-bg-position; }
+.sec-share-ma I.co { background-position: @share-ma-bg-position; }

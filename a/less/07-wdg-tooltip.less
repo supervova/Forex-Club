@@ -1,0 +1,82 @@
+@import '02-variables.less';
+@import '02-mixins.less';
+
+/*
+JS snippet in scpipts.js is needed
+HTML: <div title="tooltip text" class="dfn"></div>
+*/
+
+@tooltip-bg:                @gray-lighter;
+@tooltip-border:            @gray;
+@tooltip-color:             @text-color;
+
+@tooltip-max-width:         200px;
+@tooltip-width-large:       440px;
+@tooltip-width-small:       120px;
+
+@tooltip-opacity:           90;
+
+@tooltip-arrow-width:       8px;
+@tooltip-arrow-brd-width:   9px;
+@tooltip-arrow-offset:      20px;
+
+.dfn { // Tooltipped element
+    position: relative;
+    *zoom: 1;
+}
+
+.tooltip {
+    background: @tooltip-bg;
+    border: 1px solid @tooltip-border;
+    .border-radius(@border-radius-base);
+    .box-shadow(0 4px 8px rgba(0,0,0,.08));
+    color: @tooltip-color;
+    display: none;
+    font-size: @font-size-small;
+    line-height: @line-height-small;
+    text-align: left;
+    margin: 0 0 @tooltip-arrow-brd-width 0;
+    padding: 20px;
+    .opacity(@tooltip-opacity);
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: @tooltip-max-width;
+    z-index: @zindex-tooltip;
+
+    &:before { /* Caret border */
+        border-top: @tooltip-arrow-brd-width solid @tooltip-border;
+        border-right: @tooltip-arrow-brd-width solid transparent;
+        border-left: @tooltip-arrow-brd-width solid transparent;
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: 100%;
+        left: @tooltip-arrow-offset;
+    }
+
+    &:after { /* Caret body */
+        border-top: @tooltip-arrow-width solid @tooltip-bg;
+        border-right: @tooltip-arrow-width solid transparent;
+        border-left: @tooltip-arrow-width solid transparent;
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: 100%;
+        left: @tooltip-arrow-offset + 1;
+    }
+}
+
+// The tooltip sizes. Extra classes
+.tooltip-width-large { width: @tooltip-width-large; }
+.tooltip-width-small{ width: @tooltip-width-small; }
+
+// SNIPPET:letttr — Top Right Position
+
+// SNIPPET:lettl — Left Position
+
+// SNIPPET:lettr — Right Position
+
+// SNIPPET:lettbl — Bottom Left Position
+
+// SNIPPET:lettbr — Bottom Right Position

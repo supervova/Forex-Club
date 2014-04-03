@@ -1,0 +1,73 @@
+@import '02-variables.less';
+@import '02-mixins.less';
+
+/* Billboard (Jumbotron) ------------ */
+
+@jumbotron-padding:         30px;
+@jumbotron-color:           inherit;
+@jumbotron-bg:              #ff8000;
+@jumbotron-heading-color:   #fff;
+// @jumbotron-font-size:       ;
+
+// Jumbotron in Twitter Bootstrap
+.sec-billboard {
+    margin: 0 0 @baseline 280px;
+    padding: 0 @jumbotron-padding 0;
+    position: relative;
+    min-height: 800px;
+    *height: 800px;
+    *zoom: 1;
+
+    H1, .h1 { color: ; }
+}
+
+.p-front .sec-billboard {
+    background: @jumbotron-bg;
+    color: @jumbotron-color;
+
+    H1, .h1 { color: @jumbotron-heading-color; }
+}
+
+.hero { }
+
+/*
+|-------------------------------------------------------------------------------
+| STANDART LAPTOP SCREENS (UP TO 1440)
+|-------------------------------------------------------------------------------
+*/
+@media only screen and (max-width: 1440px) {
+
+    .sec-billboard {
+        min-height: 100%;
+        *height: 100%;
+    }
+}
+
+/*
+|-------------------------------------------------------------------------------
+| OLD SCHOOL DESKTOP MONITORS (XGA: 1024x768)
+|-------------------------------------------------------------------------------
+*/
+@media only screen and (max-width: 1199px) {
+    .sec-billboard { margin-left: 88px;}
+}
+
+/*
+|-------------------------------------------------------------------------------
+| PORTRAIT TABLETS: 768–979px
+|-------------------------------------------------------------------------------
+*/
+
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+}
+
+/*
+|-------------------------------------------------------------------------------
+| PHONES & SMALL PORTRAIT TABLETS: up to 767px
+|-------------------------------------------------------------------------------
+*/
+
+@media only screen and (max-width: 767px) {
+    .sec-billboard { margin-left: 0;}
+
+}

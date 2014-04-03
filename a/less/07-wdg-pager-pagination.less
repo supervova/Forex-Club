@@ -1,0 +1,80 @@
+@import '02-variables.less';
+@import '02-mixins.less';
+
+@pagination-bg:             @body-bg;
+@pagination-border:         @brd;
+@pagination-height:         44px;
+@pagination-margin:         38em/@b 0 8em/@b;
+@pagination-margin-mob:     28em/@bm 0 4em/@bm 20px;
+
+@pagination-color:          @link-color;
+@pagination-hover-color:    @link-hover-color;
+@pagination-hover-bg:       @gray-lighter;
+
+.pagination { // Container
+    list-style-image: none;
+    list-style-type: none;
+    margin: @pagination-margin;
+    padding: 0;
+
+    LI { display: inline; } // Remove list-style and block-level defaults
+
+    //.clearfix(); I'm not sure is it nessary if containing floats LI is inline?
+
+    A, SPAN { // Links
+        background: @pagination-bg;
+        border: @pagination-border;
+        border-left: 0 none;
+        border-left: @pagination-border;
+        color: @pagination-color;
+        .inline-block();
+        float: left; // Collapse white-space
+        line-height: @pagination-height - 2; // Minus border
+        text-align: center;
+        text-decoration: none;
+        padding: 0 4px;
+        height: @pagination-height;
+        min-width: @pagination-height;
+        *width: @pagination-height;
+    }
+
+    A:hover, A:focus {
+        background: @pagination-hover-bg;
+        color: @pagination-hover-color;
+    }
+
+    &:first-child { // Previous
+        > A, > SPAN {
+            border-left: @pagination-border;
+            border-radius: @border-radius-base @border-radius-base 0 0;
+            min-width: @pagination-height * 3;
+            *width: @pagination-height * 3;
+        }
+    }
+
+    &:last-child { // Next
+        > A, > SPAN {
+            border-radius:0 @border-radius-base @border-radius-base 0;
+            min-width: @pagination-height * 3;
+            *width: @pagination-height * 3;
+        }
+    }
+
+    .active A { color: @gray-dark; } // Color of notes
+
+    .disabled {
+        A, SPAN { color: @gray; }
+    }
+}
+
+/*
+|-------------------------------------------------------------------------------
+| PHONES & SMALL PORTRAIT TABLETS: up to 767px
+|-------------------------------------------------------------------------------
+*/
+
+@media only screen and (max-width: 767px) {
+
+    .pagination { margin: @pagination-margin-mob; }
+
+}

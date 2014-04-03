@@ -1,0 +1,67 @@
+@import '02-variables.less';
+@import '02-mixins.less';
+
+// Main sprite
+.gui,
+.a-logo,
+.btn-back, .btn-close, .btn-menu:before, .btn-search:before,
+.doc-header H1 A, .f-search BUTTON, I.co,
+.on-demand H3 I,
+.sys-message P:before, .warning-gl EM,
+.tbn-next:before, .tbn-next .before, .tbn-prev:before, .tbn-prev .before {
+    background-color: transparent;
+    background-image: url(@base-graphics) !important; // Prevent buttons styles assigning
+    background-repeat: no-repeat;
+}
+
+// Flags
+.ico-flag {
+    background-color: transparent;
+    background-image: url(/a/img/gui/flags.png);
+    background-repeat: no-repeat;
+    .ir(0, inline-block);
+    height: 11px;
+    width: 16px;
+}
+
+/*
+|---------------------------------------
+| High resolution devices
+|---------------------------------------
+*/
+
+ @media print,
+        (-o-min-device-pixel-ratio: 5/4),
+        (-webkit-min-device-pixel-ratio: 1.25),
+        (min-resolution: 120dpi) {
+
+    .gui-retina,
+    .btn-back, .btn-close, .btn-menu:before, .btn-search:before,
+    .f-search BUTTON, I.co,
+    .on-demand H3 I,
+    .sys-message P:before, .warning-gl EM,
+    .tbn-next:before, .tbn-next .before, .tbn-prev:before, .tbn-prev .before {
+        background-image: url(@base-graphics-x2) !important;
+        .background-size(550px 240px); // Half of physical retina sprite image
+    }
+
+    .ico-flag {
+        background-image: url(/a/img/gui/flags-x2.png);
+        .background-size(16px 4991px);
+    }
+}
+
+/*
+|---------------------------------------
+| High resolution XGA monitors
+|---------------------------------------
+*/
+@media  only screen and (max-width: 1199px) and (-o-min-device-pixel-ratio: 5/4),
+        only screen and (max-width: 1199px) and (-webkit-min-device-pixel-ratio: 1.25),
+        only screen and (max-width: 1199px) and (min-resolution: 120dpi) {
+
+        .a-logo {
+            background-image: url(@base-graphics-x2) !important;
+            .background-size(400px 240px);
+        }
+}

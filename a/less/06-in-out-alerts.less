@@ -1,0 +1,56 @@
+@import '02-variables.less';
+@import '02-mixins.less';
+
+@warning-gl-ico-bg-position:-100px 0;
+
+// SNIPPET:lealert — Alert Message
+
+// SNIPPET:lesysmescol — System Messages Colors: Info, Checking, Error, Success
+
+// SNIPPET:lesysmesprimwar — Primary and Warning Coloring
+
+// Old Browser and Disabled JavaScript Alerts
+.warning-gl { background: @state-warning-bg;
+
+    P {
+        background: @state-warning-bg;
+        *display: inline;
+        text-align: left;
+        margin: 0 auto;
+        padding: (2 * @bl / @b + 0em) 40px (@bl / @b + 0em) 80px;
+        position: relative;
+        max-width: 840px;
+        width: auto;
+        *width: 840px;
+        *zoom: 1;
+    }
+
+    EM { // Icon — Main sprite
+        background-position: @warning-gl-ico-bg-position;
+        .ir;
+        position: absolute;
+        top: (2 * @bl / @b + 0em);
+        left: 20px;
+        height: 40px;
+        width: 40px;
+    }
+}
+
+
+/*
+|-------------------------------------------------------------------------------
+| PHONES & SMALL PORTRAIT TABLETS: up to 767px
+|-------------------------------------------------------------------------------
+*/
+
+@media only screen and (max-width: 767px) {
+
+    .warning-gl {
+        P {
+            padding: (2 * @blm / @bm + 0em) 40px (@blm / @bm + 0em) 80px;
+            *width: auto;
+        }
+
+        EM { top: (2 * @blm / @bm + 0em); }
+    }
+}

@@ -1,0 +1,27 @@
+# Auxiliary Folders
+_dev/
+_notes/
+# a/css/*
+# !a/css/styles.css
+# a/less/_stock/
+
+# Auxiliary Files
+*.esproj
+*.zip
+a/img/_grid-bl22.png
+404.html
+
+# Editors / IDE Files
+*.sublime-project
+*.sublime-workspace
+*.sublime-projectcompletions
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db

@@ -1,0 +1,229 @@
+@import '02-variables.less';
+@import '02-mixins.less';
+
+@search-btn-bg-position:    -260px -60px;
+@search-btn-bb-bg-position: -310px -60px;
+@search-button-height:      38px;
+@search-button-width:       42px;
+
+.doc-header {
+    // background: #FCC;
+    text-align: left;
+    margin: 0 auto;
+    padding: 39px 20px 0;
+    /* position:relative and zoom set in typography styles for all headers*/
+    overflow: visible;
+    height: 110px;
+    max-width: 980px;
+    *width: 980px;
+    z-index: 1;
+
+      &:before, &:after {
+        content: '';
+        display: table;
+        line-height: 0; }
+
+      &:after { clear: both; }
+}
+
+    .p-front .doc-header H1 A { cursor: default}
+
+/*
+|---------------------------------------
+| Locale Menu
+|---------------------------------------
+*/
+
+.sec-regional {
+    float: right;
+    text-align: right;
+    padding-top: 11em / @b;
+    width: 180px;
+
+    .tel, .tel:hover {
+        color: #797c80;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    // Flag
+    .dropdown-toggle {
+        cursor: pointer;
+        line-height: 0;
+        margin: (-4em / @b) 0 0 .3em;
+        overflow: visible;
+        position: relative;
+        vertical-align: middle;
+        *zoom: 1;
+
+        &:after {
+            #caret > .to-bottom(4px, rgba(255, 255, 255, .44));
+            #caret > .body();
+            margin-top: -3px;
+            position: absolute;
+            top: 50%;
+            right: -12px;
+        }
+    }
+
+    .dropdown-menu {
+        right: 10px;
+        text-align: left;
+        .border-radius(@border-radius-base 0 @border-radius-base @border-radius-base);
+
+    &:before {
+        #caret > .to-top-right(8px, @dropdown-border);
+        right: -1px;
+    }
+
+    &:after {
+        #caret > .to-top-right(7px, @dropdown-bg);
+        right: 0;
+        top: -7px;
+    }
+
+    }
+}
+
+
+.p-front .sec-regional {
+    .tel, .tel:hover { color: #fff; }
+}
+
+
+/*
+|---------------------------------------
+| Search
+|---------------------------------------
+|
+*/
+
+.f-search {
+    margin: 0;
+    position: relative;
+    *zoom: 1;
+
+    BUTTON, INPUT { margin: 0; }
+
+    // Search Button
+    BUTTON {
+        /* Main sprite */
+        background-position: @search-btn-bg-position;
+        .reset-filter();
+        .ir;
+        border: 0;
+        border-left: 1px solid #b5bac1;
+        .border-radius(0);
+        .box-shadow(none);
+        display: block;
+        padding: 0;
+        .opacity(60);
+        position: absolute;
+        top: 1px;
+        right: 0;
+        height: @search-button-height;
+        width: @search-button-width;
+
+        &:hover {
+            .opacity(100); /* Bright up it */
+            .transition(opacity 0.1s linear);
+        }
+    }
+}
+
+// Input
+INPUT[type="search"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    background: @input-bg;
+    border: 0 none transparent !important; // Hide border
+    margin: 0;
+    outline: none;
+    vertical-align: baseline;
+    *vertical-align: middle;
+    width: 100%;
+}
+
+// Input Specials
+INPUT[type="search"]::-webkit-search-decoration, INPUT[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none; } // Inner-padding issues in Chrome OSX, Safari 5
+
+// Removes inner padding and search cancel button in Safari 5 and Chrome on OS X
+INPUT[type="search"]::-webkit-search-cancel-button,
+INPUT[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none; }
+
+// Search Placeholder
+.search-placeholder(#abaeb2, #d3d6da);
+
+
+// Search in Header ----------------- */
+
+.doc-header INPUT[type="search"] {
+    padding: 5px 11px 5px 19px;
+    height: 40px;
+}
+
+.doc-header FORM { // Separate desktop and mobile version search forms here
+    border: 1px solid @brd-color; // Reset Google inline styles @see sms-roman & polylog
+     .border-radius(2px);
+    float: left;
+    padding: 0 44px 0 0;
+    width: 620 / 940 * 100%; // (ширина блока (количество колонок плюс пробелы (на один меньше чем колонки)) / внешний контейнер * 100%;
+    *width: 619 / 940 * 100%;
+}
+
+// Search in Billboard
+.p-front .f-search {
+    border: 1px solid rgba(255, 255, 255, .44);
+
+    BUTTON {
+        background-position: @search-btn-bb-bg-position;
+        border-left: 1px solid rgba(255, 255, 255, .73);
+    }
+
+    .search-placeholder(rgba(255, 255, 255, .44), rgba(255, 255, 255, .24));
+}
+
+.p-front .doc-header {
+
+    INPUT[type="search"] {
+        color: #fff;
+        background: transparent; }
+}
+
+/*
+|-------------------------------------------------------------------------------
+| PHONES & SMALL PORTRAIT TABLETS: up to 767px
+|-------------------------------------------------------------------------------
+*/
+
+@media only screen and (max-width: 767px) {
+
+    .doc-header {
+        #gradient > .vertical(#4E5053, #282A2D);
+        border-top: 1px solid #707275;
+        border-bottom: 1px solid #000;
+        .box-shadow(0 1px 2px rgba(0,0,0,.44));
+        text-align: center;
+        margin-bottom: 0;
+        padding: 0;
+        position: fixed;
+        right: 0;
+        left: 0;
+        height: 42px; // Since box sizing remains default
+        width: 100%;
+        z-index: 444;
+        *zoom: 1;
+    }
+
+    /* Search --------------------------- */
+
+    .f-search BUTTON { display: none; }
+
+    /* Search — Hide for SMS novel. Remove it after implementation */
+
+    .f-search { display: none; }
+
+}

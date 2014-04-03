@@ -1,0 +1,163 @@
+@import '02-variables.less';
+@import '02-mixins.less';
+
+@main-menu-link-color:      #66c;
+@main-menu-link-hover-color:darken(@main-menu-link-color, 16%);
+
+/*
+|---------------------------------------
+| Container and Common Styles
+|---------------------------------------
+*/
+.main-menu { // Container
+    background: #1f2226;
+    color: #74777b;
+    overflow: hidden;
+    .fixed-on-top;
+    left: 0;
+    .transition(width .2s);
+    height: 100%;
+    width: 280px;
+
+    A {
+        color: @main-menu-link-color;
+        text-decoration: none;
+        display: block;
+
+        &:hover { color: @main-menu-link-hover-color;}
+    }
+
+}
+
+/*
+|---------------------------------------
+| Logo
+|---------------------------------------
+*/
+.p-front .a-logo { cursor: default}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+
+    .a-logo {
+        background: transparent url(/a/img/logo/forex-club-x2.png) no-repeat;
+        .background-size(100% 100%);
+
+        IMG { visibility: hidden; }
+    }
+}
+
+/*
+|---------------------------------------
+| Main Menu
+|---------------------------------------
+*/
+.nav { //  UL
+    display: table;
+    *display: block;
+    float: ;
+    padding: ;
+    position: relative;
+    width: ;
+    *zoom: 1;
+
+    A {
+        display: block;
+        padding: ;
+        width: 100%;
+    }
+
+    A.active, A:hover, A:focus { // Hover state
+        color: ;
+        background: ;
+        text-decoration: none;
+    }
+}
+
+.mm-menu { // First Level LI
+    display: table-cell;
+    *display: block;
+    *float: left;
+    margin: ;
+    z-index: 4;
+}
+
+// SNIPPET:lemmlabel — First Level Menu Item Label
+
+// There is the dropdown menu in the secondary menus file
+
+/*
+|-------------------------------------------------------------------------------
+| OLD SCHOOL DESKTOP MONITORS (XGA: 1024x768)
+|-------------------------------------------------------------------------------
+*/
+@media only screen and (max-width: 1199px) {
+    .main-menu { width: 88px; }
+
+    .a-logo {
+        // @see background in 02-sprites
+        display: block;
+        height: 125px;
+        width: 88px;
+
+        IMG { display: none; }
+    }
+
+}
+
+/*
+|-------------------------------------------------------------------------------
+| PHONES & SMALL PORTRAIT TABLETS: up to 767px
+|-------------------------------------------------------------------------------
+*/
+
+@media only screen and (max-width: 767px) {
+
+    /* Main menu had transformed to Slide out */
+
+    @so-bg:                     #4E5053;
+    @so-width:                  240px;
+
+    @so-link-color:             #5B5E62;
+    @so-link-hover-color:       lighten(@so-link-color, 16%);
+    @so-link-hover-bg:          #33363a;
+    @so-link-shadow:            0 1px 1px rgba(0,0,0,.84);
+
+    @so-link-brd-t:             0 1px 0 rgba(255, 255, 255, .2); // Inset Border Shadow
+    @so-link-brd-b:             1px solid #33363a;
+    @so-link-padding:           12px 10px 10px;
+
+    .main-menu {
+        background: @so-bg;
+        padding-top: 1px;
+        .fixed-on-top;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        visibility: hidden;
+        height: 100%;
+        width: @so-width;
+
+        UL { width: inherit; }
+
+        LI A {
+            color: @so-link-color;
+            border-bottom: @so-link-brd-b;
+            box-shadow: @so-link-brd-t;
+            display: block;
+            text-decoration: none;
+            text-shadow: @so-link-shadow;
+            padding: @so-link-padding;
+            width: @so-width;
+
+            &:visited { color: @so-link-color; }
+
+            &:hover, &:active {
+                background-color: @so-link-hover-bg;
+                color: @so-link-hover-color;
+            }
+        }
+    }
+}

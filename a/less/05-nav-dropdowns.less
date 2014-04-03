@@ -1,0 +1,137 @@
+@import '02-variables.less';
+@import '02-mixins.less';
+
+// JS snippet in scpipts.js is needed
+// SNIPPET:htdropdown — Dropdown HTML Structure
+
+@label-caret-width-base:    4px; // Arrow in label
+@label-caret-color:         @gray-lighter;
+
+@dropdown-caret-width:      8px;
+@dropdown-caret-offset:     20px;
+
+// Background and border has benn set in variables
+@dropdown-padding:          19px 19px;
+@dropdown-width-small:      120px;
+@dropdown-width-base:       220px;
+@dropdown-width-large:      400px;
+@dropdown-width-xl:         640px;
+
+
+@dropdown-divider-bg:       @gray-lighter;
+
+@dropdown-link-padding:     5px 0 6px;
+
+.dropdown { // The dropdown wrapper (div)
+    position: relative;
+    *zoom: 1;
+}
+
+//  Label Caret
+.dropdown-toggle:after {
+    #caret > .to-bottom(@label-caret-width-base, @label-caret-color);
+    #caret > .body();
+    margin-left: 4px;
+    vertical-align: middle;
+}
+
+// Dropups arrows
+.dropdown-tr .dropdown-toggle:after, .dropdown-tl .dropdown-toggle:after {
+    border-bottom: @label-caret-width-base solid;
+    border-top: 0;
+}
+
+// Dropdown menu - ul or div-container for mega dropdowns
+.dropdown-menu {
+    background: @dropdown-bg;
+    border: 1px solid @dropdown-border;
+    border-radius: @border-radius-base;
+    .box-shadow(0 4px 8px rgba(0,0,0,.08));
+    display: none;  // none by default, but block on "open" of the menu
+    // float: left;
+    margin: @dropdown-caret-width 0 0;
+    padding: @dropdown-padding;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: @dropdown-width-base;
+    z-index: @zindex-dropdown;
+
+    // SNIPPET:ledddiv — Dropdown Divider
+}
+
+UL.dropdown-menu, .dropdown-menu UL {
+    list-style-image: none;
+    list-style-type: none;
+}
+
+// The dropdowns sizes. Extra classes
+.dropdown-menu-width-small{ width: @dropdown-width-small; }
+.dropdown-menu-width-large { width: @dropdown-width-large; }
+.dropdown-menu-width-xl { width: @dropdown-width-xl; }
+
+/* Menu carets  */
+.dropdown-menu {
+    &:before { /* Caret border */
+        #caret > .to-top((@dropdown-caret-width + 1), @dropdown-border);
+        #caret > .body();
+        position: absolute;
+        top: -(@dropdown-caret-width + 1);
+        left: @dropdown-caret-offset;
+    }
+
+    &:after { /* Caret body */
+        #caret > .to-top(@dropdown-caret-width, @dropdown-bg);
+        #caret > .body();
+        position: absolute;
+        top: -(@dropdown-caret-width);
+        left: @dropdown-caret-offset + 1;
+    }
+
+    A, A:visited { // Dropdown menu links
+        color: @link-color;
+        display: block;
+    }
+
+    A, EM {  // EM is for active items
+        display: block;
+        font-style: normal;
+        padding: @dropdown-link-padding;
+    }
+
+    .active {
+        background: darken(@dropdown-bg, 4%);
+        border-radius: @border-radius-base;
+    }
+
+}
+
+
+// Menu and caret positioning — bottom right
+.dropdown-menu-br {
+    right: 0;
+    left: auto;
+
+    &:before { /* Caret border */
+        right: @dropdown-caret-offset;
+        left: auto;
+    }
+
+    &:after { /* Caret body */
+        right: @dropdown-caret-offset + 1;
+        left: auto;
+    }
+}
+
+// SNIPPET:leddbr — Bottom Right Position
+
+// SNIPPET:leddl — Left Position
+
+// SNIPPET:leddr — Right Position
+
+// SNIPPET:leddtl — Top Left Position
+
+// SNIPPET:leddtr — Top Right Position
+
+// SNIPPET:leddbackd — Backdrop for Closing on Mobiles
+
