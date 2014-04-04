@@ -1,0 +1,970 @@
+@import '../02-variables.less';
+@import '../02-mixins.less';
+
+/*
+|-------------------------------------------------------------------------------
+| UNCONDITIONAL STYLES - TABLETS AND DESKTOPS: 768px+
+|
+| MQs
+| @font-face
+|
+| ABBR
+| CODE
+| DFN
+| INS
+| KBD
+| MARK
+| PRE
+| Q
+| SAMP
+|
+| OL.chapter
+| UL.inline
+| OL.unstyled, UL.unstyled
+| Legacy rules for lists as a reserve
+|
+| Buttons colouring
+| Link-like button
+|
+| .i-uneditable
+| .ta-uneditable
+| .i-append
+| .i-prepend
+| .help-block
+|
+| Google Custom Search V2
+|
+| Tables system colouring output
+|
+| Helpers:
+| hidden, visual hidden, hidden gifs
+|
+| Typography mixins
+| Grid system mixins
+|
+| Mixins using pseudo-classes
+|
+|-------------------------------------------------------------------------------
+| IE bugs and hacks
+|
+| 1) IE: hasLayout — *zoom: 1
+| Need for most of relative positioned elements, but it some cases it's already
+| established either by default or by the setting triggers like height+width,
+| display: inline-block + width or float: left|right
+|
+| 2) Inline-block for IE — *display: inline; *zoom: 1;
+|
+| 3) IE6 Float/Margin Bug — _display: inline;
+|
+| 4) IE6 Across Block Width Bug — Set max width
+| _width: ~'expression(this.width > 577 ? 577: true)';
+|
+| 5) IE6 ignores rules which contain CSS3 selectors, e.g. .row [class*='span']
+|
+| 6) To provide box-sizing: border-box feature in IE6/7 use polyfill
+| box-sizing: border-box;
+| *behavior: url(/a/js/boxsizing.htc);
+|
+| 7) IE8 ignores the rules that use this pseudo-selectors.
+| So we should'not group common rules into one.
+| Wrong:
+| A, A:after { background: #ffc; }
+|
+| Right:
+| A { background: #ffc; }
+| A:after { background: #ffc; }
+|
+| *HTML, _property — IE6
+| *+HTML — IE7
+| *property — IE6, IE7
+| property: value\0/ — IE8
+| property: value \9 — IE6-9 | LESS - e('\9')
+|
+*/
+
+/*
+|-------------------------------------------------------------------------------
+| UNCONDITIONAL STYLES - TABLETS AND DESKTOPS: 768px+
+|-------------------------------------------------------------------------------
+*/
+
+/*
+|-------------------------------------------------------------------------------
+| DESKTOPS: 980px and up
+|-------------------------------------------------------------------------------
+*/
+
+@media only screen and (min-width: 980px) {
+}
+
+/*
+|-------------------------------------------------------------------------------
+| PORTRAIT TABLETS: 768–979px
+|-------------------------------------------------------------------------------
+*/
+
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+}
+
+
+/*
+|-------------------------------------------------------------------------------
+| PHONES & SMALL PORTRAIT TABLETS: up to 767px
+|-------------------------------------------------------------------------------
+*/
+
+@media only screen and (max-width: 767px) {
+
+}
+
+/*
+|-------------------------------------------------------------------------------
+| PORTRAIT PHONES
+|-------------------------------------------------------------------------------
+*/
+
+@media only screen and (max-width: 479px) {
+
+}
+
+
+/*
+|---------------------------------------
+| High resolution devices
+|---------------------------------------
+*/
+
+ @media print,
+        (-o-min-device-pixel-ratio: 5/4),
+        (-webkit-min-device-pixel-ratio: 1.25),
+        (min-resolution: 120dpi) {
+
+    /* .background-size(100% 100%); */
+
+/*
+    Вложенные правила @media не работают, поэтому, например, для смартфонов с высоким разрешением
+    применяем такую конструкцию:
+
+ @media print,
+        (-o-min-device-pixel-ratio: 5/4) and (max-width: 767px),
+        (-webkit-min-device-pixel-ratio: 1.25) and (max-width: 767px),
+        (min-resolution: 120dpi) and (max-width: 767px) {
+
+        }
+    UPD: этому правилу надо найти замену — так на все девайсы закачиваюся файлы
+    с высоким разрешением
+
+    СОДЕРЖАТЕЛЬНЫЕ ИЛЛЮСТРАЦИИ
+    Скрывать нормальную картинку на «Ретине» и добавлять фон контейнеру FIGURE
+
+    FIGURE.pic {
+        background: transparent url(/a/img/main-pic-mobile-x2.png) no-repeat;
+        background-size: 100% 100%; // Всегда в таких случаях указывать 100-процентный background-size
+
+        IMG { visibility: hidden; }
+    }
+
+    Либо использовать картинки «под Ретину» и размеры в CSS-пикселях.
+
+    ОФОРМИТЕЛЬСКИЕ ЭЛЕМЕНТЫ
+    Псевдо-элементы :before и :after в этом разделе и вдвое меньший, чем фактический, размер.
+    Например, background-size: 200px 200px — для фонового изображения со сторонами 400px.
+
+    СПРАЙТЫ ДЛЯ МОНИТОРОВ РАЗНОЙ ПЛОТНОСТИ
+    Сначала создается спрайт из векторных изображений для мониторов низкой плотности. Пишутся под него стили
+
+    .ico {
+    background: url(/a/img/gui/base-graphics.png) no-repeat;
+    background-position: 20px 20px; }
+
+    Затем изображение увеличивается вдвое, в этом разделе добавляются стили - меняется background-image,
+    добавляется вдвое меньше background-size, но не меняется background-position, исчисляемая в CSS-пикселях
+
+    .ico {
+    background-image: url(/a/img/gui/base-graphics-x2.png);
+    .background-size(220px 120px); // Less-примесь для набора «браузероспецифичных» правил }
+
+    Значения .background-size вдвое меньше фактического размера картинки 440x240 пикселей.
+    Процентные значения, вероятно, не подходят, так как, по-видимому они высчитываются
+    по отношению к величинам элемента, а не фоновой картинки.
+
+    По сивдетельствам экспериментаторов, максимальный размер спрайтов, которые отображаются безошибочно -
+    5 200 000 кв. пикселей – например, 2000x2600px.
+    */
+
+}
+
+/* In reserve - Huge desktop screens and landscape smartphones */
+/*
+@media only screen and (min-width: 1200px) {
+    BODY { max-width: 1440px; }
+    .page { max-width: ; }
+     }
+@media only screen and (min-width: 480px) { }
+*/
+
+/*
+|---------------------------------------
+| Typography
+|---------------------------------------
+*/
+
+
+
+
+/*
+|---------------------------------------
+| Media
+|---------------------------------------
+*/
+
+/* A workaround for S60 3.x and 5.0 devices which do not animated gif images if they have been set as display: none */
+IMG[src$=".gif"], gif-hidden {
+    position: absolute;
+    left: -100%; }
+
+FIGURE.video {
+    margin: 42em/@b 0 44em/@b; /* 42px 0 44px */
+    padding: 30px 0 56.25%;
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    *zoom: 1;
+
+    EMBED, IFRAME, OBJECT {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    *width: ~'expression(this.width > 440 ? 440: true)' !important; }
+    }
+
+/*
+|---------------------------------------
+| Lists
+|---------------------------------------
+*/
+OL.chapter {
+    list-style-type: none;
+    list-style-position: outside; }
+
+    OL.chapter LI {
+        counter-increment: section;
+        counter-reset: sub-section; }
+
+    OL.chapter LI {
+        .pseudo-before();
+        &:before, .before { content: counter(section) '. '; }
+        }
+
+    OL.chapter OL LI {
+        counter-increment: sub-section;
+        counter-reset: none;
+        list-style-type: none; }
+
+    OL.chapter OL LI {
+        .pseudo-before();
+        &:before, .before { content: counter(section) '.' counter(sub-section) '. '; }
+    }
+
+    OL.chapter UL LI { counter-increment: none; }
+
+    OL.chapter UL LI:before, OL.chapter UL LI .before { content: normal; }
+
+UL.inline {
+    list-style-image: none;
+    list-style-type: none; }
+
+    UL.inline LI {
+        display: inline;
+        margin-left: .3em;
+        .pseudo-after(); }
+
+    UL.inline LI:after, UL.inline LI .after { content: ','; }
+
+    UL.inline :last-child:after { content: ''; }
+
+OL.unstyled, UL.unstyled {
+    list-style: none;
+    list-style-image: none;
+    padding-left: 0; }
+
+/*
+|---------------------------------------
+| Buttons
+|---------------------------------------
+*/
+
+/* Colouring */
+.btn-secondary {
+    #gradient > .vertical(@gray-lighter, darken(@gray-lighter, 20%);
+
+    &:hover, &:active, &.active { background-color: darken(@gray-lighter, 20%); }
+    }
+
+.btn-warning { #gradient > .vertical(@state-warning-bg, darken(@state-warning-bg, 20%);
+
+    &:hover, &:active, &.active { background-color: darken(@state-warning-bg, 20%); }
+    }
+
+.btn-danger { #gradient > .vertical(@red, darken(@red, 20%);
+
+    &:hover, &:active, &.active { background-color: darken(@red, 20%); }
+    }
+
+.btn-success { #gradient > .vertical(@green, darken(@green, 20%);
+
+    &:hover, &:active, &.active { background-color: darken(@green, 20%); }
+    }
+
+.btn-secondary, .btn-warning, .btn-danger, .btn-success {
+    border-color: ;
+    border-color: rgba(0,0,0,.15) rgba(0,0,0,.15) rgba(0,0,0,.25); }
+
+/* Link-like button */
+.btn-link, .btn-link:active, .btn-link[disabled] {
+    background-color: transparent;
+    background-image: none;
+    .box-shadow(none); }
+
+.btn-link {
+    border-color: transparent;
+    .border-radius(0);
+    color: @link-color;
+    cursor: pointer; }
+
+.btn-link:hover {
+    background-color: transparent;
+    color: @link-hover-color;
+    text-decoration: underline; }
+
+.btn-link[disabled]:hover {
+    color: @gray-dark;
+    text-decoration: none; }
+
+/*
+|---------------------------------------
+| Forms
+|---------------------------------------
+*/
+.i-uneditable, .ta-uneditable {
+    background: @input-bg;
+    border-color: lighten(@brd, 50%);
+    .box-shadow(inset 0 1px 2px rgba(0, 0, 0, 0.025));
+    color: @gray-dark;
+    cursor: default;
+    cursor: not-allowed;
+    white-space: nowrap;
+    overflow: hidden; }
+
+.ta-uneditable {
+    width: auto;
+    height: auto; }
+
+/* Input states --------------------- */
+
+.error .i-append .add-on, .error .i-prepend .add-on  { background-color: @state-danger-bg; }
+
+.success .i-append .add-on, .success .i-prepend .add-on  { background-color: @state-success-bg; }
+
+.warning .i-append .add-on, .warning .i-prepend .add-on  { background-color: @state-warning-bg; }
+
+/* Append & prepend inputs ---------- */
+
+.i-append, .i-prepend {
+    font-size: 0;
+    white-space: nowrap;
+    margin-bottom: 5px;
+
+    INPUT, SELECT, .i-uneditable {
+        .border-radius(0 @brd-radius @brd-radius 0);
+        margin-bottom: 0;
+        *margin-left: 0;
+        position: relative;
+        vertical-align: top;
+
+    /* Make input on top when focused so blue border and shadow always show */
+    &:focus { z-index: 2; }
+    }
+
+    .add-on {
+        background-color: @gray-lighter;
+        border: @brd;
+        display: inline-block;
+        font-size: 100%;
+        font-weight: normal;
+        line-height: @baseline;
+        text-align: center;
+        text-shadow: 0 1px 0 #FFF;
+        padding: 4px 5px;
+        vertical-align: top;
+        min-width: 16px;
+        width: auto; }
+
+    .active {
+        background-color: lighten(@green, 30);
+        border-color: @green; }
+}
+
+.i-prepend {
+    .add-on { margin-right: -1px; }
+
+    .add-on:first-child { .border-radius(@brd-radius 0 0 @brd-radius); }
+}
+
+.i-append {
+    INPUT, SELECT, .i-uneditable { .border-radius(@brd-radius 0 0 @brd-radius); }
+
+    .add-on { margin-left: -1px; }
+    .add-on:last-child { .border-radius(0 (@brd-radius (@brd-radiuss 0); }
+}
+
+/* Remove all border-radius for inputs with both prepend and append */
+.i-prepend.i-append {
+    INPUT, SELECT, .i-uneditable { .border-radius(0); }
+
+    .add-on:first-child {
+        .border-radius(@brd-radius 0 0 @brd-radius);
+        margin-right: -1px; }
+
+    .add-on:last-child {
+        .border-radius(0 @brd-radius @brd-radius 0);
+        margin-left: -1px; }
+}
+
+
+.i-append, .i-prepend { margin-bottom: 5px; }
+
+.i-append INPUT, .i-prepend INPUT, .i-append SELECT, .i-prepend SELECT, .i-append .i-uneditable, .i-prepend .i-uneditable {
+    -webkit-border-radius: 0 3px 3px 0;
+    -moz-border-radius: 0 3px 3px 0;
+    border-radius: 0 3px 3px 0;
+    margin-bottom: 0;
+    *margin-left: 0;
+    position: relative;
+    vertical-align: middle }
+
+.i-append INPUT:focus, .i-prepend INPUT:focus, .i-append SELECT:focus, .i-prepend SELECT:focus,
+.i-append .i-uneditable:focus, .i-prepend .i-uneditable:focus {
+    z-index: 2; }
+
+.i-append .i-uneditable, .i-prepend .i-uneditable {
+    /* TODO — Use uneditable variable */
+    border-left-color: #ccc; }
+
+.i-append .add-on, .i-prepend .add-on {
+    background-color: #EEE;
+    /* TODO — Use input border variable */
+    border: 1px solid #CCC;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    display: inline-block;
+    font-weight: normal;
+    line-height: 18px;
+    text-align: center;
+    text-shadow: 0 1px 0 #fff;
+    margin-left: -1px;
+    padding: 4px 5px;
+    vertical-align: middle;
+    height: 18px;
+    min-width: 16px;
+    width: auto; }
+
+.i-prepend .add-on { margin-right: -1px; }
+
+.i-prepend .add-on:first-child {
+    -webkit-border-radius: 3px 0 0 3px;
+    -moz-border-radius: 3px 0 0 3px;
+    border-radius: 3px 0 0 3px; }
+
+.i-append INPUT, .i-append SELECT, .i-append .i-uneditable {
+    -webkit-border-radius: 3px 0 0 3px;
+    -moz-border-radius: 3px 0 0 3px;
+    border-radius: 3px 0 0 3px; }
+
+.i-append .i-uneditable {
+    /* TODO — Use input border variable */
+    border-right-color: #CCC;
+    border-left-color: #EEE; }
+
+.i-append .add-on:last-child {
+    -webkit-border-radius: 0 3px 3px 0;
+    -moz-border-radius: 0 3px 3px 0;
+    border-radius: 0 3px 3px 0; }
+
+.f-inline .i-append, .f-search .i-append, .f-inline .i-prepend, .f-search .i-prepend { margin-bottom: 0; }
+
+/* TODO — Delete these classes if they don't use */
+.i-prepend.i-append INPUT, .i-prepend.i-append SELECT, .i-prepend.i-append .i-uneditable {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0; }
+
+.i-prepend.i-append .add-on:first-child, .i-prepend.i-append .btn:first-child {
+    margin-right: -1px;
+    -webkit-border-radius: 3px 0 0 3px;
+    -moz-border-radius: 3px 0 0 3px;
+    border-radius: 3px 0 0 3px; }
+
+.i-prepend.i-append .add-on:last-child, .i-prepend.i-append .btn:last-child {
+    margin-left: -1px;
+    -webkit-border-radius: 0 3px 3px 0;
+    -moz-border-radius: 0 3px 3px 0;
+    border-radius: 0 3px 3px 0; }
+
+/* Help ----------------------------- */
+.help-block { display: block; }
+
+.f .help-block { margin-top: 9px; }
+
+/*
+|---------------------------------------
+| Google Custom Search V2
+| We should rewrite this stuff
+|---------------------------------------
+*/
+
+/*
+<div id="___gcse_0" >
+<div class="gsc-control-searchbox-only gsc-control-searchbox-only-ru" dir="ltr" >
+<form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8" >
+<table cellspacing="0" cellpadding="0" class="gsc-search-box" >
+<tbody >
+<tr >
+<td class="gsc-input" > <div class="gsc-input-box " id="gsc-iw-id1" >
+<table cellspacing="0" cellpadding="0" style="width: 100%; padding: 0px; " id="gs_id0" class="gstl_0 " >
+<tbody >
+<tr >
+<td id="gs_tti0" class="gsib_a" > <input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="поиск" style="width: 100%; padding: 0px; border: none; margin: 0px; height: auto; outline: none; background-image: url(http://www.google.com/cse/intl/ru/images/google_custom_search_watermark.gif); background-color: rgb(255, 255, 255); background-position: 0% 50%; background-repeat: no-repeat no-repeat; " id="gsc-i-id1" dir="ltr" spellcheck="false" > </td >
+<td class="gsib_b" > <div class="gsst_b" id="gs_st0" style="" dir="ltr" > <a class="gsst_a" href="javascript:void(0)" style="display: none; " > <span class="gscb_a" id="gs_cb0" > ×</span > </a > <span class="gsst_d" > </span > </div > </td >
+</tr >
+</tbody >
+</table >
+</div > </td >
+<td class="gsc-search-button" > <input type="image" src="http://www.google.com/uds/css/v2/search_box_icon.png" class="gsc-search-button gsc-search-button-v2" title="поиск" > </td >
+<td class="gsc-clear-button" > <div class="gsc-clear-button" title="удалить результаты" > &nbsp;</div > </td >
+</tr >
+</tbody >
+</table >
+<table cellspacing="0" cellpadding="0" class="gsc-branding" >
+<tbody >
+<tr >
+<td class="gsc-branding-user-defined" > </td >
+<td class="gsc-branding-text" > <div class="gsc-branding-text" > технология</div > </td >
+<td class="gsc-branding-img" > <img src="http://www.google.com/uds/css/small-logo.png" class="gsc-branding-img" > </td >
+</tr >
+</tbody >
+</table >
+</form >
+</div >
+</div >
+|-------------------------------
+
+GCS Inline Styles
+
+Table.gstl_0, container for input
+width: 100%; padding: 0
+
+Input.gsc-input-box
+! border: none;
+We can set border with Table.gstl_0 class styles
+
+! background-color: rgb(255, 255, 255);
+! background-image: url(http://www.google.com/cse/intl/ru/images/google_custom_search_watermark.gif);
+! background-position: 0% 50%;
+! background-repeat: no-repeat no-repeat;
+ >  We can hide watermark and change color with box-shadow property
+-moz-box-shadow: inset 0 30px 0 #fff;
+-webkit-box-shadow: inset 0 30px 0 #fff;
+box-shadow: inset 0 30px 0 #fff;
+
+margin: 0;
+
+! padding: 0;
+ >  We can try set line height in .gsc-input class to set needed height
+
+outline: none;
+
+! height: auto;
+ >  We can try set line height in .gsc-input class to set needed height
+
+width: 100%;
+
+*/
+
+/*
+| control inputs
+| .gsc-search-box: the container that hosts the text input area
+| .gsc-input: the text input area
+| .gsc-keeper: the save link below savable results
+*/
+
+
+FORM.gsc-search-box {
+    font-size: 13px; /* ! */
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 4px; /* ! */
+    margin-left: 0;
+    width: 100%;
+}
+
+/*
+| This table contains the input element and the search button
+| Note that the search button column is fixed width, designed to hold the
+| button div's background image
+*/
+
+TABLE.gsc-search-box {
+    border-style: none;
+    border-width: 0;
+    border-spacing: 0 0;
+    width: 100%;
+    margin-bottom: 2px;
+}
+
+TABLE.gsc-search-box td { vertical-align: middle; }
+
+.gsib_a {  /*  Search input container TD */
+    padding: 4px 8px 0;
+    width: 100%;
+}
+
+.gsc-input-box { /* Search Input DIV Container */
+    background: #fff;
+    border: 1px solid #D9D9D9;
+    height: 25px;
+}
+
+.gsst_b { /* Cancel Button DIV Container */
+    font-size: 16px;
+    padding: 0 3px;
+    user-select: none;
+    -webkit-user-select: none;
+    white-space: nowrap;
+}
+
+.gsst_a { /* Cancel Button — A (wrapper) */
+    cursor: pointer;
+    padding: 3px 3px 0;
+}
+
+.gsst_a .gscb_a { /* Cancel Button — SPAN */
+    color: #A1B9ED;
+    cursor: pointer;
+    display: inline-block;
+    font: 27px/13px arial, sans-serif;
+}
+
+.gsst_d { width: 4px; } /* Spacer ? */
+
+.gsc-search-box-tools .gsc-search-box .gsc-input { padding-right: 12px; }
+
+.cse .gsc-search-button { /* Class asigned foth on TD and INPUT (icon) elements. Set in Google default.css and via JS. We can try to rewrite it with !important */
+    background-color: #2C2E31;
+    background-image: none;
+    border: 1px solid #666;
+    border-color: #2C2E31;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    color: white;
+    filter: none;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: bold;
+    width: 1%; }
+
+.cse .gsc-search-button INPUT.gsc-search-button-v2, INPUT.gsc-search-button-v2 { /* Icon.Image set in HTML */
+    padding: 6px 27px;
+    margin: 2px 0 0 2px;
+    height: 13px;
+    min-width: 13px;
+    width: 13px; }
+
+DIV.gsc-clear-button { /* Сlear button*/
+    background-image: url('//www.google.com/uds/css/v2/clear.png');
+    display: inline; /* display: none; on PC */
+    text-align: right;
+    margin-left: 4px;
+    margin-right: 4px;
+    padding-left: 10px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url('//www.google.com/uds/css/clear.gif');
+    cursor: pointer; }
+
+/*
+|---------------------------------------
+| Tables
+|---------------------------------------
+*/
+
+/* System colouring output */
+TBODY TR {
+    &.success TD { background-color: @state-success-bg; }
+    &.error TD { background-color: @state-danger-bg; }
+    &.warning TD { background-color: @state-warning-bg; }
+
+    &.success:hover TD { background-color: darken(@state-success-bg, 4%); }
+    &.error:hover TD {  background-color: darken(@state-danger-bg, 4%); }
+    &.warning:hover TD { background-color: darken(@state-warning-bg, 4%); }
+}
+
+/*
+|---------------------------------------
+| Helpers
+|---------------------------------------
+*/
+
+/* Hide from both screenreaders and browsers */
+.hidden {
+    display: none !important;
+    visibility: hidden; }
+
+/* Hide only visually, but have it available for screenreaders */
+.hidden-v {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px; }
+
+/* Extends the .hidden-v class to allow the element to be focusable when navigated to via the keyboard */
+.hidden-v.focusable:active, .hidden-v.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto; }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.hidden-plc { visibility: hidden; }
+
+/*
+|---------------------------------------
+| Typography mixins
+|---------------------------------------
+*/
+
+#font {
+    #family {
+        .serif() { font-family: @font-family-serif; }
+        .sans-serif() { font-family: @font-family-base; }
+        .monospace() {  font-family: @font-family-monospace; }
+    }
+
+    .shorthand(@size: 100% * @b / 16, @weight: 400, @line-height: @baseline) { /* Defaults can be overwriten */
+        font-size: @size;
+        font-weight: @weight;
+        line-height: @line-height;
+    }
+
+        .serif(@size: 100% * @b / 16, @weight: 400, @line-height: @baseline) {
+            #font > #family > .serif;
+            #font > .shorthand(@size, @weight, @line-height);
+        }
+
+        .sans-serif(@size: 100% * @b / 16, @weight: 400, @line-height: @baseline) {
+            #font > #family > .sans-serif;
+            #font > .shorthand(@size, @weight, @line-height);
+        }
+
+        .monospace(@size: 100% * @b / 16, @weight: 400, @line-height: @baseline) {
+            #font > #family > .monospace;
+            #font > .shorthand(@size, @weight, @line-height);
+        }
+}
+
+/*
+|---------------------------------------
+| COMPONENT MIXINS
+|---------------------------------------
+*/
+
+/* Horizontal dividers
+    Dividers (basically an hr) within dropdowns and nav lists */
+.nav-divider(@top: @brd-color, @bottom: @body-bg) {
+    /* IE7 needs a set width since we gave a height. Restricting just
+        to IE7 to keep the 1px left/right space in other browsers.
+        It is unclear where IE is getting the extra space that we need
+        to negative-margin away, but so it goes. */
+    background-color: @top;
+    border-bottom: 1px solid @bottom;
+    margin: (@baseline/2 - 1/@b) 1px (@baseline/2); /* One empty line */
+    *margin: -5px 0 5px;
+    overflow: hidden;
+    height: 1px;
+    *width: 100%; }
+
+/*
+|---------------------------------------
+| Grid system mixins
+|---------------------------------------
+*/
+
+/* Centered container element */
+.container-fixed() {
+    margin-right: auto;
+    margin-left: auto;
+        *zoom: 1;
+
+    &:before, &:after {
+        content: '';
+        display: table;
+        line-height: 0; }
+
+    &:after { clear: both; }
+}
+
+/* Table columns */
+.table-cols(@columnSpan: 1) {
+    float: none; /* undo default grid column styles */ }
+
+/* Make a Grid
+    Use .make-row and .make-column to assign semantic layouts grid system behavior*/
+.make-row() {
+    *zoom: 1;
+
+    &:before, &:after {
+        content: '';
+        display: table;
+        line-height: 0; }
+
+    &:after { clear: both; }
+}
+
+.make-column(@columns: 1, @offset: 0) {
+    float: left;
+    padding: @col-padding;
+    min-height: 1px; /* prevent collapsing columns */ }
+
+/* The Grid */
+#grid {
+
+  .fluid (@fluid-grid-column-width, @fluid-gutter-width) {
+
+    .spanX (@index) when (@index > 0) {
+      (~'.span@{index}') { .span(@index); }
+      .spanX(@index - 1);
+    }
+
+    .spanX (0) {}
+
+    .offsetX (@index) when (@index > 0) {
+      (~'.offset@{index}') { .offset(@index); }
+      (~'.offset@{index}:first-child') { .offsetFirstChild(@index); }
+      .offsetX(@index - 1);
+    }
+
+    .offsetX (0) {}
+
+    .offset (@columns) {
+      margin-left: (@fluid-grid-column-width * @columns) + (@fluid-gutter-width * (@columns - 1)) + (@fluid-gutter-width*2);
+      *margin-left: (@fluid-grid-column-width * @columns) + (@fluid-gutter-width * (@columns - 1)) - (.5 / @grid-row-width * 100 * 1%) + (@fluid-gutter-width*2) - (.5 / @grid-row-width * 100 * 1%); }
+
+    .offsetFirstChild (@columns) {
+      margin-left: (@fluid-grid-column-width * @columns) + (@fluid-gutter-width * (@columns - 1)) + (@fluid-gutter-width);
+      *margin-left: (@fluid-grid-column-width * @columns) + (@fluid-gutter-width * (@columns - 1)) - (.5 / @grid-row-width * 100 * 1%) + @fluid-gutter-width - (.5 / @grid-row-width * 100 * 1%); }
+
+    .span (@columns) {
+      width: (@fluid-grid-column-width * @columns) + (@fluid-gutter-width * (@columns - 1));
+      *width: (@fluid-grid-column-width * @columns) + (@fluid-gutter-width * (@columns - 1)) - (.5 / @grid-row-width * 100 * 1%); }
+
+    .row-fluid {
+        *zoom: 1;
+
+        &:before, &:after {
+            content: '';
+            display: table;
+            line-height: 0; }
+
+        &:after { clear: both; }
+
+      [class*="span"] {
+        .input-block-level;
+        float: left;
+        margin-left: @fluid-gutter-width;
+        *margin-left: @fluid-gutter-width - (.5 / @grid-row-width * 100 * 1%);
+              width: 100%;
+      }
+
+      // generate .spanX and .offsetX
+      .spanX (@gridColumns);
+      .offsetX (@gridColumns);
+    }
+
+  }
+
+  .input(@grid-column-width, @grid-gutter-width) {
+
+    .spanX (@index) when (@index > 0) {
+      (~'input.span@{index}, textarea.span@{index}, .uneditable-input.span@{index}') { .span(@index); }
+      .spanX(@index - 1);
+    }
+
+    .spanX (0) {}
+
+    .span(@columns) {
+      width: ((@grid-column-width) * @columns) + (@grid-gutter-width * (@columns - 1)) - 14;
+    }
+
+    INPUT, TEXTAREA, .uneditable-input { margin-left: 0; /* override margin-left from core grid system */ }
+
+    /* Space grid-sized controls properly if multiple per line */
+    .controls-row [class*="span"] + [class*="span"] { margin-left: @grid-gutter-width; }
+
+    /* generate .spanX */
+    .spanX (@gridColumns);
+
+  }
+
+}
+
+/* Mixins using pseudo-classes cause dublictated rules in producted css */
+.clearfix() {
+    *zoom: 1;
+
+    &:before, &:after {
+        content: '';
+        display: table;
+        line-height: 0; }
+
+    &:after { clear: both; }
+}
+
+.ie7-restore-left-whitespace() {
+  *margin-left: .3em;
+
+  &:first-child {
+    *margin-left: 0;
+  }
+}
+
+.form-field-state(@text-color: @text-color, @brd-color: @brd-color, @body-bg: @body-bg) {
+     >  LABEL, .help-block, .help-inline { color: @text-color; }
+
+    .cbx, INPUT, .rb, SELECT, TEXTAREA { color: @text-color; }
+
+    INPUT, SELECT, TEXTAREA {
+        border-color: @brd-color;
+        .box-shadow(inset 0 1px 1px rgba(0,0,0,.075)); /*  Redeclare so transitions work */
+
+        &:focus {
+        border-color: darken(@brd-color, 10%);
+        .box-shadow(inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px lighten(@brd-color, 20%)); }
+    }
+
+    /* Give a small background color for input-prepend/-append */
+    .input-prepend .add-on, .input-append .add-on {
+        background-color: @body-bg;
+        border-color: @text-color;
+        color: @text-color; }
+
+}
