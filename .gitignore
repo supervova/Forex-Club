@@ -1,9 +1,8 @@
 # Auxiliary Folders
-_dev/*
+_labs/
 _notes/
 # a/css/*
 # !a/css/styles.css
-!a/less/_dev/styles.css
 # a/less/_stock/
 
 # Auxiliary Files
