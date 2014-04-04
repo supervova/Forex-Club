@@ -40,9 +40,18 @@
     padding-top: 11em / @b;
     width: 180px;
 
-    .tel, .tel:hover {
+    .tel {
         color: #797c80;
         font-family: 'Roboto', sans-serif;
+
+        .co {
+            background-position: -370px -70px;
+            .inline-block();
+            vertical-align: middle;
+            margin: -4px 8px 0 0;
+            height: 14px;
+            width: 9px;
+        }
     }
 
     // Flag
@@ -56,7 +65,7 @@
         *zoom: 1;
 
         &:after {
-            #caret > .to-bottom(4px, rgba(255, 255, 255, .44));
+            #caret > .to-bottom(4px, @gray);
             #caret > .body();
             margin-top: -3px;
             position: absolute;
@@ -67,21 +76,28 @@
 
     //Languages and Branches
     .dropdown-menu {
+        .border-radius(@border-radius-base 0 @border-radius-base @border-radius-base);
         padding: 30px 34px 19px;
         right: 10px;
         text-align: left;
-        .border-radius(@border-radius-base 0 @border-radius-base @border-radius-base);
 
         &:before {
             #caret > .to-top-right(12px, @dropdown-border);
-            right: -1px;
             top: -12px;
+            right: -1px;
         }
 
         &:after {
             #caret > .to-top-right(11px, @dropdown-bg);
-            right: 0;
             top: -11px;
+            right: 0;
+        }
+    }
+
+    .inline {
+        LI { padding: 0 14px;
+
+            &:first-child { margin-left: -14px; }
         }
     }
 
@@ -106,17 +122,18 @@
 
         A { padding: 0; }
     }
-
-    UL {
-        list-style-image: url(/a/img/b.gif);;
-    }
 }
 
-
+// Front page Billboard Customization
 .p-front .sec-regional {
-    .tel, .tel:hover { color: #fff; }
-}
+    .tel {
+        color: #fff;
 
+        .co { background-position: -400px -70px; }
+    }
+
+    .dropdown-toggle:after { border-top-color: rgba(255, 255, 255, .44); }
+}
 
 /*
 |---------------------------------------
@@ -221,6 +238,38 @@ INPUT[type="search"]::-webkit-search-decoration {
         background: transparent; }
 }
 
+
+/*
+|-------------------------------------------------------------------------------
+| PORTRAIT TABLETS: 768–979px
+|-------------------------------------------------------------------------------
+*/
+
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+
+    .doc-header { padding: 17px 20px 0; }
+
+    .sec-regional, .doc-header FORM {
+        float: none;
+        text-align: left;
+        width: 100%;
+        *width: auto;
+    }
+
+    .sec-regional {
+
+        padding-bottom: 11em / @b;
+
+        .dropdown-menu {
+            .border-radius(@border-radius-base);
+            margin-top: -11em / @b;
+
+            &:before, &:after { display: none; }
+        }
+    }
+}
+
+
 /*
 |-------------------------------------------------------------------------------
 | PHONES & SMALL PORTRAIT TABLETS: up to 767px
@@ -244,6 +293,16 @@ INPUT[type="search"]::-webkit-search-decoration {
         width: 100%;
         z-index: 444;
         *zoom: 1;
+    }
+
+    .sec-regional {
+
+        .dropdown-menu {
+            display: block;
+            .border-radius(none);
+
+            &:before, &:after { display: none; }
+        }
     }
 
     /* Search --------------------------- */
