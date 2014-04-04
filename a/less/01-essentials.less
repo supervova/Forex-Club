@@ -187,20 +187,19 @@ B, STRONG { font-weight: bold; }
 .byline { margin-bottom: 0; }
 
 HR {
-    background: transparent;
+    border: 0;
     border-top: @brd;
-    .box-sizing(content-box);
     clear: both;
     display: block;
     margin: (7/4 * @baseline - 1/@b) 0 (9/4 * @baseline - 1/@b); /* 4 (16/4) empty lines */
     padding: 0;
+    height: 1px;
 
     &.compact {
         background: @brd-color;
         border: 0;
         .box-sizing(border-box);
         margin: 0;
-        height: 1px;
     }
 
     // &.dashed { border-top-style: dashed; }

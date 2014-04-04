@@ -65,23 +65,42 @@
         }
     }
 
+    //Languages and Branches
     .dropdown-menu {
+        padding: 30px 29px 19px;
         right: 10px;
         text-align: left;
         .border-radius(@border-radius-base 0 @border-radius-base @border-radius-base);
 
-    &:before {
-        #caret > .to-top-right(8px, @dropdown-border);
-        right: -1px;
+        &:before {
+            #caret > .to-top-right(12px, @dropdown-border);
+            right: -1px;
+            top: -12px;
+        }
+
+        &:after {
+            #caret > .to-top-right(11px, @dropdown-bg);
+            right: 0;
+            top: -11px;
+        }
+
     }
 
-    &:after {
-        #caret > .to-top-right(7px, @dropdown-bg);
-        right: 0;
-        top: -7px;
+    H4 {
+        color: @text-color;
+        position: relative;
+        *zoom: 1;
+
+        .ico-flag {
+            position: absolute;
+            margin-top: -5px;
+            top: 50%;
+            left: -20px;
+        }
     }
 
-    }
+    HR { margin: (11em / @b) 0 (14em / @b);}
+
 }
 
 
