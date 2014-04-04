@@ -38,6 +38,7 @@ Solution for modern browsers is :first-child margin-left: 0;
 */
 
 // .row > [class*='col-'], .cfx > [class*='col-'] - die6
+.col, // For custom layouts
 .col-1of12, .col-2of12, .col-3of12, .col-4of12, .col-5of12, .col-6of12,
 .col-7of12, .col-8of12, .col-9of12, .col-10of12, .col-11of12,
 .col-1of6, .col-1of4, .col-1of3, .col-1of2, .col-2of3, .col-3of4, .col-5of6,
@@ -51,6 +52,7 @@ Solution for modern browsers is :first-child margin-left: 0;
     *zoom: 1;
 }
 
+.col,
 .col-1of12, .col-2of12, .col-3of12, .col-4of12, .col-5of12, .col-6of12,
 .col-7of12, .col-8of12, .col-9of12, .col-10of12, .col-11of12,
 .col-1of6, .col-1of4, .col-1of3, .col-1of2, .col-2of3, .col-3of4, .col-5of6 {
@@ -59,9 +61,9 @@ Solution for modern browsers is :first-child margin-left: 0;
     *margin-left: (@grid-gutter-width - 1) / @content-box * 100%;
 }
 
-.row > [class*='col-']:first-child, .cfx > [class*='col-']:first-child {
-    margin-left: 0;
-}
+.col-first { margin-left: 0; }
+
+.row > [class*='col-']:first-child, .cfx > [class*='col-']:first-child { margin-left: 0; }
 
 .col-1of12 { #grid > .col(1); }
 .col-2of12 { #grid > .col(2); } // sixth
