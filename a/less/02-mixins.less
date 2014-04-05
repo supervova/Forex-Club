@@ -11,13 +11,12 @@
 | #caret > .to-top(8px, #fff);
 | 6) Text overflow - Requires inline-block or block for proper styling
 | 7) Escape function
-| 8) Add an alphatransparency value to any background or border color
-| 9) Applying high-resolution background images — http://www.retinajs.com
-| 10) Search Placeholder
+| 8) Applying high-resolution background images — http://www.retinajs.com
+| 9) Search Placeholder
 |
 */
 
-.ir(@border: 0, @display: block) {
+.ir(@border: 0; @display: block) {
     background-color: transparent;
     border-width: @border;
     display: @display;
@@ -77,53 +76,53 @@
         *zoom: 1;
     }
 
-    .to-top(@caret-width, @caret-color) { // For Boxes that Appear at the Bottom
+    .to-top(@caret-width; @caret-color) { // For Boxes that Appear at the Bottom
         border-right: @caret-width solid transparent;
         border-bottom: @caret-width solid @caret-color;
         border-left: @caret-width solid transparent;
     }
 
-    .to-right(@caret-width, @caret-color) { // For Boxes that Appear at the Left
+    .to-right(@caret-width; @caret-color) { // For Boxes that Appear at the Left
         border-top: @caret-width solid transparent;
         border-right: 0 none;
         border-bottom: @caret-width solid transparent;
         border-left: @caret-width solid @caret-color;
     }
 
-    .to-left(@caret-width, @caret-color) { // For Boxes that Appear at the Right
+    .to-left(@caret-width; @caret-color) { // For Boxes that Appear at the Right
         border-top: @caret-width solid transparent;
         border-right: @caret-width solid @caret-color;
         border-bottom: @caret-width solid transparent;
         border-left: 0 none;
     }
 
-    .to-bottom(@caret-width, @caret-color) { // For Boxes that Appear at the Top
+    .to-bottom(@caret-width; @caret-color) { // For Boxes that Appear at the Top
         border-top: @caret-width solid @caret-color;
         border-right: @caret-width solid transparent;
         border-bottom: 0 none;
         border-left: @caret-width solid transparent;
     }
 
-    .to-bottom-left(@caret-width, @caret-color) { // Right angle triangle
+    .to-bottom-left(@caret-width; @caret-color) { // Right angle triangle
         border-right: 0 none;
         border-bottom: @caret-width solid transparent;
         border-left: @caret-width solid @caret-color;
     }
 
-    .to-bottom-right(@caret-width, @caret-color) { // Right angle triangle
+    .to-bottom-right(@caret-width; @caret-color) { // Right angle triangle
         border-top: @caret-width solid @caret-color;
         border-right: 0 none;
         border-bottom: 0 none;
         border-left: @caret-width solid transparent;
     }
 
-    .to-top-left(@caret-width, @caret-color) { // Right angle triangle
+    .to-top-left(@caret-width; @caret-color) { // Right angle triangle
         border-right: @caret-width solid transparent;
         border-bottom: @caret-width solid @caret-color;
         border-left: 0 none;
     }
 
-    .to-top-right(@caret-width, @caret-color) { // Right angle triangle
+    .to-top-right(@caret-width; @caret-color) { // Right angle triangle
         border-right: 0 none;
         border-bottom: @caret-width solid @caret-color;
         border-left: @caret-width solid transparent;
@@ -142,19 +141,10 @@
     letter-spacing: -.04em;
 }
 
-#translucent { // 8
-    .background(@color: @white, @alpha: 1) { background-color: hsla(hue(@color), saturation(@color), lightness(@color), @alpha); }
-
-    .border(@color: @white, @alpha: 1) {
-        border-color: hsla(hue(@color), saturation(@color), lightness(@color), @alpha);
-        .background-clip(padding-box);
-    }
-}
-
-// 9
+// 8
 @highdpi: ~"print, (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi)";
 
-.at2x(@path, @w: auto, @h: auto) {
+.at2x(@path; @w: auto; @h: auto) {
   background-image: url(@path);
   @at2x_path: ~`@{path}.replace(/\.\w+$/, function(match) { return "@2x" + match; })`;
 
@@ -164,7 +154,7 @@
     }
 }
 
-.search-placeholder(@color: #333, @color-focus: #666666, @transition: color .1s linear) { // 10
+.search-placeholder(@color: #333; @color-focus: #666666; @transition: color .1s linear) { // 9
     INPUT[type="search"]:-moz-placeholder { color: @color; }
     INPUT[type="search"]:focus:-moz-placeholder {
         color: @color-focus;
@@ -216,7 +206,7 @@
 
 /*
 |-------------------------------------------------------------------------------
-| BACKGROUNDS
+| Cradients (http://gradcolor.com/css3-gradient.php?c=4)
 |-------------------------------------------------------------------------------
 | 1) #gradient > .vertical(#fff, #000);
 | 2) FF 3.6+
@@ -236,9 +226,8 @@
 |
 */
 
-/* Gradients */
 #gradient { // 1
-    .vertical(@start-color: #555, @end-color: #333) {
+    .vertical(@start-color: #555; @end-color: #333) {
         background-color: mix(@start-color, @end-color, 60%);
         background-image: -moz-linear-gradient(top, @start-color, @end-color); // 2
         background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@start-color), to(@end-color)); // 3
@@ -249,7 +238,7 @@
         filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr=@start-color, endColorstr=@end-color, GradientType=0); // 7
     }
 
-    .vertical-three-colors(@start-color: #00b3ee, @mid-color: #7a43b6, @color-stop: 50%, @end-color: #c3325f) {
+    .vertical-three-colors(@start-color: #00b3ee; @mid-color: #7a43b6; @color-stop: 16%; @end-color: #c3325f) {
         background-color: mix(@mid-color, @end-color, 80%);
         background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@start-color), color-stop(@color-stop, @mid-color), to(@end-color));
         background-image: -webkit-linear-gradient(@start-color, @mid-color @color-stop, @end-color);
@@ -260,7 +249,18 @@
         filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr=@start-color, endColorstr=@end-color, GradientType=0);
     }
 
-    .radial(@innerColor: #555, @outerColor: #333)  {
+    .vertical-fifth-colors(@first-color: #ffa02b; @second-color: #f27f0e; @second-stop: 51%; @third-color: #f27c09; @third-stop: 52%; @fourth-color: #ec6d00; @fourth-stop: 84%; @end-color: #fb7c00) {
+        background-color: mix(@first-color, @end-color, 80%);
+        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@first-color), color-stop(@second-stop, @second-color), color-stop(@third-stop, @third-color), color-stop(@fourth-stop, @fourth-color), to(@end-color));
+        background-image: -webkit-linear-gradient(top, @first-color, @second-color @second-stop, @third-color @third-stop, @fourth-color @fourth-stop, @end-color);
+        background-image: -moz-linear-gradient(top, @first-color, @second-color @second-stop, @third-color @third-stop, @fourth-color @fourth-stop, @end-color);
+        background-image: -o-linear-gradient(top, @first-color, @second-color @second-stop, @third-color @third-stop, @fourth-color @fourth-stop, @end-color);
+        background-image: -ms-linear-gradient(top, @first-color, @second-color @second-stop, @third-color @third-stop, @fourth-color @fourth-stop, @end-color);
+        background-image: linear-gradient(top, @first-color, @second-color @second-stop, @third-color @third-stop, @fourth-color @fourth-stop, @end-color);
+        filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=@first-color, endColorstr=@end-color);
+    }
+
+    .radial(@innerColor: #555; @outerColor: #333)  {
         background-color: @outerColor;
         background-image: -webkit-gradient(radial, center center, 0, center center, 460, from(@innerColor), to(@outerColor));
         background-image: -webkit-radial-gradient(circle, @innerColor, @outerColor);
@@ -269,7 +269,7 @@
         background-repeat: no-repeat;
     }
 
-    .horizontal(@start-color: #555, @end-color: #333) {
+    .horizontal(@start-color: #555; @end-color: #333) {
         background-color: @end-color;
         background-image: -moz-linear-gradient(left, @start-color, @end-color);
         background-image: -webkit-gradient(linear, 0 0, 100% 0, from(@start-color), to(@end-color));
@@ -280,7 +280,7 @@
         filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr=@start-color, endColorstr=@end-color, GradientType=1);
     }
 
-    .directional(@start-color: #555, @end-color: #333, @deg: 45deg) {
+    .directional(@start-color: #555; @end-color: #333; @deg: 45deg) {
         background-color: @end-color;
         background-repeat: repeat-x;
         background-image: -moz-linear-gradient(@deg, @start-color, @end-color);
@@ -289,7 +289,7 @@
         background-image: linear-gradient(@deg, @start-color, @end-color);
     }
 
-    .striped(@color: #555, @angle: 45deg) {
+    .striped(@color: #555; @angle: 45deg) {
         background-color: @color;
         background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, rgba(255,255,255,.15)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(255,255,255,.15)), color-stop(.75, rgba(255,255,255,.15)), color-stop(.75, transparent), to(transparent));
         background-image: -webkit-linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
@@ -299,32 +299,120 @@
     }
 }
 
-/* Buttons and alerts gradients */
-.gradient-linear(@primary-color, @secondary-color, @text-color: #fff, @text-shadow: 0 -1px 0 rgba(0,0,0,.25)) {
-    color: @text-color;
-    text-shadow: @text-shadow;
-    #gradient > .vertical(@primary-color, @secondary-color);
-    border-color: @secondary-color @secondary-color darken(@secondary-color, 15%);
-    border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) fadein(rgba(0,0,0,.1), 15%);
-}
-
-/* Button backgrounds */
-.button-bg(@start-color, @end-color, @text-color: #fff, @text-shadow: 0 -1px 0 rgba(0,0,0,.25)) {
-    .gradient-linear(@start-color, @end-color, @text-color, @text-shadow); // 9
-    *background-color: @end-color; // 10
-    .reset-filter;
-
-    &:hover, &:active, &.active, &.disabled, &[disabled] { // 11
-    color: @text-color;
-    background-color: @end-color;
-    *background-color: darken(@end-color, 5%);
-}
-
-    &:active, &.active { background-color: darken(@end-color, 10%) e('\9'); } // 12
-}
-
 /* Reset filters for IE */
 .reset-filter() { filter: e(%("progid:DXImageTransform.Microsoft.gradient(enabled = false)")); }
+
+/*
+|-------------------------------------------------------------------------------
+| Buttons
+|-------------------------------------------------------------------------------
+|
+| 1) Button sizes
+| 2) Easily pump out default styles, as well as :hover, :focus, :active,
+| and disabled options for all buttons
+| 3) Fifth colors gradient variants
+|
+*/
+
+// 1
+.button-size(@padding-vertical; @padding-horizontal; @font-size; @line-height; @border-radius) {
+    border-radius: @border-radius;
+    font-size: @font-size;
+    line-height: @line-height;
+    padding: @padding-vertical @padding-horizontal;
+}
+
+// 2
+.button-variant(@color; @bg-t; @bg-m; @bg-stop; @bg-b; @border-t; @border; @border-b) {
+    #gradient > .vertical-three-colors(@bg-t; @bg-m; @bg-stop; @bg-b);
+    border: 1px solid @border;
+    border-top-color: @border-t;
+    border-bottom-color: @border-b;
+    *border: 0;
+    color: @color;
+
+    &:hover,
+    &:focus {
+        background-color: @bg-b; // Gradient goes up to uncover its dark side
+        background-position: 0 -16px;
+        color: @color;
+        text-decoration: none;
+        .transition(background-position 0.1s linear);
+    }
+
+    &:active,
+    &.active, /* .open .dropdown-toggle& */ {
+        background-color: @bg-b;
+        background-image: none;
+        .box-shadow(inset 0 2px 4px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.12));
+        outline: 0;
+    }
+
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            background-color: darken(@bg-m, 12%);
+            background-image: none;
+            .box-shadow(none);
+        }
+    }
+
+    .badge {
+        background-color: @color;
+        color: @bg-m;
+    }
+}
+
+// 3
+.button-variant-fifth-color(@color; @bg-t; @bg-second; @second-stop; @bg-third; @third-stop; @bg-fourth; @fourth-stop; @bg-b; @border-t; @border; @border-b) {
+    #gradient > .vertical-three-colors(@bg-t; @bg-second; @second-stop; @bg-third; @third-stop; @bg-fourth; @fourth-stop; @bg-b);
+    border: 1px solid @border;
+    border-top-color: @border-t;
+    border-bottom-color: @border-b;
+    *border: 0;
+    color: @color;
+
+    &:hover,
+    &:focus {
+        background-color: @bg-b; // Gradient goes up to uncover its dark side
+        background-position: 0 -16px;
+        color: @color;
+        text-decoration: none;
+        .transition(background-position 0.1s linear);
+    }
+
+    &:active,
+    &.active, /* .open .dropdown-toggle& */ {
+        background-color: @bg-b;
+        background-image: none;
+        .box-shadow(inset 0 2px 4px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.12));
+        outline: 0;
+    }
+
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            background-color: darken(@bg-second, 12%);
+            background-image: none;
+            .box-shadow(none);
+        }
+    }
+
+    .badge {
+        background-color: @color;
+        color: @bg-second;
+    }
+}
 
 /*
 |-------------------------------------------------------------------------------
@@ -453,8 +541,8 @@
 
 /* Webkit-style focus */
 .tab-focus() { // 1
-    outline: thin dotted #CCCFD3; /* Default */
-    outline: 5px auto -webkit-focus-ring-color; /* Webkit */
+    outline: thin dotted; // Default
+    outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px;
 }
 
@@ -503,7 +591,7 @@
 }
 
 // CSS3 Content Columns
-.content-columns(@columnCount, @columnGap: @grid-gutter-width) {
+.content-columns(@columnCount; @columnGap: @grid-gutter-width) {
     -webkit-column-count: @columnCount;
     -moz-column-count: @columnCount;
     column-count: @columnCount;
@@ -529,7 +617,7 @@
     transform: scale(@ratio);
 }
 
-.translate(@x, @y) {
+.translate(@x; @y) {
     -webkit-transform: translate(@x, @y);
     -moz-transform: translate(@x, @y);
     -ms-transform: translate(@x, @y);
@@ -537,7 +625,7 @@
     transform: translate(@x, @y);
 }
 
-.skew(@x, @y) {
+.skew(@x; @y) {
     -webkit-transform: skew(@x, @y);
     -moz-transform: skew(@x, @y);
     -ms-transform: skewX(@x) skewY(@y); // See https://github.com/twitter/bootstrap/issues/4885
@@ -545,7 +633,7 @@
     transform: skew(@x, @y);
 }
 
-.translate3d(@x, @y, @z) {
+.translate3d(@x; @y; @z) {
     -webkit-transform: translate3d(@x, @y, @z);
     -moz-transform: translate3d(@x, @y, @z);
     -o-transform: translate3d(@x, @y, @z);

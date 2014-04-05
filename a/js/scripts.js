@@ -198,13 +198,19 @@ $(function() {
         }
     });
 
+    // Restore on window resize
+    $(window).resize(function(){
+        contentPanel.removeAttr('style');
+    });
+
+
     $('.slide-out li a').click(function() {
         var p = $(this).parent();
-        if ($(p).hasClass('active')) {
+        if (p.hasClass('active')) {
             $('.slide-out li').removeClass('active');
         } else {
             $('.slide-out li').removeClass('active');
-            $(p).addClass('active');
+            p.addClass('active');
         }
     });
 });

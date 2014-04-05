@@ -1,15 +1,1 @@
-.ir,.btn-back,.btn-close,.btn-menu:before,.btn-search:before,.doc-header H1 A,.f-search BUTTON,I.co,.on-demand H3 I,.sys-message P:before,.warning-gl EM,.tbn-next:before,.tbn-next .before,.tbn-prev:before,.tbn-prev .before,.a .a {
-    background-color: transparent;
-    background-image: url('/a/img/gui/base-graphics.png') !important;
-    background-repeat: no-repeat
-}
-
-@media print,(-o-min-device-pixel-ratio:5/4),(-webkit-min-device-pixel-ratio:1.25),(min-resolution:120dpi) {
-    .ir-retina,.btn-back,.btn-close,.btn-menu:before,.btn-search:before,.doc-header H1 A,.f-search BUTTON,I.co,.on-demand H3 I,.sys-message P:before,.warning-gl EM,.tbn-next:before,.tbn-next .before,.tbn-prev:before,.tbn-prev .before {
-        background-image: url('/a/img/gui/base-graphics-x2.png') !important;
-        -webkit-background-size: 340px 200px;
-        -moz-background-size: 340px 200px;
-        -o-background-size: 340px 200px;
-        background-size: 340px 200px
-    }
-}
+.btn{color:#fff}
