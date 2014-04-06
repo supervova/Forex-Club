@@ -143,7 +143,7 @@ H1, .h1 {
     padding-bottom: 21em/@h1;
 }
 
-    H1 B, .h1 B { line-height: .9; } // Some fonts add extra line height to bold lines, so @todo — test
+    H1 B, .h1 B { line-height: .9; } // Some fonts add extra line height to bold lines, so TODO — test
 
 H2, .h2 {
     font: @font-weight-h2 @font-size-h2 @font-family-h2;
@@ -174,7 +174,14 @@ HEADER {
 |---------------------------------------
 */
 
-// SNIPPET:letypoext — Extended Typography: ABBR, ADDRESS, DFN, INS, MARK, Q
+// SNIPPET:letypoext — Extended Typography: ABBR, DFN, INS, MARK, Q
+
+ADDRESS {
+    display: block;
+    font-style: normal;
+    margin-bottom: @baseline;
+}
+
 
 // SNIPPET:lealign - Text Alignment Classes
 
@@ -356,7 +363,7 @@ I.co { .ir; }
 
     .ir BR { display: none; }
 
-// @TODO. Test it. Responsive images require to remove the media's height and width attributes from the HTML
+// TODO. Test it. Responsive images require to remove the media's height and width attributes from the HTML
 IMG {
     border: 0;
     display: block;

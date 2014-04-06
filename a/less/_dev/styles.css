@@ -9,8 +9,12 @@
 @import '/a/css/03-basic-buttons.css';
 @import '/a/css/03-basic-forms.css';
 
+/* Some Widgets Which Customizated in Regions Styles */
+@import '/a/css/07-wdg-tooltip.css';
+
 /* Layout */
 @import '/a/css/04-layout-header.css';
+@import '/a/css/07-wdg-icons.css';
 @import '/a/css/07-wdg-flags.css';
 @import '/a/css/04-layout-footer.css';
 /*@import '/a/css/04-layout-sidebars.css';*/
@@ -41,7 +45,6 @@
 @import '/a/css/07-wdg-modal.css';
 @import '/a/css/07-wdg-pager-pagination.css';
 @import '/a/css/07-wdg-sharing.css';
-@import '/a/css/07-wdg-tooltip.css';
 @import '/a/css/07-wdg-typeahead.css';
 /*@import '/a/css/07-wdg-wysiwyg.css';*/
 

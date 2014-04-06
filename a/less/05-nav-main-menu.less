@@ -12,12 +12,12 @@
 .main-menu { // Container
     background: #1f2226;
     color: #74777b;
-    overflow: hidden;
     .fixed-on-top;
     left: 0;
     .transition(width .2s);
     height: 100%;
     width: 280px;
+    z-index: 1; // It's need for tooltip appeas above main content
 
     A {
         color: @main-menu-link-color;
@@ -90,10 +90,41 @@
 
 /*
 |-------------------------------------------------------------------------------
+| TABLETS AND DESKTOPS: 768px and up
+|-------------------------------------------------------------------------------
+*/
+
+@media only screen and (min-width: 768px) {
+    .tt-company { // Company Card Tooltip
+        top: 33em / 13;
+        width: 400px;
+
+        H1, H2 {
+            font-size: 100%;
+            display: inline-block;
+            letter-spacing: normal;
+            line-height: inherit;
+            padding: 0 0 (5em / 13);
+        }
+
+        H1:after { content: '.'; }
+
+        ADDRESS, P { margin-bottom: 0;}
+
+        I {
+            font-style: normal;
+            color: #000;
+        }
+    }
+}
+
+/*
+|-------------------------------------------------------------------------------
 | OLD SCHOOL DESKTOP MONITORS (XGA: 1024x768)
 |-------------------------------------------------------------------------------
 */
 @media only screen and (max-width: 1199px) {
+
     .main-menu { width: 88px; }
 
     .a-logo {
@@ -104,6 +135,9 @@
 
         IMG { display: none; }
     }
+
+    // Company Card Tooltip
+    .tt-company { top: 55em / 13; }
 
 }
 
@@ -120,6 +154,7 @@
     .slide-out {
         background: @so-bg;
         padding-top: 1px;
+        overflow: hidden;
         .fixed-on-top;
         right: 0;
         bottom: 0;

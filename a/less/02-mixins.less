@@ -192,10 +192,6 @@
     *height: ~'expression(minY=(this.scrollHeight < parseInt(this.currentStyle.minHeight)+1)? this.currentStyle.minHeight : maxY=(this.scrollHeight > parseInt(this.currentStyle.maxHeight)+1)? this.currentStyle.maxHeight : "auto")';
 }
 
-.pseudo-after() { *zoom: ~'expression(this.runtimeStyle.zoom="1", this.appendChild( document.createElement("span") ).className="after")'; }
-
-.pseudo-before() { *zoom: ~'expression(this.runtimeStyle.zoom="1", this.appendChild( document.createElement("span") ).className="before")'; }
-
 .inline-block() {
     display: inline-block;
     *display: inline; // 1
@@ -423,7 +419,7 @@
 | 3) ! Greater than half - More than one part.
 | I'm not sure that math is correct. Need to check
 | 4) First-child offset
-| 5) ! Wrong math! @todo - fix it.
+| 5) ! Wrong math! TODO - fix it.
 */
 
 #grid {

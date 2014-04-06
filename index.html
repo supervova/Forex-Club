@@ -8,7 +8,7 @@
 
     ****************************************************************************
 
-    @TODOs and reminders
+    TODOs and reminders
 
     I. Use Emmet to write code
     http://coding.smashingmagazine.com/2013/03/26/goodbye-zen-coding-hello-emmet/
@@ -73,7 +73,7 @@
     <!-- @Title --><meta name="application-name" content="Forex Club — ведущий брокер на рынке форекс в России">
     <!-- @Description --><meta name="msapplication-tooltip" content="Forex Club. Финансовые рынки для людей. Без комиссии. Спрэд 0.6-3. Свопы. Макс. кредитное плечо — 200:1. Мин. депозит $200. Платформы: StartFX, MetaTrader, Rumus.">
 
-    <!-- @TODO: set cookie to show banner only once -->
+    <!-- TODO: set cookie to show banner only once -->
     <meta name="apple-itunes-app" content="app-id=684181266">
 
     <!-- @URL --><link rel="canonical" href="http://www.fxclub.org/">
@@ -139,15 +139,21 @@
 
         <header class="doc-header">
 
+        <!-- Logo / Menu Button in Mobile Version -->
+        <button class="btn-menu mob">Forex Club</button>
+
         <div class="sec-regional dropdown">
 
             <!-- Phone -->
             <a href="tel:8-800-2002-600" class="tel"><i class="co"></i>8-800-2002-600</a>
 
-            <!-- Locale Selector -->
-            <h3 class="dropdown-toggle ico-flag ico-ru" title="Русский язык. Выбрать другой язык или филиал">Русский язык. Выбрать другой язык или выбрать филиал</h3>
+            <!-- Locale Selector: Desktop / Tablets -->
+            <button class="dropdown-toggle ico-flag ico-ru tbl-pc" title="Русский язык. Выбрать другой язык или филиал">Русский язык. Выбрать другой язык или выбрать филиал</button>
 
-            <div class="dropdown-menu dropdown-menu-br dropdown-menu-width-xl" style="display: block" role="menu">
+            <!-- Locale Selector: Phones -->
+            <button class="btn-menu-secd mob" title="Русский язык. Выбрать другой язык или филиал"><i class="ico-flag ico-ru"></i></button>
+
+            <div class="dropdown-menu dropdown-menu-br dropdown-xl slide-out slide-out-right" role="menu">
 
                 <!-- Languages -->
                 <ul class="inline">
@@ -300,8 +306,10 @@
         <!-- Search Form -->
         <form action="/search/" method="get" role="search" class="f-search tbl-pc">
             <input type="search" name="query" class="i-search" placeholder="Финансовые рынки для людей">
-            <button type="submit" class="png">Найти</button>
+            <button type="submit">Найти</button>
         </form>
+
+
 
     </header>
 
@@ -347,17 +355,17 @@
 </div><!--/ page — regions container -->
 
 <!-- MAIN MENU ============================================================= -->
-<nav class="main-menu" role="navigation">
+<nav class="main-menu slide-out slide-out-left" role="navigation">
 
     <form action="/search/" method="get" class="f-search mob">
         <input type="search" name="query" class="i-search" placeholder="Финансовые рынки для людей">
-        <button type="submit" class="png">Найти</button>
+        <button type="submit">Найти</button>
     </form>
 
-    <header role="banner" itemscope itemtype="http://schema.org/Organization">
+    <header role="banner" itemscope itemtype="http://schema.org/Organization" class="rmb-enabled">
         <a href="/" title="Первая страница" class="a-logo" itemprop="url"><img itemprop="logo" src="/a/img/logo/forex-club.png" height="110" width="280" alt="Forex Club — надежный форекс-брокер."></a>
 
-        <div class="tooltip">
+        <div class="tooltip tooltip-r tooltip-large tt-company rmb-popup">
 
             <h1 itemprop="name">Forex Club</h1>
 
@@ -365,10 +373,10 @@
             <address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
                 <span itemprop="postalCode">123022</span>
                 <span itemprop="addressLocality">Россия, Москва</span>
-                <span itemprop="streetAddress">Звенигородское шоссе, д. 18/20, корп. 1, этаж 5</span>
+                <p itemprop="streetAddress">Звенигородское шоссе, д. 18/20, корп. 1, этаж 5</p>
             </address>
-            Тел: <span itemprop="telephone">8-800-2002-600</span>
-            Email: <span itemprop="email">manager(at)forexclub.ru</span>
+            <p><i class="ico-l ico-tel">Тел:</i> <span itemprop="telephone">8-800-2002-600</span></p>
+            <p><i class="ico-l ico-email">Email:</i> <span itemprop="email">manager(at)forexclub.ru</span></p>
         </div>
 
     </header>

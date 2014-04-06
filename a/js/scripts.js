@@ -5,25 +5,33 @@ Approach, Lightweight Datepicker, Lightweight Modal Box, Markup Editor,
 Tiny Scrollbar
 */
 
-// SNIPPET:jsslideout — Slide Out
-
-// SNIPPET:jsmodal — Modal Box
-
-// SNIPPET:jsfluidvideo — Fluid Width Video New Style
-
-// SNIPPET:jssticky — Sticky Menu
-
-// SNIPPET:jstooltip — Tooltip
-
-// SNIPPET:jsrotator — Rotator
-
 // SNIPPET:jscarousel — Carousel
-
-// SNIPPET:jstabs — Tabs
 
 // SNIPPET:jscollaps — Collapsibles
 
+// SNIPPET:jscontext — Context Menu and Popups on Right Button Click
+
+// SNIPPET:jsdownload — Platform Contextual Downloads
+
 // SNIPPET:jsflash — Flash / SWFogject
+
+// SNIPPET:jsfluidvideo — Fluid Width Video (New Style)
+
+// SNIPPET:jsmodal — Modal Box
+
+// SNIPPET:jsmq — JavaScript Media Query
+
+// SNIPPET:jsrotator — Rotator
+
+// SNIPPET:jsscaf — jQuery Self Calling Anonymous Function
+
+// SNIPPET:jssticky — Sticky Menu
+
+// SNIPPET:jstabs — Tabs
+
+// SNIPPET:jstooltip — Tooltip
+
+
 
 /*
 |-------------------------------------------------------------------------------
@@ -34,41 +42,6 @@ Tiny Scrollbar
 |
 */
 (function(){var e;var t=function(){};var n=["assert","clear","count","debug","dir","dirxml","error","exception","group","groupCollapsed","groupEnd","info","log","markTimeline","profile","profileEnd","table","time","timeEnd","timeStamp","trace","warn"];var r=n.length;var i=window.console=window.console||{};while(r--){e=n[r];if(!i[e]){i[e]=t}}})()
-
-
-/*
-|-------------------------------------------------------------------------------
-| LIBRARIES
-|-------------------------------------------------------------------------------
-|
-| http://jqueryui.com
-| http://addyosmani.github.com/jquery-ui-bootstrap/
-| http://semantic-ui.com/
-|
-| https://github.com/eightmedia/hammer.js // touch events
-|
-|-------------------------------------------------------------------------------
-| RESPONSIVE GALLERIES / SLIDERS / SLIDESHOWS / CAROUSELS
-|-------------------------------------------------------------------------------
-|
-| Bootstrap carousel is tricky and jQuery Tools one is buggy
-| http://responsive-slides.viljamis.com
-| http://webdesignandsuch.com/top-30-responsive-jquery-slider-plugins-for-websites/
-|
-|-------------------------------------------------------------------------------
-| A RESPONSIVE IMAGES approach including Retina image replacement
-|-------------------------------------------------------------------------------
-| Picturefill - https://github.com/scottjehl/picturefill.
-|
-|-------------------------------------------------------------------------------
-| OTHER USEFUL jQUERY PLUGINS
-|-------------------------------------------------------------------------------
-| Lightweight datepicker — http://stefangabos.ro/jquery/zebra-datepicker/
-| Lightweight modal box - http://www.jacklmoore.com/colorbox/example2/
-| Turn any textarea into a markup editor - http://markitup.jaysalvat.com/home/
-| Tiny scrollbar - http://baijs.nl/tinyscrollbar/
-|
-*/
 
 /*
 |-------------------------------------------------------------------------------
@@ -86,21 +59,25 @@ jQuery.easing["jswing"]=jQuery.easing["swing"];jQuery.extend(jQuery.easing,{def:
 | DROPDOWNS
 |-------------------------------------------------------------------------------
 |
-| Close om mobiles solution: extra element .dropdown-backdrop.
+| Close on mobiles solution: extra element .dropdown-backdrop.
 | @SEE snippet and https://github.com/twbs/bootstrap/blob/master/js/dropdown.js
 |
+|
 */
-$(function(){
-    var label = $('.dropdown-toggle'),
-        allDropDowns = $('.dropdown-menu');
 
-    label.click(function(event) {
-        allDropDowns.hide();
-        $(this).parents('.dropdown').children('.dropdown-menu').toggle();
-        label.removeClass('down');
-        $(this).addClass('down');
-        return false;
-    });
+function dropDowns(){
+    var label = $('.dropdown-toggle'),
+        allDropDowns = $('.dropdown-menu, .rmb-popup');
+
+    if(window.matchMedia('(min-width: 768px)').matches) {
+        label.click(function(event) {
+            allDropDowns.hide();
+            $(this).parents('.dropdown').children('.dropdown-menu').toggle();
+            label.removeClass('down');
+            $(this).addClass('down');
+            return false;
+        });
+    }
 
     // var ua = navigator.userAgent,
         // event = ((ua.match(/iPad/i)) || (ua.match(/iPhone/i))) ? "touchstart" : "click";
@@ -111,6 +88,7 @@ $(function(){
         label.removeClass('down');
     });
 
+    // Close dropdowns on Esc
     $(document).keydown(function(e) {
         if(e.keyCode == 27) {
             allDropDowns.hide();
@@ -119,7 +97,7 @@ $(function(){
     });
 
     // @FIXME: this did not work
-    if ($('.dropdown-toggle').hasClass('down')) {
+    if (label.hasClass('down')) {
         $('.sec-billboard a').click(function(e) {
                 e.preventDefault();
             });
@@ -134,69 +112,80 @@ $(function(){
     //     allDropDowns.hide();
     // });
 
-});
+}
+
 
 /*
 |-------------------------------------------------------------------------------
 | SLIDE-OUT MENU
 |-------------------------------------------------------------------------------
+|
+| TODO: This function is called by pressing the same buttons as a dropdowns
+| function.
+|
 */
-$(function() {
+
+
+function slideOut(){
     var menuStatus;
     var contentPanel = $('.page, .doc-header, .sec-billboard');
 
-    $('.btn-menu').click(function() {
+    if(window.matchMedia('(max-width: 767px)').matches) {
 
-        if (menuStatus !== true) {
+        $('.btn-menu').click(function() {
 
-            contentPanel.removeAttr('style').animate({
-                marginLeft: '240px'
-            }, 400, function() {
-                menuStatus = true;
-            });
+            if (menuStatus !== true) {
 
-            if ($('.slide-out-left').css('visibility') != 'visible') {
-                $('.slide-out-left').css('visibility', 'visible');
+                contentPanel.removeAttr('style').animate({
+                    marginLeft: '240px'
+                }, 400, function() {
+                    menuStatus = true;
+                });
+
+                if ($('.slide-out-left').css('visibility') != 'visible') {
+                    $('.slide-out-left').css('visibility', 'visible');
+                }
+
+                return false;
+
+            } else {
+
+                contentPanel.animate({
+                    marginLeft: '0'
+                }, 400, function() {
+                    menuStatus = false;
+                });
+                return false;
             }
+        });
 
-            return false;
+        $('.btn-menu-secd').click(function() {
+            if (menuStatus !== true) {
 
-        } else {
+                contentPanel.removeAttr('style').animate({
+                    marginLeft: '-240px'
+                }, 400, function() {
+                    menuStatus = true;
+                });
 
-            contentPanel.animate({
-                marginLeft: '0'
-            }, 400, function() {
-                menuStatus = false;
-            });
-            return false;
-        }
-    });
+                if ($('.slide-out-right').css('visibility') != 'visible') {
+                    $('.slide-out-right').css('visibility', 'visible');
+                }
 
-    $('.btn-menu-secd').click(function() {
-        if (menuStatus !== true) {
+                return false;
 
-            contentPanel.removeAttr('style').animate({
-                marginLeft: '-240px'
-            }, 400, function() {
-                menuStatus = true;
-            });
+            } else {
 
-            if ($('.slide-out-right').css('visibility') != 'visible') {
-                $('.slide-out-right').css('visibility', 'visible');
+                contentPanel.animate({
+                    marginLeft: '0'
+                }, 400, function() {
+                    menuStatus = false;
+                });
+                return false;
             }
+        });
 
-            return false;
-
-        } else {
-
-            contentPanel.animate({
-                marginLeft: '0'
-            }, 400, function() {
-                menuStatus = false;
-            });
-            return false;
-        }
-    });
+    }
 
     // Restore on window resize
     $(window).resize(function(){
@@ -204,16 +193,51 @@ $(function() {
     });
 
 
-    $('.slide-out li a').click(function() {
-        var p = $(this).parent();
-        if (p.hasClass('active')) {
-            $('.slide-out li').removeClass('active');
-        } else {
-            $('.slide-out li').removeClass('active');
-            p.addClass('active');
+    // $('.slide-out li a').click(function() {
+    //     var p = $(this).parent();
+    //     if (p.hasClass('active')) {
+    //         $('.slide-out li').removeClass('active');
+    //     } else {
+    //         $('.slide-out li').removeClass('active');
+    //         p.addClass('active');
+    //     }
+    // });
+}
+
+/*
+|-------------------------------------------------------------------------------
+| SHOW ELEMENTS ON RIGHT MOUSE BUTTON CLICK
+|-------------------------------------------------------------------------------
+*/
+
+$(function() {
+    var el = $('.rmb-enabled');
+    var popup = $('.rmb-popup');
+
+    el.bind('contextmenu', function () {
+        return false;
+    });
+
+    el.mousedown(function(e) {
+        if (e.button == 2) {
+            $(this).children('.rmb-popup').show();
+            return false;
+        }
+        return true;
+    });
+
+    // Close popups
+    $(document).click(function() {
+        popup.hide();
+    });
+
+    $(document).keydown(function(e) {
+        if(e.keyCode == 27) {
+            popup.hide();
         }
     });
 });
+
 
 /*
 |-------------------------------------------------------------------------------
@@ -237,6 +261,8 @@ $(function(){
 $(document).ready(function(){
 
     $('ol:not(.bcol), ul:not(.bcol)').prev('p').css('margin-bottom', '0'); //lists captions
+    dropDowns(); // TODO: make self calling on window resize anonymous function
+    slideOut(); // TODO: the same
 
     // $('.sec-gallery').tinycarousel();
 
@@ -245,6 +271,15 @@ $(document).ready(function(){
 
 });
 
+/*
+|---------------------------------------
+| On window resize
+|---------------------------------------
+*/
+$(window).resize(function(){
+    dropDowns(); // TODO: @see dropDowns() in .ready() comment
+    slideOut(); // TODO: @see dropDowns() in .ready() comment
+});
 
 
 /*

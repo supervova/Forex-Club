@@ -1,18 +1,20 @@
     <header class="doc-header">
 
-        <button class="btn btn-menu mob">Меню</button>
+        <!-- Logo / Menu Button in Mobile Version -->
+        <button class="btn-menu mob">Forex Club</button>
 
         <div class="sec-regional dropdown">
 
             <!-- Phone -->
             <a href="tel:8-800-2002-600" class="tel"><i class="co"></i>8-800-2002-600</a>
 
-            <!-- Locale Selector -->
-            <h3 class="dropdown-toggle ico-flag ico-ru" title="Русский язык. Выбрать другой язык или филиал">Русский язык. Выбрать другой язык или выбрать филиал</h3>
+            <!-- Locale Selector: Desktop / Tablets -->
+            <button class="dropdown-toggle ico-flag ico-ru tbl-pc" title="Русский язык. Выбрать другой язык или филиал">Русский язык. Выбрать другой язык или выбрать филиал</button>
 
-            <button class="btn btn-menu-secd mob">Филиалы</button>
+            <!-- Locale Selector: Phones -->
+            <button class="btn-menu-secd mob" title="Русский язык. Выбрать другой язык или филиал"><i class="ico-flag ico-ru"></i></button>
 
-            <div class="dropdown-menu dropdown-menu-br dropdown-menu-width-xl slide-out slide-out-right" role="menu">
+            <div class="dropdown-menu dropdown-menu-br dropdown-xl slide-out slide-out-right" role="menu">
 
                 <!-- Languages -->
                 <ul class="inline">
@@ -165,7 +167,7 @@
         <!-- Search Form -->
         <form action="/search/" method="get" role="search" class="f-search tbl-pc">
             <input type="search" name="query" class="i-search" placeholder="Финансовые рынки для людей">
-            <button type="submit" class="png">Найти</button>
+            <button type="submit">Найти</button>
         </form>
 
 

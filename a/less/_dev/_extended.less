@@ -254,9 +254,8 @@ OL.chapter {
         counter-reset: sub-section; }
 
     OL.chapter LI {
-        .pseudo-before();
-        &:before, .before { content: counter(section) '. '; }
-        }
+        &:before { content: counter(section) '. '; }
+    }
 
     OL.chapter OL LI {
         counter-increment: sub-section;
@@ -264,13 +263,12 @@ OL.chapter {
         list-style-type: none; }
 
     OL.chapter OL LI {
-        .pseudo-before();
-        &:before, .before { content: counter(section) '.' counter(sub-section) '. '; }
+        &:before { content: counter(section) '.' counter(sub-section) '. '; }
     }
 
     OL.chapter UL LI { counter-increment: none; }
 
-    OL.chapter UL LI:before, OL.chapter UL LI .before { content: normal; }
+    OL.chapter UL LI:before { content: normal; }
 
 UL.inline {
     list-style-image: none;
@@ -279,9 +277,9 @@ UL.inline {
     UL.inline LI {
         display: inline;
         margin-left: .3em;
-        .pseudo-after(); }
+    }
 
-    UL.inline LI:after, UL.inline LI .after { content: ','; }
+    UL.inline LI:after { content: ','; }
 
     UL.inline :last-child:after { content: ''; }
 

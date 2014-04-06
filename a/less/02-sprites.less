@@ -3,12 +3,11 @@
 
 // Main sprite
 .gui,
+.alert:first-child:before, .warning-gl EM,
 .a-logo,
-.btn-back, .btn-close, .btn-menu:before, .btn-search:before,
-.doc-header H1 A, .f-search BUTTON, I.co,
-.on-demand H3 I,
-.sys-message P:before, .warning-gl EM,
-.tbn-next:before, .tbn-next .before, .tbn-prev:before, .tbn-prev .before {
+.btn-back, .btn-close, .btn-menu, .btn-menu-secd,
+.f-search BUTTON, I.co,
+.on-demand H3 I {
     background-color: transparent;
     background-image: url(@base-graphics) !important; // Prevent buttons styles assigning
     background-repeat: no-repeat;
@@ -24,6 +23,16 @@
     width: 16px;
 }
 
+// Icons on white (l for light background)
+.ico-l {
+    background-color: transparent;
+    background-image: url(/a/img/gui/icons-l.png);
+    background-repeat: no-repeat;
+    .ir(0, inline-block);
+}
+
+
+
 /*
 |---------------------------------------
 | High resolution devices
@@ -36,11 +45,11 @@
         (min-resolution: 120dpi) {
 
     .gui-retina,
-    .btn-back, .btn-close, .btn-menu:before, .btn-search:before,
+    .alert:first-child:before, .warning-gl EM,
+    .a-logo,
+    .btn-back, .btn-close, .btn-menu, .btn-menu-secd,
     .f-search BUTTON, I.co,
-    .on-demand H3 I,
-    .sys-message P:before, .warning-gl EM,
-    .tbn-next:before, .tbn-next .before, .tbn-prev:before, .tbn-prev .before {
+    .on-demand H3 I {
         background-image: url(@base-graphics-x2) !important;
         .background-size(550px 240px); // Half of physical retina sprite image
     }
@@ -48,6 +57,11 @@
     .ico-flag {
         background-image: url(/a/img/gui/flags-x2.png);
         .background-size(16px 4991px);
+    }
+
+    .ico-l {
+        background-image: url(/a/img/gui/icons-l-x2.png);
+        .background-size(400px 200px);
     }
 }
 

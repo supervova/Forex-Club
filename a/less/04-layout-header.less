@@ -26,8 +26,6 @@
       &:after { clear: both; }
 }
 
-    .p-front .doc-header H1 A { cursor: default}
-
 /*
 |---------------------------------------
 | Locale Menu
@@ -153,12 +151,8 @@
     BUTTON {
         /* Main sprite */
         background-position: @search-btn-bg-position;
-        .reset-filter();
         .ir;
-        border: 0;
         border-left: 1px solid #b5bac1;
-        .border-radius(0);
-        .box-shadow(none);
         display: block;
         padding: 0;
         .opacity(60);
@@ -279,23 +273,53 @@ INPUT[type="search"]::-webkit-search-decoration {
 @media only screen and (max-width: 767px) {
 
     .doc-header {
-        #gradient > .vertical(#4E5053, #282A2D);
-        border-top: 1px solid #707275;
-        border-bottom: 1px solid #000;
-        .box-shadow(0 1px 2px rgba(0,0,0,.44));
+        #gradient > .vertical(#33363a, #1f2226);
+        border-top: 1px solid #3d4044;
+        border-bottom: 1px solid #15181c;
+        .box-shadow(0 1px 0 rgba(255, 255 , 255, .12));
         text-align: center;
-        margin-bottom: 0;
         padding: 0;
         position: fixed;
         right: 0;
         left: 0;
-        height: 42px; // Since box sizing remains default
+        height: 44px;
         width: 100%;
         z-index: 444;
         *zoom: 1;
     }
 
+    // Logo / Menu Button
+    .btn-menu {
+        background-position: 0 -140px;
+        .ir;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 42px;
+        width: 126px;
+    }
+
+    // Flag / Language Selector
+    .btn-menu-secd {
+        background-position: -420px -50px;
+        text-align: left;
+        padding: 15px 0 0 12px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 42px;
+        width: 42px;
+
+        .ico-flag { vertical-align: top; }
+    }
+
     .sec-regional {
+
+        .tel {
+            position: absolute;
+            top: 13px;
+            right: 42px;
+        }
 
         .dropdown-menu {
             display: block;
@@ -303,6 +327,7 @@ INPUT[type="search"]::-webkit-search-decoration {
 
             &:before, &:after { display: none; }
         }
+
     }
 
     /* Search --------------------------- */

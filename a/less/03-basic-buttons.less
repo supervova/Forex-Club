@@ -40,12 +40,6 @@ BUTTON, .btn {
     overflow: visible; // Address 'overflow' set to 'hidden' in IE 8/9/10
     vertical-align: middle;
 
-    &, &:active, &.active {
-        &:focus {
-            .tab-focus();
-        }
-    }
-
     &[disabled] {
         cursor: default;
         cursor: not-allowed;
@@ -67,6 +61,12 @@ BUTTON, .btn {
     margin: @btn-margin;
     padding: @btn-padding-v @btn-padding-h;
     *padding: (@btn-padding-v - 2/@b) @btn-padding-h; // Old IEs Cure
+
+    &, &:active, &.active {
+        &:focus {
+            .tab-focus();
+        }
+    }
 }
 
 .btn-default {

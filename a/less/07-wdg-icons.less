@@ -1,0 +1,21 @@
+@import '02-variables.less';
+@import '02-mixins.less';
+
+// Sizing and position
+.ico-email, .ico-tel {
+    margin-right: .4em;
+    vertical-align: middle;
+    height: 16px;
+    width: 16px;
+}
+
+.tooltip {
+    .ico-email, .ico-tel {
+        margin-top: -.2em;
+    }
+}
+
+// Background Positions
+.ico-email { background-position: -210px 0; }
+.ico-tel { background-position: -240px 0; }
+
