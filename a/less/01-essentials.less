@@ -69,7 +69,16 @@ BODY {
 
 // SNIPPET:leie8bgcrush — IE8 BODY Image Background Crush Cure
 
-// SNIPPET:lepage — Page Conainer for Slide Out Model at Mobiles
+.page {
+    background: @body-bg; // Repeat body background for slide out manipulation
+    text-align: left;
+    position: relative;
+    margin: 0 auto;
+    min-height: 100%;
+    height: auto;
+    *height: 100%;
+    *zoom: 1;
+}
 
 
 /*
@@ -493,13 +502,20 @@ TABLE > TR:last-child TH, TABLE > TR:last-child TD, TBODY TR:last-child TH, TBOD
     In emergency case move it in slideOut function.
     On the other hand, if these styles can prove their worth, to rewrite the rules above. */
     BODY {
-        background: @body-bg none;
+        background: @body-bg;
         font-size: 100% * @bm / 16;
         line-height: @baseline-mob;
         overflow-x: hidden;
     }
 
-.page { width: 100%;}
+.page {
+    padding: 0 20px;
+    max-width: none;
+    width: 100%;
+    z-index: 2;
+}
+
+
 
 /*
 |---------------------------------------

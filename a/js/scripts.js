@@ -220,7 +220,7 @@ $(function() {
 
     el.mousedown(function(e) {
         if (e.button == 2) {
-            $(this).children('.rmb-popup').show();
+            $(this).children('.rmb-popup').show('fast');
             return false;
         }
         return true;

@@ -52,7 +52,7 @@
 @import '/a/css/08-cstm-front.css';
 @import '/a/css/08-cstm-inner.css';
 @import '/a/css/08-cstm-blog.css';
-@import '/a/css/08-cstm-legacy.css';
+@import '/a/css/08-legacy.css';
 
 /* The Final Piece */
 @import '/a/css/09-utilities.css';
