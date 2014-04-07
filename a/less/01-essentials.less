@@ -73,7 +73,7 @@ BODY {
     background: @body-bg; // Repeat body background for slide out manipulation
     text-align: left;
     position: relative;
-    margin: 0 auto;
+    margin: 0 0 0 280px;
     min-height: 100%;
     height: auto;
     *height: 100%;
@@ -478,6 +478,16 @@ TABLE > TR:last-child TH, TABLE > TR:last-child TD, TBODY TR:last-child TH, TBOD
 
 /*
 |-------------------------------------------------------------------------------
+| OLD SCHOOL DESKTOP MONITORS (XGA: 1024x768)
+|-------------------------------------------------------------------------------
+*/
+@media only screen and (max-width: 1199px) {
+    .page { margin-left: 88px;}
+}
+
+
+/*
+|-------------------------------------------------------------------------------
 | PHONES & SMALL PORTRAIT TABLETS: up to 767px
 |-------------------------------------------------------------------------------
 */
@@ -509,6 +519,7 @@ TABLE > TR:last-child TH, TABLE > TR:last-child TD, TBODY TR:last-child TH, TBOD
     }
 
 .page {
+    margin-left: 0;
     padding: 0 20px;
     max-width: none;
     width: 100%;
