@@ -316,16 +316,29 @@ INPUT[type="search"]::-webkit-search-decoration {
 
     .sec-regional {
 
+        padding-top: 0;
+
         .tel {
             color: #65686c !important;
             font-family: @font-family-sans-serif;
             font-size: @font-size-small;
-            line-height: 1;
-            padding-top: 18px;
             position: absolute;
-            top: 0;
+            top: 14px;
             right: 60px;
             height: 42px;
+
+            -webkit-appearance: none;
+            -webkit-font-smoothing: auto;
+            -webkit-writing-mode: horizontal-tb;
+
+            line-height: 22px;
+
+            margin: 0;
+            padding: 0;
+
+            overflow-: hidden;
+
+            vertical-align: middle;
         }
 
         .dropdown-menu {
