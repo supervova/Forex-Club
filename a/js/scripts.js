@@ -72,7 +72,7 @@ function dropDowns(){
     if(window.matchMedia('(min-width: 768px)').matches) {
         label.click(function(event) {
             allDropDowns.hide();
-            $(this).parents('.dropdown').children('.dropdown-menu').toggle();
+            $(this).parents('.dropdown').children('.dropdown-menu').toggle('fast');
             label.removeClass('down');
             $(this).addClass('down');
             return false;

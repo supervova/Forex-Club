@@ -28,18 +28,14 @@
 }
 
 //  Label Caret
-.dropdown-toggle:after {
-    #caret > .to-bottom(@label-caret-width-base, @label-caret-color);
+.dropdown-toggle-b:after, .dropdown-toggle-t:after {
     #caret > .body();
     margin-left: 4px;
     vertical-align: middle;
 }
 
-// Dropups arrows
-.dropdown-tr .dropdown-toggle:after, .dropdown-tl .dropdown-toggle:after {
-    border-bottom: @label-caret-width-base solid;
-    border-top: 0;
-}
+.dropdown-toggle-b:after { #caret > .to-bottom(@label-caret-width-base, @label-caret-color); }
+.dropdown-toggle-t:after { #caret > .to-top(@label-caret-width-base, @label-caret-color); }
 
 // Dropdown menu - ul or div-container for mega dropdowns
 .dropdown-menu {
@@ -123,7 +119,26 @@ UL.dropdown-menu {
     }
 }
 
-// SNIPPET:leddbr — Bottom Right Position
+// Menu and caret positioning — right
+.dropdown-menu-r {
+    margin: 0 0 0 (@dropdown-caret-width + 1);
+    top: 0;
+    left: 100%;
+
+    &:before { // Caret border
+        #caret > .to-left((@dropdown-caret-width + 1), @dropdown-border);
+        top: @dropdown-caret-offset;
+        right: 100%;
+        left: auto;
+    }
+
+    &:after { // Caret body
+        #caret > .to-left(@dropdown-caret-width, @dropdown-bg);
+        top: @dropdown-caret-offset + 1;
+        right: 100%;
+        left: auto;
+    }
+}
 
 // SNIPPET:leddl — Left Position
 

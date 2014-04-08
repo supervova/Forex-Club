@@ -3,18 +3,18 @@
 
 // Default Button Settings
 @btn-bg-t:                  #f8f9fb;
-@btn-bg-m:                  #f1f2f4;
-@btn-bg-stop:               16%;
-@btn-bg-b:                  #e4e5e7;
+@btn-bg-m:                  #e4e5e7;
+@btn-bg-stop:               84%;
+@btn-bg-b:                  #f1f2f4;
 
-@btn-border-t:              darken(@btn-bg-t, 4%);
-@btn-border:                darken(@btn-bg-t, 8%);
-@btn-border-b:              darken(@btn-bg-m, 4%);
+@btn-border-t:              #d3d6da;
+@btn-border:                #d3d6da;
+@btn-border-b:              #d3d6da;
 
 @btn-border-radius:         @border-radius-base;
 @btn-color:                 #797c80;
 @btn-margin:                -1/2*@baseline 0 1.5*@baseline;
-@btn-padding-v:             (1/2*@baseline - 1/@b);
+@btn-padding-v:             5em / @b;
 @btn-padding-h:             12px;
 
 /*
@@ -56,10 +56,10 @@ BUTTON, .btn {
 |
 */
 .btn {
-    .box-shadow(inset 0 1px 0 rgba(255, 255, 255, 0.32), 0 1px 2px rgba(0, 0, 0, 0.16)); // 1
+    .box-shadow(inset 0 1px 0 rgba(255, 255, 255, 0.12), inset 0 -1px 0 rgba(255, 255, 255, 0.12), inset 1px 0 0 rgba(255, 255, 255, 0.12), inset -1px 0 0 rgba(255, 255, 255, 0.12)); // 1
     .border-radius(@btn-border-radius);
     margin: @btn-margin;
-    padding: @btn-padding-v @btn-padding-h;
+    padding: @btn-padding-v @btn-padding-h (4em / @b);
     *padding: (@btn-padding-v - 2/@b) @btn-padding-h; // Old IEs Cure
 
     &, &:active, &.active {
@@ -69,9 +69,17 @@ BUTTON, .btn {
     }
 }
 
+FORM .btn { margin-top: 13em / @b; }
+
 .btn-default {
     .button-variant(@btn-color; @btn-bg-t; @btn-bg-m; @btn-bg-stop; @btn-bg-b; @btn-border-t; @btn-border; @btn-border-b);
-    text-shadow: 0 -1px 1px rgba(0, 0, 0, .44);
+    text-shadow: 0 1px 0 rgb(255, 255, 255);
+
+    &:hover,
+    &:focus {
+        .box-shadow(inset 0 1px 4px rgba(255, 255, 255, 1), inset 0 -1px 4px rgba(255, 255, 255, 1), inset 1px 0 4px rgba(255, 255, 255, 1), inset -1px 0 4px rgba(255, 255, 255, 1));
+        color: #515458;
+    }
 }
 
 // .btn-block {

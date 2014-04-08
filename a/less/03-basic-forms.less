@@ -70,8 +70,11 @@ LABEL {
 |---------------------------------------
 */
 
+INPUT[type="email"],
+INPUT[type="password"],
+INPUT[type="tel"],
 INPUT[type="text"], /*.i-uneditable, */
-
+INPUT[type="url"],
 SELECT, TEXTAREA {
     background: @input-bg;
     border: @brd;
@@ -84,8 +87,12 @@ SELECT, TEXTAREA {
     width: 100%;
 }
 
-INPUT[type="text"], TEXTAREA {
-    font-weight: bold;
+INPUT[type="email"],
+INPUT[type="password"],
+INPUT[type="tel"],
+INPUT[type="text"], /*.i-uneditable, */
+INPUT[type="url"],
+TEXTAREA {
     padding: (@baseline/4 - 1em/@b) 7px;
     outline: none;
 }
@@ -254,12 +261,23 @@ SELECT[multiple], SELECT[size] { height: auto; }
 
     /* Text inputs and textareas -------- */
 
-    INPUT[type="text"], /*.i-uneditable, */ SELECT, TEXTAREA {
+    INPUT[type="email"],
+    INPUT[type="password"],
+    INPUT[type="tel"],
+    INPUT[type="text"], /*.i-uneditable, */
+    INPUT[type="url"],
+    SELECT,
+    TEXTAREA {
         margin: @baseline-mob/4 0;
         padding: (@baseline-mob/2 - 1em/@bm) 7px;
     }
 
-    INPUT[type="text"], TEXTAREA { font-weight: normal; }
+    INPUT[type="email"],
+    INPUT[type="password"],
+    INPUT[type="tel"],
+    INPUT[type="text"], /*.i-uneditable, */
+    INPUT[type="url"],
+    TEXTAREA { font-weight: normal; }
 
     /* Checkboxes, radiobuttons, input-images nad input-files ------------------- */
 
