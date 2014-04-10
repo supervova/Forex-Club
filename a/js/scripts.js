@@ -73,8 +73,8 @@ function dropDowns(){
         label.click(function(event) {
             allDropDowns.hide();
             $(this).parents('.dropdown').children('.dropdown-menu').toggle('fast');
-            label.removeClass('down');
-            $(this).addClass('down');
+            label.removeClass('active');
+            $(this).addClass('active');
             return false;
         });
     }
@@ -85,19 +85,19 @@ function dropDowns(){
     // $(document).bind(event, function() {
     $(document).click(function() {
         allDropDowns.hide();
-        label.removeClass('down');
+        label.removeClass('active');
     });
 
     // Close dropdowns on Esc
     $(document).keydown(function(e) {
         if(e.keyCode == 27) {
             allDropDowns.hide();
-            label.removeClass('down');
+            label.removeClass('active');
         }
     });
 
     // @FIXME: this did not work
-    if (label.hasClass('down')) {
+    if (label.hasClass('active')) {
         $('.sec-billboard a').click(function(e) {
                 e.preventDefault();
             });

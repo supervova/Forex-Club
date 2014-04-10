@@ -51,27 +51,66 @@
 | Main Menu
 |---------------------------------------
 */
-.nav { //  UL
-    display: table;
-    *display: block;
-    padding: 0 20px;
-    position: relative;
-    width: 280px;
-    *zoom: 1;
+
+.main-menu {
+
+    .nav { //  UL
+        display: table;
+        *display: block;
+        padding: 45px 20px 88px;
+        position: relative;
+        width: 280px;
+        *zoom: 1;
+    }
+
+    // First Level A
+    .dropdown-toggle, .dropdown-toggle:visited,
+    .mm-label, .mm-label:visited { // First Level A
+        color: @main-menu-link-color;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
+        .transition(color .2s);
+
+        &.active, &:hover, A:focus  {
+            color: @main-menu-link-hover-color;
+        }
+    }
+
+    .dropdown {
+        &.active A, &:hover A  {
+            color: @main-menu-link-hover-color;
+        }
+    }
+
+
+    // First Level A w/o Sign In / Sign Up
+    .dropdown-toggle {
+        padding: (11em / @b) 0 (11em / @b) 40px;
+    }
 }
 
-.dropdown { // First Level LI
-    margin: ;
-    z-index: 444;
+
+
+
+// Sign In / Sign Up
+.mm-sign-in, .mm-sign-up {
+    .inline-block();
+    margin-bottom: 5em / @b;
+
+    .mm-label {
+        background: #25282c;
+        border-radius: @border-radius-small;
+        text-align: center;
+        padding: (5em / @b) 0 (6em / @b);
+    }
 }
 
-.dropdown-toggle, .dropdown-toggle:visited,
-.mm-label, .mm-label:visited { // First Level A
-    color: @main-menu-link-color;
-    .transition(color .2s);
-
-    &.active, &:hover, A:focus  { color: @main-menu-link-hover-color; }
+.mm-sign-in {
+    margin-right: 1px;
+    width: 75px;
 }
+
+.mm-sign-up { width: 164px; }
+
 
 // SNIPPET:lemmlabel — First Level Menu Item Label
 
@@ -159,7 +198,6 @@
             border-bottom: @so-link-brd-b;
             box-shadow: @so-link-brd-t;
             display: block;
-            text-shadow: @so-link-shadow;
             padding: @so-link-padding;
             width: @so-width;
 

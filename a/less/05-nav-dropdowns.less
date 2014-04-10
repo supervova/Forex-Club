@@ -11,7 +11,7 @@
 @dropdown-caret-offset:     20px;
 
 // Background and border has benn set in variables
-@dropdown-padding:          19px 19px;
+@dropdown-padding:          19px;
 @dropdown-width-small:      120px;
 @dropdown-width-base:       220px;
 @dropdown-width-large:      400px;
@@ -56,6 +56,25 @@
     // SNIPPET:ledddiv — Dropdown Divider
 }
 
+// Entitled Dropdown
+.dropdown-menu-entitled {
+    padding: 0;
+
+    .dropdown-header {
+        #gradient > .vertical-three-colors(#edf0f4; #e1e4e8; 76%; #e7eaee);
+        border-bottom: 1px solid #d3d6da;
+        .box-shadow(0 1px 4px rgba(0, 0, 0, .08));
+        text-shadow: 0 1px 0 #FFF;
+        padding: (17em / @b) 29px 0;
+        height: 53px;
+    }
+
+    .dropdown-body { padding: @dropdown-padding; }
+}
+
+.dropdown-body .f-actions .btn { margin-bottom: 0; }
+
+// Dropdown List
 UL.dropdown-menu {
     list-style-image: none;
     list-style-type: none;
@@ -138,6 +157,19 @@ UL.dropdown-menu {
         right: 100%;
         left: auto;
     }
+}
+
+.dropdown-menu-r.dropdown-menu-entitled:after { // Caret body
+    border-right-color: #e4e7eb;
+}
+
+/*
+|-------------------------------------------------------------------------------
+| Customization
+|-------------------------------------------------------------------------------
+*/
+.dropdown-sign-in {
+    top: -13px;
 }
 
 // SNIPPET:leddl — Left Position

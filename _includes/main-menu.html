@@ -26,27 +26,31 @@
 
     <ul class="nav">
 
-    <li class="mm-sign-in dropdown"><a href="/sign-in" class="dropdown-toggle">Вход</a>
-        <form action="https://secure.fxclub.org/fx?plugin=login&amp;amp;lang=rus" method="post" accept-charset="UTF-8" class="f-sign-in dropdown-menu dropdown-menu-r dropdown-large">
+    <li class="mm-sign-in dropdown"><a href="/sign-in" class="mm-label dropdown-toggle">Вход</a>
+
+        <div class="dropdown-menu dropdown-menu-r dropdown-large dropdown-menu-entitled dropdown-sign-in">
+        <header class="dropdown-header">С возвращением :)</header>
+        <form action="https://secure.fxclub.org/fx?plugin=login&amp;amp;lang=rus" method="post" accept-charset="UTF-8" class="f-sign-in dropdown-body">
 
             <label for="i-login">Email</label>
             <input type="email" name="login" id="i-login" required="required">
 
-            <label for="i-password">Пароль<a href="//secure.fxclub.org/fx?plugin=lost_password&amp;lang=rus" id="fgtPsw" class="a-forget">Забыли?</a></label>
+            <label for="i-password">Пароль<a href="//secure.fxclub.org/fx?plugin=lost_password&amp;lang=rus" id="fgtPsw" class="first-aid" rel="nofollow">Забыли?</a></label>
             <input type="text" name="password" id="i-password" required="required">
 
             <div class="f-actions">
                 <button type="submit" class="btn btn-default">Войти</button>
-                <label class="cbx"><input type="checkbox" value="1" name="remember-me" checked="checked">Оставаться в системе</label>
+                <label class="cbx cbx-stay-signed-in"><input type="checkbox" value="1" name="remember-me" checked="checked">Оставаться в системе</label>
             </div>
 
             <input name="formid" type="hidden" value="ContactForm">
         </form>
+        </div>
     </li>
 
     <li class="mm-sign-up"><a href="/open-account" class="mm-label">Открыть счет</a></li>
 
-    <li class="mm-products dropdown"><a href="/products" class="dropdown-toggle">Продукты и услуги</a>
+    <li class="mm-products dropdown"><a href="/products" class="dropdown-toggle"><i class="ico-d"></i>Продукты и услуги</a>
         <ul class="dropdown-menu dropdown-menu-r dropdown-large">
             <li><a href="/accounts-types">Типы счетов</a>
             <ul>
@@ -84,7 +88,7 @@
         </ul>
     </li>
 
-    <li class="mm-benefits dropdown"><a href="/benefits" class="dropdown-toggle">Преимущества</a>
+    <li class="mm-benefits dropdown"><a href="/benefits" class="dropdown-toggle"><i class="ico-d"></i>Преимущества</a>
         <ul class="dropdown-menu dropdown-menu-r">
             <li><a href="/preimushchestva-torgovli">Репутация, возможности, сервис, ПО</a></li>
             <li><a href="/istorii-uspeha">Истории успеха</a></li>
@@ -105,7 +109,7 @@
         </ul>
     </li>
 
-    <li class="mm-analytics dropdown"><a href="/tools_info" class="dropdown-toggle">Новости и аналитика</a>
+    <li class="mm-analytics dropdown"><a href="/tools_info" class="dropdown-toggle"><i class="ico-d"></i>Новости и аналитика</a>
         <ul class="dropdown-menu dropdown-menu-r">
             <li><a href="/invest-idei">Торговые идеи</a></li>
             <li><a href="/tools_info_quotes">Онлайн-котировки</a></li>
@@ -117,7 +121,7 @@
         </ul>
     </li>
 
-    <li class="mm-education dropdown"><a href="/obuchenie" class="dropdown-toggle">Обучение</a>
+    <li class="mm-education dropdown"><a href="/obuchenie" class="dropdown-toggle"><i class="ico-d"></i>Обучение</a>
         <ul class="dropdown-menu dropdown-menu-r">
             <li><a href="/filials_dist_reg">Онлайн-семинары</a></li>
             <li><a href="/academy_lib_book">Книги и материалы по Forex</a></li>
@@ -131,7 +135,7 @@
         </ul>
     </li>
 
-    <li class="mm-about dropdown"><a href="/about_mission" class="dropdown-toggle">О нас</a>
+    <li class="mm-about dropdown"><a href="/about_mission" class="dropdown-toggle"><i class="ico-d"></i>О нас</a>
         <ul class="dropdown-menu dropdown-menu-r">
             <li><a href="/o-kompanii">Общие сведения</a></li>
             <li><a href="/branches">Филиалы</a></li>
@@ -145,7 +149,7 @@
         </ul>
     </li>
 
-    <li class="mm-help dropdown"><a href="//support.fxclub.org" class="dropdown-toggle">Справка и поддержка</a>
+    <li class="mm-help dropdown"><a href="//support.fxclub.org" class="dropdown-toggle"><i class="ico-d"></i>Справка и поддержка</a>
         <ul class="dropdown-menu dropdown-menu-r">
             <!-- TODO: bind event via jQuery -->
             <li><a href="#" id="liveagent_button_online_573a00000000R4y" onClick="liveagent.startChat('573a00000000R4y')">Онлайн-чат</a></li>

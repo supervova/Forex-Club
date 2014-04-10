@@ -36,8 +36,18 @@ INPUT::-moz-focus-inner { // Inner padding and border oddities in FF3/4
 }
 
 // SNIPPET:lefcontainers — Form Containers: FIEDLSET + LEGEND, .group
-// SNIPPET:lebtncontainer — Buttons container: .f-actions
 
+
+/*
+|---------------------------------------
+| Buttons container
+|---------------------------------------
+*/
+
+.f-actions {
+    position: relative;
+    *zoom: 1;
+}
 
 /*
 |---------------------------------------
@@ -51,6 +61,8 @@ LABEL {
     display: block;
     margin: 5/4*@baseline 0 (5em / @b);
     padding: 0 0 0 12px;
+    position: relative;
+    *zoom: 1;
 
     B {
         display: inline; // Show labels text on big screens
@@ -60,6 +72,12 @@ LABEL {
 
     LABEL.first, FORM > LABEL:first-child, FORM > .group:first-child LABEL, LEGEND + LABEL { margin-top: 0 ; }
     .help + LABEL, .with-tip + LABEL, .with-tip + .group LABEL { margin-top: @baseline; }
+
+.first-aid {
+    top: -5em / @b;
+    right: 0;
+    position: absolute;
+}
 
 // We have to use few rules, because browsers ignore a rule with an unknown selector.
 :-moz-placeholder { color: @input-bg; } // Placeholder isn't supported in Firefox 3.6
@@ -141,9 +159,7 @@ INPUT[type="radio"] { vertical-align: text-bottom; }
 
 .cbx, .rb { // Labels-containers
     padding-left: @baseline;
-    position: relative;
     width: 100%;
-    *zoom: 1;
 }
 
 // SNIPPET:leformcbx — .cbx and .rb Extra Properties: Nested and Inline Structures
@@ -215,7 +231,17 @@ SELECT[multiple], SELECT[size] { height: auto; }
 | Customization
 |-------------------------------------------------------------------------------
 */
+.f-sign-in {
+    top: 100px;
+}
 
+.cbx-stay-signed-in {
+    .inline-block();
+    position: absolute;
+    top: -8em / @b;
+    right: 0;
+    width: auto;;
+}
 
 /*
 |-------------------------------------------------------------------------------

@@ -62,11 +62,10 @@ BUTTON, .btn {
     padding: @btn-padding-v @btn-padding-h (4em / @b);
     *padding: (@btn-padding-v - 2/@b) @btn-padding-h; // Old IEs Cure
 
-    &, &:active, &.active {
-        &:focus {
-            .tab-focus();
-        }
-    }
+    &:focus { .tab-focus(); }
+
+    &:active,
+    &.active { padding: (@btn-padding-v + (1em / @b)) @btn-padding-h (3em / @b); }
 }
 
 FORM .btn { margin-top: 13em / @b; }
@@ -79,6 +78,7 @@ FORM .btn { margin-top: 13em / @b; }
     &:focus {
         .box-shadow(inset 0 1px 4px rgba(255, 255, 255, 1), inset 0 -1px 4px rgba(255, 255, 255, 1), inset 1px 0 4px rgba(255, 255, 255, 1), inset -1px 0 4px rgba(255, 255, 255, 1));
         color: #515458;
+        .transition(color .2s linear);
     }
 }
 
