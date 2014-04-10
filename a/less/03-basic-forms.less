@@ -46,9 +46,11 @@ INPUT::-moz-focus-inner { // Inner padding and border oddities in FF3/4
 */
 
 LABEL {
+    color: @gray-dark;
     cursor: pointer;
     display: block;
-    margin: 5/4*@baseline 0 @baseline/4;
+    margin: 5/4*@baseline 0 (5em / @b);
+    padding: 0 0 0 12px;
 
     B {
         display: inline; // Show labels text on big screens
@@ -78,7 +80,7 @@ INPUT[type="url"],
 SELECT, TEXTAREA {
     background: @input-bg;
     border: @brd;
-    .border-radius(@brd-radius);
+    .border-radius(@border-radius-small);
     display: inline-block;
     font-family: inherit;
     margin: 0;
@@ -93,7 +95,7 @@ INPUT[type="tel"],
 INPUT[type="text"], /*.i-uneditable, */
 INPUT[type="url"],
 TEXTAREA {
-    padding: (@baseline/4 - 1em/@b) 7px;
+    padding: (@baseline/3) 11px;
     outline: none;
 }
 
@@ -103,7 +105,7 @@ INPUT, TEXTAREA {
 
      // Focus state
     &:focus {
-        border-color: darken(@brd-color, 24%);
+        border-color: #4cb2ff;
         outline: 0;
         outline: thin dotted \9; // IE6-9
     }
@@ -207,6 +209,13 @@ SELECT[multiple], SELECT[size] { height: auto; }
 }
 
 // SNIPPET:leformlayout — Forms Layout: Labels-on-Left and Inline Forms
+
+/*
+|-------------------------------------------------------------------------------
+| Customization
+|-------------------------------------------------------------------------------
+*/
+
 
 /*
 |-------------------------------------------------------------------------------

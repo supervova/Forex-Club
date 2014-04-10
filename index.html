@@ -99,6 +99,9 @@
     <!--<link rel="stylesheet" href="/a/css/styles.css?140401a">-->
 
     <!-- Development styles. Remove on production -->
+    <meta http-equiv="X-UA-Compatible" content="IE=10">
+    <meta http-equiv="X-UA-Compatible" content="IE=9">
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
     <style type="text/css">
     .page:hover { background: url(/a/img/_grid-bl22.png) 0 0 repeat-y #FFF; }
 
@@ -305,7 +308,7 @@
 
         <!-- Search Form -->
         <form action="/search/" method="get" role="search" class="f-search tbl-pc">
-            <input type="search" name="query" class="i-search" placeholder="Финансовые рынки для людей">
+            <input type="search" name="query" class="i-search" placeholder="Финансовые рынки для людей" required="required">
             <button type="submit">Найти</button>
         </form>
 
@@ -316,7 +319,7 @@
 
     <!-- Main Billboard Content -->
     <section class="hero">
-        Четыре.section.sec-billboard
+        section.sec-billboard
     </section>
 
 </div>
@@ -357,8 +360,8 @@
 <!-- MAIN MENU ============================================================= -->
 <nav class="main-menu slide-out slide-out-left" role="navigation">
 
-    <form action="/search/" method="get" class="f-search mob">
-        <input type="search" name="query" class="i-search" placeholder="Финансовые рынки для людей">
+    <form action="/search" method="get" class="f-search mob">
+        <input type="search" name="query" class="i-search" placeholder="Финансовые рынки для людей" required="required">
         <button type="submit">Найти</button>
     </form>
 
@@ -371,9 +374,9 @@
 
             <h2>Центральный офис:</h2>
             <address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-                <span itemprop="postalCode">123022</span>
-                <span itemprop="addressLocality">Россия, Москва</span>
-                <p itemprop="streetAddress">Звенигородское шоссе, д. 18/20, корп. 1, этаж 5</p>
+            <span itemprop="postalCode">123022</span>
+            <span itemprop="addressLocality">Россия, Москва</span>
+            <p itemprop="streetAddress">Звенигородское шоссе, д. 18/20, корп. 1, этаж 5</p>
             </address>
             <p><i class="ico-l ico-tel">Тел:</i> <span itemprop="telephone">8-800-2002-600</span></p>
             <p><i class="ico-l ico-email">Email:</i> <span itemprop="email">manager(at)forexclub.ru</span></p>
@@ -382,119 +385,140 @@
     </header>
 
     <ul class="nav">
-    <li class="mm-products dropdown"><a href="/produkty" class="dropdown-toggle">Продукты и услуги</a>
-        <ul class="dropdown-menu">
-            <li><a href="/trfw/">Типы счетов</a>
+
+    <li class="mm-sign-in dropdown"><a href="/sign-in" class="dropdown-toggle">Вход</a>
+        <form action="https://secure.fxclub.org/fx?plugin=login&amp;amp;lang=rus" method="post" accept-charset="UTF-8" class="f-sign-in dropdown-menu dropdown-menu-r dropdown-large">
+
+            <label for="i-login">Email</label>
+            <input type="email" name="login" id="i-login" required="required">
+
+            <label for="i-password">Пароль<a href="//secure.fxclub.org/fx?plugin=lost_password&amp;lang=rus" id="fgtPsw" class="a-forget">Забыли?</a></label>
+            <input type="text" name="password" id="i-password" required="required">
+
+            <div class="f-actions">
+                <button type="submit" class="btn btn-default">Войти</button>
+                <label class="cbx"><input type="checkbox" value="1" name="remember-me" checked="checked">Оставаться в системе</label>
+            </div>
+
+            <input name="formid" type="hidden" value="ContactForm">
+        </form>
+    </li>
+
+    <li class="mm-sign-up"><a href="/open-account" class="mm-label">Открыть счет</a></li>
+
+    <li class="mm-products dropdown"><a href="/products" class="dropdown-toggle">Продукты и услуги</a>
+        <ul class="dropdown-menu dropdown-menu-r dropdown-large">
+            <li><a href="/accounts-types">Типы счетов</a>
             <ul>
-                <li><a href="/scheta-treidera/">Трейдеру</a></li>
-                <li><a href="/upravlyayushiy-trader/">Управляющему</a></li>
-                <li><a href="/investitsionnie-scheta/">Инвестору</a></li>
-                <li><a href="/servicepkg/">Пакеты услуг</a></li>
+                <li><a href="/trfw">Трейдеру</a></li>
+                <li><a href="/upravlyayushiy-trader">Управляющему</a></li>
+                <li><a href="/investitsionnie-scheta">Инвестору</a></li>
+                <li><a href="/servicepkg">Пакеты услуг</a></li>
                 <li><a href="/vip">VIP-условия</a></li>
             </ul>
             </li>
 
-            <li><a href="/markets/">Торговые продукты</a>
+            <li><a href="/markets">Торговые продукты</a>
             <ul>
-                <li><a href="/markets/forex/">Forex</a></li>
-                <li><a href="/bitcoin/">Биткоин</a></li>
-                <li><a href="/markets/gold-silver/">Золото и серебро</a></li>
-                <li><a href="/markets/neft-gaz/">Нефть и газ</a></li>
-                <li><a href="/markets/stock/">Акции</a></li>
-                <li><a href="/markets/metals/">Металлы</a></li>
-                <li><a href="/markets/indexes/">Индексы</a></li>
-                <li><a href="/cfd_specification/">Спецификация инструментов</a></li>
+                <li><a href="/markets/forex">Forex</a></li>
+                <li><a href="/bitcoin">Биткоин</a></li>
+                <li><a href="/markets/gold-silver">Золото и серебро</a></li>
+                <li><a href="/markets/neft-gaz">Нефть и газ</a></li>
+                <li><a href="/markets/stock">Акции</a></li>
+                <li><a href="/markets/metals">Металлы</a></li>
+                <li><a href="/markets/indexes">Индексы</a></li>
+                <li><a href="/cfd_specification">Спецификация инструментов</a></li>
             </ul>
             </li>
 
-            <li><a href="/tools_soft/">Платформы</a>
+            <li><a href="/tools_soft">Платформы</a>
             <ul>
-                <li><a href="/tools_soft/startfx/">StartFX</a></li>
-                <li><a href="/tools_soft/rumus/">Rumus 2</a></li>
-                <li><a href="/tools_soft/metatrader/">MetaTrader4™</a></li>
-                <li><a href="/tools_soft/">Сравнение платформ</a></li>
+                <li><a href="/tools_soft/startfx">StartFX</a></li>
+                <li><a href="/tools_soft/rumus">Rumus 2</a></li>
+                <li><a href="/tools_soft/metatrader">MetaTrader4™</a></li>
+                <li><a href="/tools_soft">Сравнение платформ</a></li>
             </ul>
             </li>
 
-            <li><a href="/foreks-widzhety/">Виджеты, сервисы, расширения</a></li>
+            <li><a href="/foreks-widzhety">Виджеты, сервисы, расширения</a></li>
         </ul>
     </li>
 
-    <li class="mm-benefits dropdown"><a href="/preimushchestva-torgovli/" class="dropdown-toggle">Преимущества</a>
-        <ul class="dropdown-menu">
-            <li><a href="/preimushchestva-torgovli/">Репутация, возможности, сервис, ПО</a></li>
-            <li><a href="/istorii-uspeha/">Истории успеха</a></li>
+    <li class="mm-benefits dropdown"><a href="/benefits" class="dropdown-toggle">Преимущества</a>
+        <ul class="dropdown-menu dropdown-menu-r">
+            <li><a href="/preimushchestva-torgovli">Репутация, возможности, сервис, ПО</a></li>
+            <li><a href="/istorii-uspeha">Истории успеха</a></li>
 
-            <li><a href="/akcii-i-bonusy/">Акции и бонусы</a>
+            <li><a href="/akcii-i-bonusy">Акции и бонусы</a>
                 <ul>
-                <li><a href="/akcii-i-bonusy/konkurs-investorov/">Инвестомания — конкурс LibertEx</a></li>
-                <li><a href="/akcii-i-bonusy/dynamic-start/">Dynamic Start. Поехали!</a></li>
-                <li><a href="/upravlyayushiy-trader/contest/about/">Конкурс управляющих</a></li>
-                <li><a href="/account_interest/">Премия на депозит</a></li>
-                <li><a href="/bonusnyi_schet/">Бонусный счет</a></li>
-                <li><a href="/compensation_commission/">Компенсация комиссий</a></li>
-                <li><a href="/trade_award/">Торговая премия</a></li>
-                <li><a href="/refer_a_friend/">Пригласи друга!</a></li>
-                <li><a href="/akcii-i-bonusy/archive/">Архив акций</a></li>
+                <li><a href="/akcii-i-bonusy/konkurs-investorov">Инвестомания — конкурс LibertEx</a></li>
+                <li><a href="/akcii-i-bonusy/dynamic-start">Dynamic Start. Поехали!</a></li>
+                <li><a href="/upravlyayushiy-trader/contest/about">Конкурс управляющих</a></li>
+                <li><a href="/account_interest">Премия на депозит</a></li>
+                <li><a href="/bonusnyi_schet">Бонусный счет</a></li>
+                <li><a href="/compensation_commission">Компенсация комиссий</a></li>
+                <li><a href="/trade_award">Торговая премия</a></li>
+                <li><a href="/refer_a_friend">Пригласи друга!</a></li>
+                <li><a href="/akcii-i-bonusy/archive">Архив акций</a></li>
                 </ul>
             </li>
         </ul>
     </li>
 
-    <li class="mm-analytics dropdown"><a href="/tools_info/" class="dropdown-toggle">Новости и аналитика</a>
-        <ul class="dropdown-menu">
+    <li class="mm-analytics dropdown"><a href="/tools_info" class="dropdown-toggle">Новости и аналитика</a>
+        <ul class="dropdown-menu dropdown-menu-r">
             <li><a href="/invest-idei">Торговые идеи</a></li>
             <li><a href="/tools_info_quotes">Онлайн-котировки</a></li>
-            <li><a href="/economcalendar/">Календарь рынка</a></li>
-            <li><a href="/sentiment_indicator/">Индикатор настроений</a></li>
-            <li><a href="/akmos-analyst-indexes/">Макроэкономические показатели</a></li>
-            <li><a href="/skolko-vy-mogli-zarabotat-na-proshloi-nedele/">Возможности прошлой недели</a></li>
+            <li><a href="/economcalendar">Календарь рынка</a></li>
+            <li><a href="/sentiment_indicator">Индикатор настроений</a></li>
+            <li><a href="/akmos-analyst-indexes">Макроэкономические показатели</a></li>
+            <li><a href="/skolko-vy-mogli-zarabotat-na-proshloi-nedele">Возможности прошлой недели</a></li>
             <li><a href="/blog">Блог</a></li>
         </ul>
     </li>
 
     <li class="mm-education dropdown"><a href="/obuchenie" class="dropdown-toggle">Обучение</a>
-        <ul class="dropdown-menu">
-            <li><a href="/filials_dist_reg/">Онлайн-семинары</a></li>
-            <li><a href="/academy_lib_book/">Книги и материалы по Forex</a></li>
-            <li><a href="/about_academy/">Академия Forex Club</a>
+        <ul class="dropdown-menu dropdown-menu-r">
+            <li><a href="/filials_dist_reg">Онлайн-семинары</a></li>
+            <li><a href="/academy_lib_book">Книги и материалы по Forex</a></li>
+            <li><a href="/about_academy">Академия Forex Club</a>
             <ul>
-                <li><a href="/academy/packages/">Программы обучения</a></li>
-                <li><a href="http://www.traderacademy.ru/content/individualnye-konsultacii-i-obuchenie/">Индивидуальные консультации и обучение</a></li>
-                <li><a href="/condition_howtrade_freeseminar/">Вводный семинар по FOREX в вашем городе</a></li>
+                <li><a href="/academy/packages">Программы обучения</a></li>
+                <li><a href="//www.traderacademy.ru/content/individualnye-konsultacii-i-obuchenie">Индивидуальные консультации и обучение</a></li>
+                <li><a href="/condition_howtrade_freeseminar">Вводный семинар по FOREX в вашем городе</a></li>
             </ul>
             </li>
         </ul>
     </li>
 
-    <li class="mm-about dropdown"><a href="/about_mission/" class="dropdown-toggle">О нас</a>
-        <ul class="dropdown-menu">
-            <li><a href="/o-kompanii/">Общие сведения</a></li>
-            <li><a href="/filialy">Филиалы</a></li>
-            <li><a href="/swindle/">Отраслевое регулирование</a></li>
-            <li><a href="/press/novosti-kompanii/">Новости</a></li>
-            <li><a href="/press/fotogalereya/">Фото</a></li>
-            <li><a href="/pub_video/">Видео</a></li>
-            <li><a href="/about_vacansy/">Вакансии</a></li>
-            <li><a href="http://www.fxclub.org/about_mission/partneri/">Партнёрство</a></li>
+    <li class="mm-about dropdown"><a href="/about_mission" class="dropdown-toggle">О нас</a>
+        <ul class="dropdown-menu dropdown-menu-r">
+            <li><a href="/o-kompanii">Общие сведения</a></li>
+            <li><a href="/branches">Филиалы</a></li>
+            <li><a href="/swindle">Отраслевое регулирование</a></li>
+            <li><a href="/press/novosti-kompanii">Новости</a></li>
+            <li><a href="/press/fotogalereya">Фото</a></li>
+            <li><a href="/pub_video">Видео</a></li>
+            <li><a href="/about_vacansy">Вакансии</a></li>
+            <li><a href="/about_mission/partneri">Партнёрство</a></li>
             <li><a href="/customer_service">Контакты</a></li>
         </ul>
     </li>
 
-    <li class="mm-help dropdown"><a href="http://support.fxclub.org/" class="dropdown-toggle">Справка и поддержка</a>
-        <ul class="dropdown-menu">
+    <li class="mm-help dropdown"><a href="//support.fxclub.org" class="dropdown-toggle">Справка и поддержка</a>
+        <ul class="dropdown-menu dropdown-menu-r">
             <!-- TODO: bind event via jQuery -->
             <li><a href="#" id="liveagent_button_online_573a00000000R4y" onClick="liveagent.startChat('573a00000000R4y')">Онлайн-чат</a></li>
-            <li><a href="/spravka">Справочник</a>
+            <li><a href="/help">Справочник</a>
             <ul>
-                <li><a href="/about_mission/internet-trading/">Что такое онлайн-трейдинг?</a></li>
-                <li><a href="/how_to_deal/">Как заключить первую сделку?</a></li>
-                <li><a href="http://support.fxclub.org/pkb_Home?l=ru&amp;c=KnowledgeBase%3AFOREX_CLUB">Торговые условия и всё для начинающиx</a></li>
-                <li><a href="http://support.fxclub.org/pkb_Home?l=ru&amp;c=KnowledgeBase%3ACategory3">Инвестору и Управляющему</a></li>
-                <li><a href="http://support.fxclub.org/pkb_Home?l=ru&amp;c=KnowledgeBase%3ACategory1">Торговые платформы</a></li>
-                <li><a href="http://support.fxclub.org/pkb_Home?l=ru&amp;c=KnowledgeBase%3ACategory0" target="_blank">Денежные переводы — снятие и зачисление</a></li>
-                <li><a href="http://support.fxclub.org/pkb_Home?gl=true&amp;l=ru&amp;c=KnowledgeGlossary%3AA">Словарь терминов</a></li>
-                <li><a href="/condition_faq/">F.A.Q.</a></li>
+                <li><a href="/about_mission/internet-trading">Что такое онлайн-трейдинг?</a></li>
+                <li><a href="/how_to_deal">Как заключить первую сделку?</a></li>
+                <li><a href="//support.fxclub.org/pkb_Home?l=ru&amp;c=KnowledgeBase%3AFOREX_CLUB">Торговые условия и всё для начинающиx</a></li>
+                <li><a href="//support.fxclub.org/pkb_Home?l=ru&amp;c=KnowledgeBase%3ACategory3">Инвестору и Управляющему</a></li>
+                <li><a href="//support.fxclub.org/pkb_Home?l=ru&amp;c=KnowledgeBase%3ACategory1">Торговые платформы</a></li>
+                <li><a href="//support.fxclub.org/pkb_Home?l=ru&amp;c=KnowledgeBase%3ACategory0" target="_blank">Денежные переводы — снятие и зачисление</a></li>
+                <li><a href="//support.fxclub.org/pkb_Home?gl=true&amp;l=ru&amp;c=KnowledgeGlossary%3AA">Словарь терминов</a></li>
+                <li><a href="/condition_faq">F.A.Q.</a></li>
             </ul>
             </li>
         </ul>
@@ -665,7 +689,7 @@ document.write('<iframe src="//fxclub.org/sites/all/modules/forexfilial/counter/
 <!-- WTF-104: AdRiver -->
 <div id="block-block-104">
 <!--  Site: fxclub.ru PZ: 0 BN: 0 -->
-<script language="javascript" type="text/javascript">
+<script type="text/javascript">
     <!--
     var RndNum4NoCash=Math.round(Math.random()*1e9);var ar_Tail="unknown";if(document.referrer)ar_Tail=escape(document.referrer);document.write('<img src="//ad.adriver.ru/cgi-bin/rle.cgi?'+"sid=134180&bt=21&pz=0&rnd="+RndNum4NoCash+"&tail256="+ar_Tail+'" border=0 width=1 height=1>')
     //-->

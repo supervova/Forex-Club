@@ -1,7 +1,7 @@
 <nav class="main-menu slide-out slide-out-left" role="navigation">
 
     <form action="/search" method="get" class="f-search mob">
-        <input type="search" name="query" class="i-search" placeholder="Финансовые рынки для людей">
+        <input type="search" name="query" class="i-search" placeholder="Финансовые рынки для людей" required="required">
         <button type="submit">Найти</button>
     </form>
 
@@ -27,15 +27,17 @@
     <ul class="nav">
 
     <li class="mm-sign-in dropdown"><a href="/sign-in" class="dropdown-toggle">Вход</a>
-        <form action="https://secure.fxclub.org/fx?plugin=login&amp;amp;lang=rus" method="post" accept-charset="UTF-8" class="dropdown-menu dropdown-menu-r dropdown-large">
-            <label for="login">Email</label>
-            <input type="email" name="login" id="login">
-            <label for="password">Пароль</label>
-            <input type="text" name="password" id="password">
+        <form action="https://secure.fxclub.org/fx?plugin=login&amp;amp;lang=rus" method="post" accept-charset="UTF-8" class="f-sign-in dropdown-menu dropdown-menu-r dropdown-large">
+
+            <label for="i-login">Email</label>
+            <input type="email" name="login" id="i-login" required="required">
+
+            <label for="i-password">Пароль<a href="//secure.fxclub.org/fx?plugin=lost_password&amp;lang=rus" id="fgtPsw" class="a-forget">Забыли?</a></label>
+            <input type="text" name="password" id="i-password" required="required">
 
             <div class="f-actions">
-            <button type="submit" class="btn btn-default">Войти</button>
-            <a href="//secure.fxclub.org/fx?plugin=lost_password&amp;lang=rus" id="fgtPsw" class="a-forget">Забыли пароль?</a><br>
+                <button type="submit" class="btn btn-default">Войти</button>
+                <label class="cbx"><input type="checkbox" value="1" name="remember-me" checked="checked">Оставаться в системе</label>
             </div>
 
             <input name="formid" type="hidden" value="ContactForm">
