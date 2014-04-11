@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ru" class="ru">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
@@ -67,7 +66,7 @@
     <!-- @Title --><meta property="og:title" content="Forex Club — ведущий брокер на рынке форекс в России">
     <!-- @Description --><meta property="og:description" content="Forex Club. Финансовые рынки для людей. Без комиссии. Спрэд 0.6-3. Свопы. Макс. кредитное плечо — 200:1. Мин. депозит $200. Платформы: StartFX, MetaTrader, Rumus.">
     <!-- @MetaImage --><meta property="og:image" content="http://www.fxclub.org/a/img/logo/forex-club-transparent-light-bg.png">
-    <!-- <meta property="fb:app_id" content=""> -->
+    <meta property="fb:app_id" content="186052351427622">
 
     <!-- IE9 pinned sites -->
     <!-- @Title --><meta name="application-name" content="Forex Club — ведущий брокер на рынке форекс в России">
@@ -341,6 +340,40 @@
         <h4>Quick brown fox jumps over the lazy dog</h4>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu enim ut mauris blandit placerat sit amet non nibh. Pellentesque sit amet bibendum ante, vitae tempor sapien. Nam suscipit, velit lacinia faucibus dictum, urna ligula sollicitudin quam, feugiat fermentum dui metus vitae magna. In varius eros eu velit mattis tincidunt. Etiam sodales ipsum ac sapien euismod sodales. Donec iaculis ultrices auctor. Duis vitae pretium nunc. Pellentesque tincidunt rutrum aliquam. Nulla facilisi. Vestibulum non mollis sem, eget ultrices metus. Etiam eu tempor enim. Vivamus feugiat tortor risus, quis consequat purus sollicitudin et. Vestibulum fermentum felis ut nibh sodales, vel cursus mauris dictum. Nullam in congue quam, et ornare mauris.</p>
         <p>Phasellus tincidunt bibendum odio, sed auctor dolor venenatis tincidunt. Aenean gravida sodales felis. Morbi facilisis, elit eget interdum ultricies, ligula turpis fringilla metus, sit amet tempor sapien sem eu nunc. Sed molestie mauris sem. Ut hendrerit elementum ante, semper sodales dolor tincidunt eu. Nunc purus turpis, tempus quis venenatis sed, gravida id justo. Pellentesque molestie nunc ac orci laoreet viverra auctor justo tempor. In posuere nibh et lacus commodo tristique molestie dolor volutpat. Ut orci justo, condimentum id ullamcorper eu, cursus in augue. Vivamus ullamcorper odio eu erat dignissim tincidunt a rutrum metus. Duis suscipit rutrum dolor, eget vehicula justo sagittis condimentum. Suspendisse placerat eros sit amet risus consequat in iaculis erat dapibus. Sed ac auctor quam. Cras vitae tincidunt mauris.</p>
+        <a href="/tools_info_quotes" class="a-chart">
+    <figure>
+    <header>EUR USD</header>
+    <canvas id="chart-01" height="70" width="116"></canvas>
+    <figcaption>1.38917 <span class="market-movement up">+0.19%</span></figcaption>
+    </figure>
+</a>
+
+
+<script>
+// First Chart
+var chartData01 = {
+    labels : ["January","February","March","April","May","June","July"],
+    datasets : [
+        {
+            fillColor : "rgba(220,220,220,0.5)",
+            strokeColor : "rgba(220,220,220,1)",
+            pointColor : "rgba(220,220,220,1)",
+            pointStrokeColor : "#fff",
+            data : [65,59,90,81,56,55,40]
+        },
+        {
+            fillColor : "rgba(151,187,205,0.5)",
+            strokeColor : "rgba(151,187,205,1)",
+            pointColor : "rgba(151,187,205,1)",
+            pointStrokeColor : "#fff",
+            data : [28,48,40,19,96,27,100]
+        }
+    ]
+
+}
+
+var chart01 = new Chart($("#chart-01").get(0).getContext("2d")).Line(chartData01);
+</script>
 
 
 
