@@ -29,8 +29,6 @@ Tiny Scrollbar
 
 // SNIPPET:jstabs — Tabs
 
-// SNIPPET:jstooltip — Tooltip
-
 
 
 /*
@@ -147,7 +145,7 @@ function slideOut(){
             if (menuStatus !== true) {
 
                 contentPanel.removeAttr('style').animate({
-                    marginLeft: '240px'
+                    marginLeft: '270px'
                 }, 400, function() {
                     menuStatus = true;
                 });
@@ -251,6 +249,32 @@ $(function() {
 
 /*
 |-------------------------------------------------------------------------------
+| TOOLTIP
+|-------------------------------------------------------------------------------
+*/
+$(function () {
+    if (window.matchMedia('(min-width: 980px)').matches) {
+        $('.dfn').hover(
+            function () {
+                var el = $(this);
+                var txtTitle = el.prop('title');
+                el.attr('title', '');
+                el.append('<p class="tooltip">' + txtTitle + '</p>');
+                el.find('.tooltip').show('fast');
+            }, function () {
+                var el = $(this);
+                var tT = el.find('.tooltip');
+                var txtTitle = tT.text();
+                tT.hide('fast').remove();
+                el.attr('title', txtTitle);
+            }
+        );
+    }
+});
+
+
+/*
+|-------------------------------------------------------------------------------
 | SET THE ORDERED NUMBERS BOLD
 |-------------------------------------------------------------------------------
 */
@@ -287,7 +311,9 @@ $(document).ready(function(){
 |---------------------------------------
 */
 $(window).resize(function(){
-    dropDowns(); // TODO: @see dropDowns() in .ready() comment
+    /* @FIXME: ometimes this function is called multiple times
+        TODO: @see dropDowns() in .ready() comment */
+    dropDowns();
     slideOut(); // TODO: @see dropDowns() in .ready() comment
 });
 

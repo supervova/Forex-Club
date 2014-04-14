@@ -5,6 +5,8 @@
 .mob, .mob-inl,
 .tbl, .tbl-inl,
 .tbl-mob, .tbl-mob-inl
+.xga, .xga-tbl,
+.xga-inl, .xga-tbl-inl
 { display: none !important; }
 
 
@@ -26,21 +28,43 @@
 
 /*
 |-------------------------------------------------------------------------------
+| LANDSCAPE TABLETS and OLD SCHOOL DESKTOP MONITORS (XGA: 1024x768)
+|-------------------------------------------------------------------------------
+*/
+@media only screen and (max-width: 1199px) {
+
+    /* Hide */
+    .pc, .pc-inl, .pc-mob, .pc-mob-inl, .tbl, .tbl-inl { display: none !important; }
+
+    /* Show */
+    .xga, .xga-tbl, .xga-pc { display: block !important; }
+    .xga-inl, .xga-pc-inl, .xga-tbl-inl  {
+        display: inline-block !important;
+        *display: inline !important; /* IE7 inline-block hack */
+        *zoom: 1;
+    }
+
+}
+
+
+/*
+|-------------------------------------------------------------------------------
 | PORTRAIT TABLETS: 768–979px
 |-------------------------------------------------------------------------------
 */
 
 @media only screen and (min-width: 768px) and (max-width: 979px) {
 
-/* Hide */
-.pc, .pc-inl, .pc-mob, .pc-mob-inl { display: none !important; }
+    /* Hide */
+    .pc, .pc-inl, .pc-mob, .pc-mob-inl, .xga, .xga-pc, .xga-inl, .xga-pc-inl { display: none !important; }
 
-/* Show */
-.tbl, .tbl-mob { display: block !important; }
-.tbl-inl, .tbl-mob-inl  {
-    display: inline-block !important;
-    *display: inline !important; /* IE7 inline-block hack */
-    *zoom: 1; }
+    /* Show */
+    .tbl, .tbl-mob { display: block !important; }
+    .tbl-inl, .tbl-mob-inl  {
+        display: inline-block !important;
+        *display: inline !important; /* IE7 inline-block hack */
+        *zoom: 1;
+    }
 }
 
 /*
@@ -54,10 +78,13 @@
     /* Hide */
     .tbl, .tbl-inl,
     .tbl-pc, .tbl-pc-inl,
+    .xga, .xga-inl,
+    .xga-pc, .xga-pc-inl,
+    .xga-tbl, .xga-tbl-inl,
     .pc, .pc-inl { display: none !important; }
 
     /* Show */
-    .mob, .pc-mob .tbl-mob { display: block !important; }
+    .mob, .pc-mob, .tbl-mob { display: block !important; }
     .mob, .mob-inl,
     .pc-mob-inl,
     .tbl-mob, .tbl-mob-inl {

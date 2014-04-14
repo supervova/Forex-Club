@@ -1,8 +1,12 @@
 @import '02-variables.less';
 @import '02-mixins.less';
 
-@main-menu-link-color:      #797c80;
+@main-menu-link-color:      #74777b;
 @main-menu-link-hover-color:#c9ccd0;
+
+// Slide Out
+@so-width:                  270px;
+@so-link-padding:           12px 10px 10px;
 
 /*
 |---------------------------------------
@@ -11,7 +15,7 @@
 */
 .main-menu { // Container
     background: #1f2226;
-    color: #74777b;
+    color: @main-menu-link-color;
     text-align: left;
     .fixed-on-top;
     left: 0;
@@ -88,9 +92,6 @@
     }
 }
 
-
-
-
 // Sign In / Sign Up
 .mm-sign-in, .mm-sign-up {
     .inline-block();
@@ -101,6 +102,9 @@
         border-radius: @border-radius-small;
         text-align: center;
         padding: (5em / @b) 0 (6em / @b);
+        .transition(background-color .2s);
+
+        &:hover { background-color: #2f3236; }
     }
 }
 
@@ -111,10 +115,125 @@
 
 .mm-sign-up { width: 164px; }
 
+// Bonus
+/*
+|---------------------------
+| BONUS
+|---------------------------
+*/
+.main-menu .mm-bonus {
+    background-color: #25282c;
+    color: #fff;
+    display: none;
+    padding: 28px 0 0 80px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    .transition(background-color .2s);
+    height: 66px;
+    width: 280px;
 
-// SNIPPET:lemmlabel — First Level Menu Item Label
+    .ico-d {
+        margin-top: @baseline;
+        top: 0;
+        left: 38px;
+    }
+
+    &:hover { background-color: #2f3236; }
+}
+
+.main-menu FOOTER .tooltip {
+    bottom: 55px;
+    left: 20px;
+}
+
+// Show only on
+@media  only screen and (min-height: 740px),
+        only screen and (min-height: 570px) and (min-width: 1200px)  {
+
+        .main-menu .mm-bonus { display: block; }
+}
 
 // There is the dropdown menu in the secondary menus file
+
+/*
+|-------------------------------------------------------------------------------
+| LANDSCAPE TABLETS and OLD SCHOOL DESKTOP MONITORS (XGA: 1024x768)
+|-------------------------------------------------------------------------------
+*/
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+
+    .main-menu {
+        width: 88px;
+
+        .nav { //  UL
+            padding: 0 0 66px;
+            width: 88px;
+        }
+
+        .dropdown { width: 88px; }
+
+        // First Level A
+        .dropdown-toggle, .mm-bonus, .mm-label {
+            font-size: 13px;
+            text-align: center;
+            padding: 0;
+            height: 66px;
+            margin: 0;
+            width: 88px;
+        }
+
+        .dropdown-toggle {
+            border-top: 1px solid #25282c;
+            border-bottom: 1px solid #15181c;
+            padding: 35px 4px 0;
+        }
+
+        .mm-bonus {
+            border-top: 1px solid #25282c;
+            padding: 35px 4px 0;
+        }
+
+        .ico-d, .mm-bonus .ico-d {
+            left: 50%;
+            margin: 0 0 0 -15px;
+            top: 9px;
+        }
+    }
+
+
+    // Sign In / Sign Up
+    .mm-sign-in, .mm-sign-up {
+        margin-bottom: 0;
+
+        .mm-label {
+            .border-radius(none);
+            border-top: 1px solid #2f3236;
+            border-bottom: 1px solid #1b1e22;
+        }
+    }
+
+    .main-menu .mm-sign-in A { padding: 25px 4px 0; }
+    .main-menu .mm-sign-up A {
+        line-height: normal;
+        padding: 16px 4px 0;
+    }
+
+
+    .a-logo {
+        // @see background in 02-sprites
+        display: block;
+        height: 125px;
+        width: 88px;
+
+        IMG { display: none; }
+    }
+
+    // Company Card Tooltip
+    .tt-company { top: 55em / 13; }
+
+}
+
 
 /*
 |-------------------------------------------------------------------------------
@@ -146,28 +265,6 @@
     }
 }
 
-/*
-|-------------------------------------------------------------------------------
-| LANDSCAPE TABLETS and OLD SCHOOL DESKTOP MONITORS (XGA: 1024x768)
-|-------------------------------------------------------------------------------
-*/
-@media only screen and (max-width: 1199px) {
-
-    .main-menu { width: 88px; }
-
-    .a-logo {
-        // @see background in 02-sprites
-        display: block;
-        height: 125px;
-        width: 88px;
-
-        IMG { display: none; }
-    }
-
-    // Company Card Tooltip
-    .tt-company { top: 55em / 13; }
-
-}
 
 /*
 |-------------------------------------------------------------------------------
@@ -177,10 +274,23 @@
 
 @media only screen and (max-width: 767px) {
 
-    /* Main menu had transformed to Slide out */
 
+.main-menu { // Container
+    color: @main-menu-link-color;
+    text-align: left;
+    .fixed-on-top;
+    left: 0;
+    .transition(width .2s);
+    height: 100%;
+    width: 280px;
+    z-index: 1; // It's need for tooltip appeas above main content
+
+
+}
+
+    // Main menu had transformed to Slide out
     .slide-out {
-        background: @so-bg;
+        background: #1f2226;
         padding-top: 1px;
         overflow: hidden;
         .fixed-on-top;
@@ -191,22 +301,18 @@
         height: 100%;
         width: @so-width;
 
-        UL { width: inherit; }
-
         LI A {
-            color: @so-link-color;
-            border-bottom: @so-link-brd-b;
-            box-shadow: @so-link-brd-t;
+            border: 0 none;
+            color: @main-menu-link-color;
             display: block;
-            padding: @so-link-padding;
-            width: @so-width;
+            padding: 0;
+            width: 100%;
 
-            &:visited { color: @so-link-color; }
+            &:visited { color: @main-menu-link-color; }
 
-            &:hover, &:active {
-                background-color: @so-link-hover-bg;
-                color: @so-link-hover-color;
-            }
+            &:hover, &:active { color: @main-menu-link-hover-color; }
         }
+
+        .mm-sign-up { width: 154px; }
     }
 }

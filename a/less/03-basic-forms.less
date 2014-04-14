@@ -231,9 +231,6 @@ SELECT[multiple], SELECT[size] { height: auto; }
 | Customization
 |-------------------------------------------------------------------------------
 */
-.f-sign-in {
-    top: 100px;
-}
 
 .cbx-stay-signed-in {
     .inline-block();
@@ -253,6 +250,17 @@ SELECT[multiple], SELECT[size] { height: auto; }
 .msg { // System message appear next to the input (on the right)
     right: ; //  -440px: Message Width + Margin
     max-width: ; } // 420px
+}
+
+
+/*
+|-------------------------------------------------------------------------------
+| LANDSCAPE TABLETS and OLD SCHOOL DESKTOP MONITORS (XGA: 1024x768)
+|-------------------------------------------------------------------------------
+*/
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+
+    .first-aid { top: -25em / @b; }
 }
 
 /*

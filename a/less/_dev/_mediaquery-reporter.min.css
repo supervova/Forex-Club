@@ -1,4 +1,0 @@
-BODY:after{background:hsla(1,60%,40%,0.7);color:#fff;content:"less than 320px";font-weight:bold;text-align:center;position:fixed;bottom:0;left:0;width:100%}
-@media only screen and (min-width:320px){BODY:after{background:hsla(90,60%,40%,0.7);content:"Portrait Phones: 320 to 480px"}}@media only screen and (min-width:480px){BODY:after{background:hsla(180,60%,40%,0.7);content:"Landscape Phones: 480 to 767px"}
-}@media only screen and (min-width:768px){BODY:after{background:hsla(270,60%,40%,0.7);content:"Tablets: 768 to 979px"}}@media only screen and (min-width:980px){BODY:after{background:hsla(360,60%,40%,0.7);content:"Landscape Tablets and Old School Desktop XGA: 980px to 1199px"}
-}@media only screen and (min-width:1200px){BODY:after{content:"Laptops and Designers Screens: 1200px and up"}}
