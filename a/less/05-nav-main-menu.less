@@ -149,6 +149,7 @@
 
 // Show only on
 @media  only screen and (min-height: 740px),
+        only screen and (min-height: 570px) and (max-width: 320px) ,
         only screen and (min-height: 570px) and (min-width: 1200px)  {
 
         .main-menu .mm-bonus { display: block; }
@@ -285,13 +286,15 @@
     width: 280px;
     z-index: 1; // It's need for tooltip appeas above main content
 
+    .nav { //  UL
+        padding: 23px 20px 88px;
+    }
 
 }
 
     // Main menu had transformed to Slide out
     .slide-out {
         background: #1f2226;
-        padding-top: 1px;
         overflow: hidden;
         .fixed-on-top;
         right: 0;
@@ -314,5 +317,51 @@
         }
 
         .mm-sign-up { width: 154px; }
+    }
+
+    /* Search --------------------------- */
+    .main-menu .f-search {
+        border: 0 none !important; // Reset Google inline styles @see sms-roman & polylog
+        height: 44px;
+        width: 270px;
+
+        // Search Button
+        BUTTON {
+            /* Main sprite */
+            background-position: -490px -60px;
+            border-left: 1px solid #a8abb0;
+            position: absolute;
+            top: 3px;
+            right: 0;
+            height: 38px;
+            width: 43px;
+        }
+    }
+
+    // Input
+    INPUT[type="search"] {
+        background: #33363a;
+        .box-shadow(inset 0 12px 24px rgba(0, 0, 0, .24));
+        color: #fff;
+        padding: 10px 48px 5px 19px;
+        height: 44px;
+    }
+
+    // Search Placeholder
+    .search-placeholder(#abaeb2, #d3d6da);
+
+    INPUT[type="search"]:-moz-placeholder {
+        font-size: 13px;
+        padding-top: 2px;
+    }
+
+    INPUT[type="search"]:-ms-input-placeholder {
+        font-size: 13px;
+        padding-top: 2px;
+    }
+
+    INPUT[type="search"]::-webkit-input-placeholder {
+        font-size: 13px;
+        padding-top: 2px;
     }
 }

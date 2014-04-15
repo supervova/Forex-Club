@@ -82,3 +82,24 @@
     .ico-d { background-position: 0 -240px; }
     &:hover .ico-d, .active .ico-d { background-position: -40px -240px; }
 }
+
+
+/*
+|-------------------------------------------------------------------------------
+| LANDSCAPE TABLETS and OLD SCHOOL DESKTOP MONITORS (XGA: 1024x768)
+|-------------------------------------------------------------------------------
+*/
+@media only screen and (max-width: 1199px) {
+
+    /* Hide */
+    .pc, .pc-inl, .pc-mob, .pc-mob-inl, .tbl, .tbl-inl { display: none !important; }
+
+    /* Show */
+    .xga, .xga-tbl, .xga-pc { display: block !important; }
+    .xga-inl, .xga-pc-inl, .xga-tbl-inl  {
+        display: inline-block !important;
+        *display: inline !important; /* IE7 inline-block hack */
+        *zoom: 1;
+    }
+
+}

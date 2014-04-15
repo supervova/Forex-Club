@@ -155,20 +155,26 @@
 }
 
 .search-placeholder(@color: #333; @color-focus: #666666; @transition: color .1s linear) { // 9
-    INPUT[type="search"]:-moz-placeholder { color: @color; }
-    INPUT[type="search"]:focus:-moz-placeholder {
-        color: @color-focus;
-        -moz-transition: @transition; }
+    INPUT[type="search"]:-moz-placeholder {
+        color: @color;
+        -moz-transition: @transition;
+    }
 
-    INPUT[type="search"]:-ms-input-placeholder { color: @color; }
-    INPUT[type="search"]:focus:-ms-input-placeholder {
-        color: @color-focus;
-        -ms-transition: @transition; }
+    INPUT[type="search"]:focus:-moz-placeholder { color: @color-focus; }
 
-    INPUT[type="search"]::-webkit-input-placeholder { color: @color; }
-    INPUT[type="search"]:focus::-webkit-input-placeholder {
-        color: @color-focus;
-        -webkit-transition: @transition; }
+    INPUT[type="search"]:-ms-input-placeholder {
+        color: @color;
+        -ms-transition: @transition;
+    }
+
+    INPUT[type="search"]:focus:-ms-input-placeholder { color: @color-focus; }
+
+    INPUT[type="search"]::-webkit-input-placeholder {
+        color: @color;
+        -webkit-transition: @transition;
+    }
+
+    INPUT[type="search"]:focus::-webkit-input-placeholder { color: @color-focus; }
 }
 
 /*
