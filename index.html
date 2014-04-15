@@ -391,6 +391,11 @@ var chart01 = new Chart($("#chart-01").get(0).getContext("2d")).Line(chartData01
 <!-- MAIN MENU ============================================================= -->
 <nav class="main-menu slide-out slide-out-left" role="navigation">
 
+    <form action="/search" method="get" class="f-search mob">
+        <input type="search" name="query" class="i-search" placeholder="Финансовые рынки для людей" required="required">
+        <button type="submit">Найти</button>
+    </form>
+
     <header role="banner" itemscope itemtype="http://schema.org/Organization" class="rmb-enabled tbl-pc">
         <a href="/" title="Первая страница" class="a-logo" itemprop="url"><img itemprop="logo" src="/a/img/logo/forex-club.png" height="110" width="280" alt="Forex Club — надежный форекс-брокер."></a>
 
@@ -573,7 +578,7 @@ var chart01 = new Chart($("#chart-01").get(0).getContext("2d")).Line(chartData01
             <ul>
                 <li><a href="/about_mission/internet-trading">Что такое онлайн-трейдинг?</a></li>
                 <li><a href="/how_to_deal">Как заключить первую сделку?</a></li>
-                <li><a href="//support.fxclub.org/pkb_Home?l=ru&amamp;c=KnowledgeBase%3AFOREX_CLUB">Торговые условия и всё для начинающиx</a></li>
+                <li><a href="//support.fxclub.org/pkb_Home?l=ru&amp;c=KnowledgeBase%3AFOREX_CLUB">Торговые условия и всё для начинающиx</a></li>
                 <li><a href="//support.fxclub.org/pkb_Home?l=ru&amp;c=KnowledgeBase%3ACategory3">Инвестору и Управляющему</a></li>
                 <li><a href="//support.fxclub.org/pkb_Home?l=ru&amp;c=KnowledgeBase%3ACategory1">Торговые платформы</a></li>
                 <li><a href="//support.fxclub.org/pkb_Home?l=ru&amp;c=KnowledgeBase%3ACategory0" target="_blank">Денежные переводы — снятие и зачисление</a></li>
@@ -586,9 +591,7 @@ var chart01 = new Chart($("#chart-01").get(0).getContext("2d")).Line(chartData01
 
     </ul>
 
-<footer><a href="/akcii-i-bonusy" class="mm-bonus dfn" title="Пополните счет и получите $200 подъемных (суть спецпредложения передается через атрибут title)"><i class="ico-d"></i><span class="pc-mob">Спец. предложение</span><span class="xga-tbl">Для вас</span>
-</a>
-</footer>
+<footer><a href="/akcii-i-bonusy" class="mm-bonus dfn" title="Пополните счет и получите $200 подъемных (суть спецпредложения передается через атрибут title)"><i class="ico-d"></i><span class="pc-mob">Спец. предложение</span><span class="xga-tbl">Для вас</span></a></footer>
 
 </nav>
 

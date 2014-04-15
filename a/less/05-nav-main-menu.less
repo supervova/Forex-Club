@@ -125,7 +125,7 @@
     background-color: #25282c;
     color: #fff;
     display: none;
-    padding: 28px 0 0 80px;
+    padding: 28px 0 0 60px;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -134,9 +134,9 @@
     width: 280px;
 
     .ico-d {
-        margin-top: @baseline;
-        top: 0;
-        left: 38px;
+        line-height: 0;
+        top: 37em / @b;
+        left: 20px;
     }
 
     &:hover { background-color: #2f3236; }
@@ -275,26 +275,11 @@
 
 @media only screen and (max-width: 767px) {
 
-
-.main-menu { // Container
-    color: @main-menu-link-color;
-    text-align: left;
-    .fixed-on-top;
-    left: 0;
-    .transition(width .2s);
-    height: 100%;
-    width: 280px;
-    z-index: 1; // It's need for tooltip appeas above main content
-
-    .nav { //  UL
-        padding: 23px 20px 88px;
-    }
-
-}
-
-    // Main menu had transformed to Slide out
+    // Main menu and langiage selector
     .slide-out {
         background: #1f2226;
+        color: @main-menu-link-color;
+        text-align: left;
         overflow: hidden;
         .fixed-on-top;
         right: 0;
@@ -303,12 +288,12 @@
         visibility: hidden;
         height: 100%;
         width: @so-width;
+        z-index: 1; // It's need for tooltip appeas above main content
 
         LI A {
             border: 0 none;
             color: @main-menu-link-color;
             display: block;
-            padding: 0;
             width: 100%;
 
             &:visited { color: @main-menu-link-color; }
@@ -319,11 +304,14 @@
         .mm-sign-up { width: 154px; }
     }
 
-    /* Search --------------------------- */
+    // Main menu UL
+    .main-menu .nav { padding: 23px 20px 88px; }
+
+/* Search --------------------------- */
     .main-menu .f-search {
         border: 0 none !important; // Reset Google inline styles @see sms-roman & polylog
         height: 44px;
-        width: 270px;
+        width: @so-width;
 
         // Search Button
         BUTTON {
@@ -363,5 +351,14 @@
     INPUT[type="search"]::-webkit-input-placeholder {
         font-size: 13px;
         padding-top: 2px;
+    }
+
+/* Bonus ---------------------------- */
+    .main-menu .mm-bonus {
+        padding: 21px 0 0 60px;
+        height: 60px;
+        width: @so-width;
+
+        .ico-d { top: 30em / @b; }
     }
 }
