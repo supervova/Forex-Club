@@ -1,7 +1,5 @@
 /* Essentials */
 @import '/a/css/01-essentials.css';
-@import '/a/css/02-variables.css';
-@import '/a/css/02-mixins.css';
 @import '/a/css/02-sprites.css';
 
 /* Basic Layout and UI */
