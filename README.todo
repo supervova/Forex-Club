@@ -1,0 +1,42 @@
+I. Reminders:
+    ☐ Use Emmet to write code
+    http://coding.smashingmagazine.com/2013/03/26/goodbye-zen-coding-hello-emmet/
+
+    ☐ Use landmark roles attributes
+    application
+    banner
+    complementary
+    contentinfo
+    form
+    main
+    navigation
+    search
+    http://www.w3.org/TR/wai-aria/roles
+
+--- ✄ -----------------------
+
+II. Todos:
+    ☐ Test on Android
+    <link rel="apple-touch-icon" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-57x57.png">
+
+III. Has Been Removed:
+
+    1) Rambler Top 100
+    2) Trilan counter
+
+
+IV. @WTF:
+    1) legacy.js functions
+    2) Gde slon
+    3) Google Code for Entire website
+    4) Partner Cookie
+    5) WTF-39
+    6) WTF-42
+    7) WTF-98: Kavanga.AdEngine
+    8) WTF-104: AdRiver
+    9) WTF: Gemius SA
+    10) WTF: Chats
+
+PlainTasks (.todo) Plugin Usage
+https://github.com/aziz/PlainTasks

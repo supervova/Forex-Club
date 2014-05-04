@@ -281,6 +281,8 @@
         color: @main-menu-link-color;
         text-align: left;
         overflow: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
         .fixed-on-top;
         right: 0;
         bottom: 0;
@@ -306,6 +308,29 @@
 
     // Main menu UL
     .main-menu .nav { padding: 23px 20px 88px; }
+
+/*  Main menu scrollbar  ------------ */
+
+    .slide-out::-webkit-scrollbar { // Entire scrollbar
+        height: 100%;
+        width: 10px;
+    }
+
+    .slide-out::-webkit-scrollbar-track { // Track. We can use .scrollbar-track class for jQuery solutions
+        background-color: #15181c;
+        -webkit-border-radius: 10px;  // We can use mixin for jQuery solutions
+        pointer-events: none; // Prevents all click, state and cursor options on the specified HTML element
+        -webkit-user-select: none;  // We can use mixin for jQuery solutions
+        width: 10px; // it will be increase on hover
+        z-index: 4;
+    }
+
+    .slide-out::-webkit-scrollbar-thumb { // Handle. We can use .scrollbar-handle for jQuery solutions
+        background-color: #292c30;
+        // border: 1px solid rgba(85, 85, 85, 0.6);
+        border-radius: 7px; // We can use mixin for jQuery solutions
+        width: 8px;
+    }
 
 /* Search --------------------------- */
     .main-menu .f-search {

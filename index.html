@@ -1,52 +1,8 @@
 
 <!DOCTYPE html>
-<!-- @Lang --><html lang="ru" class="ru">
+<!-- @Lang --><html lang="ru" class="ru no-js">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
     <meta charset="utf-8">
-
-    <!--
-
-    ****************************************************************************
-
-    TODOs and reminders
-
-    I. Use Emmet to write code
-    http://coding.smashingmagazine.com/2013/03/26/goodbye-zen-coding-hello-emmet/
-
-    II. Test on Android
-    <link rel="apple-touch-icon" href="/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-57x57.png">
-
-    II. Use landmark roles attributes
-    application
-    banner
-    complementary
-    contentinfo
-    form
-    main
-    navigation
-    search
-    http://www.w3.org/TR/wai-aria/roles
-
-    III. HAS BEEN REMOVED
-    1) Rambler Top 100
-    2) Trilan counter
-
-    IV. @WTF
-    1) legacy.js functions
-    2) Gde slon
-    3) Google Code for Entire website
-    4) Partner Cookie
-    5) WTF-39
-    6) WTF-42
-    7) WTF-98: Kavanga.AdEngine
-    8) WTF-104: AdRiver
-    9) WTF: Gemius SA
-    10) WTF: Chats
-
-    ****************************************************************************
-
-    -->
 
     <!-- @Title --><title>Forex Club — ведущий брокер на рынке форекс в России</title>
     <!-- @Description --><meta name="description" content="Forex Club. Финансовые рынки для людей. Без комиссии. Спрэд 0.6-3. Свопы. Макс. кредитное плечо — 200:1. Мин. депозит $200. Платформы: StartFX, MetaTrader, Rumus.">
@@ -109,10 +65,7 @@
     <link rel="stylesheet" href="/a/less/_dev/_mediaquery-reporter.css">
     <!-- / Development styles. Remove on production -->
 
-    <!--[if (lt IE 9) & (!IEMobile)]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <script src="/a/js/respond.min.js"></script>
-    <![endif]-->
+    <script src="/a/js/modernizr.js"></script>
 </head>
 
 <body class="p-front p-branded-header">
@@ -441,6 +394,8 @@ var chart01 = new Chart($("#chart-01").get(0).getContext("2d")).Line(chartData01
 
     <li class="mm-sign-up"><a href="/open-account" class="mm-label">Открыть счет</a></li>
 
+    <li class="mm-home mob"><a href="/"><i class="ico-d"></i>Главная</a>
+
     <li class="mm-products dropdown"><a href="/products" class="dropdown-toggle"><i class="ico-d"></i>Продукты<span class="pc-mob-inl">&nbsp;и услуги</span></a>
         <div class="dropdown-menu dropdown-menu-r sm">
 
@@ -477,7 +432,7 @@ var chart01 = new Chart($("#chart-01").get(0).getContext("2d")).Line(chartData01
             <div class="cfx">
 
                 <ul class="col col-first">
-                <li><a href="/markets/forex">Forex</a></li>
+                <li><a href="/markets/forex">Валюты / Forex</a></li>
                 <li><a href="/bitcoin">Биткоин</a></li>
                 <li><a href="/markets/gold-silver">Золото и серебро</a></li>
                 <li><a href="/markets/neft-gaz">Нефть и газ</a></li>
@@ -597,8 +552,8 @@ var chart01 = new Chart($("#chart-01").get(0).getContext("2d")).Line(chartData01
 </nav>
 
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="/a/js/jquery-1.10.2.min.js"><\/script>')</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/a/js/jquery.js"><\/script>')</script>
 
 
 <!-- Improving mobile user experience -->

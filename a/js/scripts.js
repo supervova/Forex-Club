@@ -1,33 +1,51 @@
 /*
-SNIPPET:jsresource — Useful Resources, Plugins: UI Librraries, Touch Events,
+FIXME: Responsive Javascript Issue - window.matchMedia don't update after window
+resize. Try call dropDowns after resize.
+
+And if call function from window.resize() many resize events fire as long as
+the user continues resizing the window.
+
+Quick Fix - Toggle class in functions and in set it responsive properties
+with CSS MQ
+
+Perhaps try to combine these solutions:
+http://stackoverflow.com/questions/9720294/jquery-how-to-detect-window-width-on-the-fly
+and http://jsfiddle.net/Zevan/c9UE5/5/
+or http://www.paulirish.com/2009/throttled-smartresize-jquery-event-handler/
+
+----------------------------------------
+
+SNIPPET:jsresource - Useful Resources, Plugins: UI Librraries, Touch Events,
 Responsive Galleries / Sliders / Slideshows / Carousels, A Responsive Images
 Approach, Lightweight Datepicker, Lightweight Modal Box, Markup Editor,
 Tiny Scrollbar
 */
 
-// SNIPPET:jscarousel — Carousel
+// SNIPPET:jscarousel - Carousel
 
-// SNIPPET:jscollaps — Collapsibles
+// SNIPPET:jscollaps - Collapsibles
 
-// SNIPPET:jscontext — Context Menu and Popups on Right Button Click
+// SNIPPET:jscontext - Context Menu and Popups on Right Button Click
 
-// SNIPPET:jsdownload — Platform Contextual Downloads
+// SNIPPET:jsdownload - Platform Contextual Downloads
 
-// SNIPPET:jsflash — Flash / SWFogject
+// SNIPPET:jseasing - jQuery Easing Plugin
 
-// SNIPPET:jsfluidvideo — Fluid Width Video (New Style)
+// SNIPPET:jsflash - Flash / SWFogject
 
-// SNIPPET:jsmodal — Modal Box
+// SNIPPET:jsfluidvideo - Fluid Width Video (New Style)
 
-// SNIPPET:jsmq — JavaScript Media Query
+// SNIPPET:jsmodal - Modal Box
 
-// SNIPPET:jsrotator — Rotator
+// SNIPPET:jsmq - JavaScript Media Query
 
-// SNIPPET:jsscaf — jQuery Self Calling Anonymous Function
+// SNIPPET:jsrotator - Rotator
 
-// SNIPPET:jssticky — Sticky Menu
+// SNIPPET:jsscaf - jQuery Self Calling Anonymous Function
 
-// SNIPPET:jstabs — Tabs
+// SNIPPET:jssticky - Sticky Menu
+
+// SNIPPET:jstabs - Tabs
 
 
 
@@ -43,18 +61,7 @@ Tiny Scrollbar
 
 /*
 |-------------------------------------------------------------------------------
-| EASING — jQuery Easing v1.3
-|-------------------------------------------------------------------------------
-|
-| © 2001 Robert Penner - http://gsgd.co.uk/sandbox/jquery/easing/
-|
-*/
-
-jQuery.easing["jswing"]=jQuery.easing["swing"];jQuery.extend(jQuery.easing,{def:"easeOutQuad",swing:function(e,t,n,r,i){return jQuery.easing[jQuery.easing.def](e,t,n,r,i)},easeInQuad:function(e,t,n,r,i){return r*(t/=i)*t+n},easeOutQuad:function(e,t,n,r,i){return-r*(t/=i)*(t-2)+n},easeInOutQuad:function(e,t,n,r,i){if((t/=i/2)<1)return r/2*t*t+n;return-r/2*(--t*(t-2)-1)+n},easeInCubic:function(e,t,n,r,i){return r*(t/=i)*t*t+n},easeOutCubic:function(e,t,n,r,i){return r*((t=t/i-1)*t*t+1)+n},easeInOutCubic:function(e,t,n,r,i){if((t/=i/2)<1)return r/2*t*t*t+n;return r/2*((t-=2)*t*t+2)+n},easeInQuart:function(e,t,n,r,i){return r*(t/=i)*t*t*t+n},easeOutQuart:function(e,t,n,r,i){return-r*((t=t/i-1)*t*t*t-1)+n},easeInOutQuart:function(e,t,n,r,i){if((t/=i/2)<1)return r/2*t*t*t*t+n;return-r/2*((t-=2)*t*t*t-2)+n},easeInQuint:function(e,t,n,r,i){return r*(t/=i)*t*t*t*t+n},easeOutQuint:function(e,t,n,r,i){return r*((t=t/i-1)*t*t*t*t+1)+n},easeInSine:function(e,t,n,r,i){if((t/=i/2)<1)return r/2*t*t*t*t*t+n;return r/2*((t-=2)*t*t*t*t+2)+n},easeInSine:function(e,t,n,r,i){return-r*Math.cos(t/i*(Math.PI/2))+r+n},easeOutSine:function(e,t,n,r,i){return r*Math.sin(t/i*(Math.PI/2))+n},easeInOutSine:function(e,t,n,r,i){return-r/2*(Math.cos(Math.PI*t/i)-1)+n},easeInExpo:function(e,t,n,r,i){return t==0?n:r*Math.pow(2,10*(t/i-1))+n},easeOutExpo:function(e,t,n,r,i){return t==i?n+r:r*(-Math.pow(2,-10*t/i)+1)+n},easeInOutExpo:function(e,t,n,r,i){if(t==0)return n;if(t==i)return n+r;if((t/=i/2)<1)return r/2*Math.pow(2,10*(t-1))+n;return r/2*(-Math.pow(2,-10*--t)+2)+n},easeInCirc:function(e,t,n,r,i){return-r*(Math.sqrt(1-(t/=i)*t)-1)+n},easeOutCirc:function(e,t,n,r,i){return r*Math.sqrt(1-(t=t/i-1)*t)+n},easeInOutCirc:function(e,t,n,r,i){if((t/=i/2)<1)return-r/2*(Math.sqrt(1-t*t)-1)+n;return r/2*(Math.sqrt(1-(t-=2)*t)+1)+n},easeInElastic:function(e,t,n,r,i){var s=1.70158;var o=0;var u=r;if(t==0)return n;if((t/=i)==1)return n+r;if(!o)o=i*.3;if(u<Math.abs(r)){u=r;var s=o/4}else var s=o/(2*Math.PI)*Math.asin(r/u);return-(u*Math.pow(2,10*(t-=1))*Math.sin((t*i-s)*2*Math.PI/o))+n},easeOutElastic:function(e,t,n,r,i){var s=1.70158;var o=0;var u=r;if(t==0)return n;if((t/=i)==1)return n+r;if(!o)o=i*.3;if(u<Math.abs(r)){u=r;var s=o/4}else var s=o/(2*Math.PI)*Math.asin(r/u);return u*Math.pow(2,-10*t)*Math.sin((t*i-s)*2*Math.PI/o)+r+n},easeInOutElastic:function(e,t,n,r,i){var s=1.70158;var o=0;var u=r;if(t==0)return n;if((t/=i/2)==2)return n+r;if(!o)o=i*.3*1.5;if(u<Math.abs(r)){u=r;var s=o/4}else var s=o/(2*Math.PI)*Math.asin(r/u);if(t<1)return-.5*u*Math.pow(2,10*(t-=1))*Math.sin((t*i-s)*2*Math.PI/o)+n;return u*Math.pow(2,-10*(t-=1))*Math.sin((t*i-s)*2*Math.PI/o)*.5+r+n},easeInBack:function(e,t,n,r,i,s){if(s==undefined)s=1.70158;return r*(t/=i)*t*((s+1)*t-s)+n},easeInSine:function(e,t,n,r,i,s){if(s==undefined)s=1.70158;return r*((t=t/i-1)*t*((s+1)*t+s)+1)+n},easeInOutBack:function(e,t,n,r,i,s){if(s==undefined)s=1.70158;if((t/=i/2)<1)return r/2*t*t*(((s*=1.525)+1)*t-s)+n;return r/2*((t-=2)*t*(((s*=1.525)+1)*t+s)+2)+n},easeInBounce:function(e,t,n,r,i){return r-jQuery.easing.easeInSine(e,i-t,0,r,i)+n},easeInSine:function(e,t,n,r,i){if((t/=i)<1/2.75){return r*7.5625*t*t+n}else if(t<2/2.75){return r*(7.5625*(t-=1.5/2.75)*t+.75)+n}else if(t<2.5/2.75){return r*(7.5625*(t-=2.25/2.75)*t+.9375)+n}else{return r*(7.5625*(t-=2.625/2.75)*t+.984375)+n}},easeInOutBounce:function(e,t,n,r,i){if(t<i/2)return jQuery.easing.easeInBounce(e,t*2,0,r,i)*.5+n;return jQuery.easing.easeInSine(e,t*2-i,0,r,i)*.5+r*.5+n}})
-
-/*
-|-------------------------------------------------------------------------------
-| CHARTS — Chart.js
+| CHARTS - Chart.js
 |-------------------------------------------------------------------------------
 |
 | © 2013 Nick Downie - http://chartjs.org/
@@ -73,19 +80,20 @@ var Chart=function(e){function t(e,t,n){e=s((e-t.graphMin)/(t.steps*t.stepValue)
 |
 */
 
-function dropDowns(){
-    var label = $('.dropdown-toggle'),
-        allDropDowns = $('.dropdown-menu, .rmb-popup');
+$(function(){
+    var label = $('.dropdown-toggle');
+    var allDropDowns = $('.dropdown-menu, .rmb-popup');
 
-    if(window.matchMedia('(min-width: 768px)').matches) {
-        label.click(function(event) {
+
+    label.on('click', function(event) {
+        if(window.matchMedia('(min-width: 768px)').matches) {
             allDropDowns.hide();
             $(this).parents('.dropdown').children('.dropdown-menu').toggle('fast');
             label.removeClass('active');
             $(this).addClass('active');
             return false;
-        });
-    }
+        }
+    });
 
     // var ua = navigator.userAgent,
         // event = ((ua.match(/iPad/i)) || (ua.match(/iPhone/i))) ? "touchstart" : "click";
@@ -116,32 +124,26 @@ function dropDowns(){
     });
 
     // Hide open Dropdown on window resize
-    // $(window).resize(function(){
-    //     allDropDowns.hide();
-    // });
-
-}
+    $(window).resize(function(){
+        allDropDowns.hide();
+    });
+});
 
 
 /*
 |-------------------------------------------------------------------------------
 | SLIDE-OUT MENU
 |-------------------------------------------------------------------------------
-|
-| TODO: This function is called by pressing the same buttons as a dropdowns
-| function.
-|
 */
 
-
-function slideOut(){
+$(function(){
     var menuStatus;
     var contentPanel = $('.page, .doc-header, .sec-billboard');
+    var soLeft = $('.slide-out-left');
+    var soRight = $('.slide-out-right');
 
-    if(window.matchMedia('(max-width: 767px)').matches) {
-
-        $('.btn-menu').click(function() {
-
+    $('.btn-menu').on('click', function(event) {
+        if(window.matchMedia('(max-width: 767px)').matches) {
             if (menuStatus !== true) {
 
                 contentPanel.removeAttr('style').animate({
@@ -150,8 +152,8 @@ function slideOut(){
                     menuStatus = true;
                 });
 
-                if ($('.slide-out-left').css('visibility') != 'visible') {
-                    $('.slide-out-left').css('visibility', 'visible');
+                if (soLeft.css('visibility') != 'visible') {
+                    soLeft.css('visibility', 'visible');
                 }
 
                 return false;
@@ -165,9 +167,11 @@ function slideOut(){
                 });
                 return false;
             }
-        });
+        }
+    });
 
-        $('.btn-menu-secd').click(function() {
+    $('.btn-menu-secd').on('click', function(event) {
+        if(window.matchMedia('(min-width: 768px)').matches) {
             if (menuStatus !== true) {
 
                 contentPanel.removeAttr('style').animate({
@@ -176,8 +180,8 @@ function slideOut(){
                     menuStatus = true;
                 });
 
-                if ($('.slide-out-right').css('visibility') != 'visible') {
-                    $('.slide-out-right').css('visibility', 'visible');
+                if (soRight.css('visibility') != 'visible') {
+                    soRight.css('visibility', 'visible');
                 }
 
                 return false;
@@ -191,15 +195,13 @@ function slideOut(){
                 });
                 return false;
             }
-        });
-
-    }
+        }
+    });
 
     // Restore on window resize
     $(window).resize(function(){
         contentPanel.removeAttr('style');
     });
-
 
     // $('.slide-out li a').click(function() {
     //     var p = $(this).parent();
@@ -210,7 +212,7 @@ function slideOut(){
     //         p.addClass('active');
     //     }
     // });
-}
+});
 
 /*
 |-------------------------------------------------------------------------------
@@ -295,28 +297,13 @@ $(function(){
 $(document).ready(function(){
 
     $('ol:not(.bcol), ul:not(.bcol)').prev('p').css('margin-bottom', '0'); //lists captions
-    dropDowns(); // TODO: make self calling on window resize anonymous function
-    slideOut(); // TODO: the same
 
     // $('.sec-gallery').tinycarousel();
 
-    // SNIPPET:jsfluidvideold — Fluid Width Video Old Style
-    // SNIPPET:jsmbphelp — Mobile Bolilerplate Helpers
+    // SNIPPET:jsfluidvideold - Fluid Width Video Old Style
+    // SNIPPET:jsmbphelp - Mobile Bolilerplate Helpers
 
 });
-
-/*
-|---------------------------------------
-| On window resize
-|---------------------------------------
-*/
-$(window).resize(function(){
-    /* @FIXME: ometimes this function is called multiple times
-        TODO: @see dropDowns() in .ready() comment */
-    dropDowns();
-    slideOut(); // TODO: @see dropDowns() in .ready() comment
-});
-
 
 /*
 |-------------------------------------------------------------------------------
