@@ -19,6 +19,15 @@ II. Todos:
     ☐ Test on Android
     <link rel="apple-touch-icon" href="/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-57x57.png">
+    ☐ Test media queries w and w/o respond.js
+        <script>
+        Modernizr.load([
+          {
+            test : Modernizr.mq('only all'),
+            nope : '/a/js/respond.js'
+          }
+        ]);
+        </script>
 
 III. Has Been Removed:
 

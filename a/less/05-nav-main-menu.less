@@ -87,8 +87,10 @@
 
 
     // First Level A w/o Sign In / Sign Up
-    .dropdown-toggle {
-        padding: (11em / @b) 0 (11em / @b) 40px;
+    .dropdown-toggle, .mm-home .mm-label {
+        position: relative;
+        padding: (11em / @b) 20px (11em / @b) 40px;
+        *zoom: 1;
     }
 }
 
@@ -304,10 +306,85 @@
         }
 
         .mm-sign-up { width: 154px; }
+
+        // Transform Dropdowns to Static Submenus
+        .sm {
+            background: transparent;
+            border: 0 none;
+            .box-shadow(none);
+            margin: 0;
+            padding: 0;
+            position: static;
+            top: auto;
+            left: auto;
+            width: auto !important;
+
+            .col {
+                margin-right: 0;
+                width: auto;
+            }
+
+
+            // Carets, HRs, icons
+            HR, &:before, &:after, .ico-l { display: none; }
+
+            // Links
+            A, A:visited {
+                background-image: url(/a/img/gui/b-a-grey.png);
+                background-position: 0 (5em / @b);
+                text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+                padding: (11em / @b) 20px (11em / @b) 40px;
+            }
+
+            A:hover, A:visited:hover {
+                background-color: transparent;
+                color: #C9CCD0;
+                .transition(color .2s);
+            }
+
+            H4 A {
+                background-image: url(/a/img/gui/b-a.png);
+                font-weight: normal;
+            }
+
+            .active {
+                // background: darken(@dropdown-bg, 4%);
+            }
+        }
     }
 
     // Main menu UL
     .main-menu .nav { padding: 23px 20px 88px; }
+
+/*  Customization  ------------------ */
+
+    .p-products .mm-products .sm,
+    .p-benefits .mm-benefits .sm,
+    .p-analytics .mm-analytics .sm,
+    .p-education .mm-education .sm,
+    .p-about .mm-about .sm,
+    .p-help .mm-help .sm,
+    .p-user .mm-user .sm {
+        display: block;
+    }
+
+    .p-products,
+    .p-benefits,
+    .p-analytics,
+    .p-education,
+    .p-about,
+    .p-help,
+    .p-user {
+        .main-menu .mm-bonus {
+            position: relative;
+            bottom: auto;
+            left: auto;
+        }
+
+        .main-menu .nav { padding-bottom: 12em / @b; }
+    }
+
+
 
 /*  Main menu scrollbar  ------------ */
 
@@ -347,7 +424,7 @@
             top: 3px;
             right: 0;
             height: 38px;
-            width: 43px;
+            width: 53px;
         }
     }
 
@@ -386,4 +463,19 @@
 
         .ico-d { top: 30em / @b; }
     }
+}
+
+/*
+|---------------------------------------
+| High resolution devices
+|---------------------------------------
+*/
+
+@media  only screen and (max-width: 767px) and (-o-min-device-pixel-ratio: 5/4),
+        only screen and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.25),
+        only screen and (max-width: 767px) and (min-resolution: 120dpi) {
+
+    // Submenu links
+    .slide-out .sm A, .slide-out .sm A:visited { background-image: url(/a/img/gui/b-a-grey-x2.png); }
+    .slide-out .sm H4 A  { background-image: url(/a/img/gui/b-a-x2.png); }
 }

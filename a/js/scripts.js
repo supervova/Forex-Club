@@ -1,20 +1,4 @@
 /*
-FIXME: Responsive Javascript Issue - window.matchMedia don't update after window
-resize. Try call dropDowns after resize.
-
-And if call function from window.resize() many resize events fire as long as
-the user continues resizing the window.
-
-Quick Fix - Toggle class in functions and in set it responsive properties
-with CSS MQ
-
-Perhaps try to combine these solutions:
-http://stackoverflow.com/questions/9720294/jquery-how-to-detect-window-width-on-the-fly
-and http://jsfiddle.net/Zevan/c9UE5/5/
-or http://www.paulirish.com/2009/throttled-smartresize-jquery-event-handler/
-
-----------------------------------------
-
 SNIPPET:jsresource - Useful Resources, Plugins: UI Librraries, Touch Events,
 Responsive Galleries / Sliders / Slideshows / Carousels, A Responsive Images
 Approach, Lightweight Datepicker, Lightweight Modal Box, Markup Editor,
@@ -36,8 +20,6 @@ Tiny Scrollbar
 // SNIPPET:jsfluidvideo - Fluid Width Video (New Style)
 
 // SNIPPET:jsmodal - Modal Box
-
-// SNIPPET:jsmq - JavaScript Media Query
 
 // SNIPPET:jsrotator - Rotator
 
@@ -254,24 +236,26 @@ $(function() {
 | TOOLTIP
 |-------------------------------------------------------------------------------
 */
-$(function () {
-    if (window.matchMedia('(min-width: 980px)').matches) {
-        $('.dfn').hover(
-            function () {
+$(function() {
+    $('.dfn').hover(
+        function() {
+            if (window.matchMedia('(min-width: 980px)').matches) {
                 var el = $(this);
                 var txtTitle = el.prop('title');
                 el.attr('title', '');
                 el.append('<p class="tooltip">' + txtTitle + '</p>');
                 el.find('.tooltip').show('fast');
-            }, function () {
+            }
+        }, function() {
+            if (window.matchMedia('(min-width: 980px)').matches) {
                 var el = $(this);
                 var tT = el.find('.tooltip');
                 var txtTitle = tT.text();
                 tT.hide('fast').remove();
                 el.attr('title', txtTitle);
             }
-        );
-    }
+        }
+    );
 });
 
 
