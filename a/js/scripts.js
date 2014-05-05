@@ -153,7 +153,7 @@ $(function(){
     });
 
     $('.btn-menu-secd').on('click', function(event) {
-        if(window.matchMedia('(min-width: 768px)').matches) {
+        if(window.matchMedia('(max-width: 767px)').matches) {
             if (menuStatus !== true) {
 
                 contentPanel.removeAttr('style').animate({
