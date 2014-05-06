@@ -16,23 +16,24 @@ I. Reminders:
 --- ✄ -----------------------
 
 II. Todos:
-    ☐ Test on Android
+    ☐ Test on Android @Sonya
     <link rel="apple-touch-icon" href="/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-57x57.png">
-    ☐ Test media queries w and w/o respond.js
-        <script>
-        Modernizr.load([
-          {
-            test : Modernizr.mq('only all'),
-            nope : '/a/js/respond.js'
-          }
-        ]);
-        </script>
+    Or Twitter Bootstrap solution
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+
+    ☐ Set cookie to show smart banner only once
+    <meta name="apple-itunes-app" content="app-id=684181266">
+
+    ✔ Test media queries w and w/o respond.js @done (14-05-05 18:36)
+
+
 
 III. Has Been Removed:
 
     1) Rambler Top 100
     2) Trilan counter
+    3) Invalid schema.org in <header>
 
 
 IV. @WTF:
