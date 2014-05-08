@@ -134,6 +134,14 @@ $(function() {
                     menuStatus = true;
                 });
 
+                if (soRight.attr('style')) {
+                    soRight.animate({
+                        right: '-270px'
+                    }, 400, function() {
+                        soRight.removeAttr('style');
+                    });
+                }
+
                 return false;
 
             } else {
@@ -166,8 +174,8 @@ $(function() {
             }, 400, function() {
                 soRight.removeAttr('style');
             });
-            return false;
         }
+        return false;
     });
 
 

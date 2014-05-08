@@ -370,29 +370,29 @@
         .border-radius(0);
         margin-top: 0;
         right: -@so-width;
-        padding: 12px 19px 19px;
+        padding: 13px 11px 19px;
 
         .col {
             margin: 0;
             width: auto;
 
-            H4 { padding-top: 22em / @b; }
+            H4 { padding: 22em / @b 0 6px 22px; }
         }
 
-        H4 {
-            padding-left: 14px;
+        H3, H4 {
+            color: #515458;
 
             .ico-flag {
+                margin: 0;
                 top: auto;
-                left: -8px;
-                bottom: 5px;
+                left: 0;
+                bottom: 12em / @b;
             }
         }
 
-        HR {
-            margin-right: -8px;
-            margin-left: -8px;
-        }
+        H3 { padding: 0 0 4px 22px; }
+
+        HR { margin-bottom: 0; }
 
         UL {
             padding: 0;
@@ -403,12 +403,21 @@
             border: 0 none;
             display: block;
             float: none;
-            margin: 0;
-            padding: 0 14px;
+            margin: 0 0 1px;
+            padding: 0;
         }
 
-        A {
-            padding: 5px 0 6px;
+        A, EM { padding: 5px 22px; }
+
+        A, {
+            background-image: url(/a/img/gui/b.png);
+            background-position: 0 (9em / @b);
+            background-repeat:  no-repeat;
+
+            &:hover {
+                background-color: @submenu-link-hover-bg;
+                .border-radius(@border-radius-base);
+            }
         }
     }
 
