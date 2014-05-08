@@ -134,7 +134,10 @@
 | *HTML, _property — IE6
 | *+HTML — IE7
 | *property — IE6, IE7
-| property: value\0/ — IE8
+| property: value\0/ — IE8 | LESS - e('\0/')
+| modernizr IE8 detects: no-canvas no-rgba no-multiplebgs no-backgroundsize
+| no-borderradius no-boxshadow no-textshadow no-opacity no-cssanimations
+| no-csscolumns no-cssgradients
 | property: value \9 — IE6-9 | LESS - e('\9')
 |
 |-------------------------------------------------------------------------------
@@ -212,7 +215,7 @@
 /* Optional Widgets */
 @import '07-wdg-flags.less';
 @import '07-wdg-icons.less';
-@import '07-wdg-modal.less';
+@import '07-jquery-ui.less';
 @import '07-wdg-pager-pagination.less';
 @import '07-wdg-sharing.less';
 

@@ -29,22 +29,23 @@
 
 /* System Input / Output */
 @import '/a/css/06-in-out-alerts.css';
-@import '/a/css/06-in-out-communication.css';
+/*@import '/a/css/06-in-out-communication.css';
 @import '/a/css/06-in-out-filters.css';
-/*@import '/a/css/06-in-out-search.css';*/
+@import '/a/css/06-in-out-search.css';
 @import '/a/css/06-in-out-sign-in.css';
 @import '/a/css/06-in-out-sign-up.css';
-@import '/a/css/06-in-out-settings.css';
+@import '/a/css/06-in-out-settings.css';*/
 
 /* Optional Widgets */
-@import '/a/css/07-wdg-calendar-datepicker.css';
+@import '/a/css/07-jquery-ui.css';
+/*@import '/a/css/07-wdg-calendar-datepicker.css';
 @import '/a/css/07-wdg-collapsibles.css';
 @import '/a/css/07-wdg-gallery-slideshow-carousel.css';
-@import '/a/css/07-wdg-modal.css';
+@import '/a/css/07-wdg-modal.css';*/
 @import '/a/css/07-wdg-pager-pagination.css';
 @import '/a/css/07-wdg-sharing.css';
-@import '/a/css/07-wdg-typeahead.css';
-/*@import '/a/css/07-wdg-wysiwyg.css';*/
+/*@import '/a/css/07-wdg-typeahead.css';
+@import '/a/css/07-wdg-wysiwyg.css';*/
 
 /* Customization */
 @import '/a/css/08-cstm-front.css';

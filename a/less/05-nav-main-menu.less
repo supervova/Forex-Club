@@ -111,6 +111,7 @@
 }
 
 .mm-sign-in {
+    float: left;
     margin-right: 1px;
     width: 75px;
 }
@@ -178,6 +179,7 @@
 
         // First Level A
         .dropdown-toggle, .mm-bonus, .mm-label {
+            float: none;
             font-size: 13px;
             text-align: center;
             padding: 0;
@@ -277,19 +279,23 @@
 
 @media only screen and (max-width: 767px) {
 
-    // Main menu and langiage selector
-    .slide-out {
+    // Main menu and language selector
+    .slide-out { left: 0; }
+    .sec-regional .slide-out-right {
+        margin-top: 0;
+        right: -@so-width;
+    }
+
+    .slide-out, .sec-regional .slide-out-right {
         background: #1f2226;
+        border: 0 none;
         color: @main-menu-link-color;
         text-align: left;
         overflow: hidden;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
         .fixed-on-top;
-        right: 0;
         bottom: 0;
-        left: 0;
-        visibility: hidden;
         height: 100%;
         width: @so-width;
         z-index: 1; // It's need for tooltip appeas above main content
@@ -300,9 +306,10 @@
             display: block;
             width: 100%;
 
-            &:visited { color: @main-menu-link-color; }
-
-            &:hover, &:active { color: @main-menu-link-hover-color; }
+            &:visited, &:hover, &:active {
+                color: @main-menu-link-color;
+                text-decoration: none;
+            }
         }
 
         .mm-sign-up { width: 154px; }
@@ -476,6 +483,12 @@
         only screen and (max-width: 767px) and (min-resolution: 120dpi) {
 
     // Submenu links
-    .slide-out .sm A, .slide-out .sm A:visited { background-image: url(/a/img/gui/b-a-grey-x2.png); }
-    .slide-out .sm H4 A  { background-image: url(/a/img/gui/b-a-x2.png); }
+    .slide-out .sm A, .slide-out .sm A:visited {
+        background-image: url(/a/img/gui/b-a-grey-x2.png);
+        .background-size(24px 24px);
+    }
+    .slide-out .sm H4 A  {
+        background-image: url(/a/img/gui/b-a-x2.png);
+        .background-size(24px 24px);
+    }
 }

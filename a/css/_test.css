@@ -1,1 +1,8 @@
-.btn{color:#fff}
+.a-logo {
+    background-image: url('/a/img/gui/base-graphics-x2.png') !important;
+    background-image: url('/a/img/gui/base-graphics.png') \0/ !important;
+    -webkit-background-size: 400px 240px;
+    -moz-background-size: 400px 240px;
+    -o-background-size: 400px 240px;
+    background-size: 400px 240px
+}

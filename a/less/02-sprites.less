@@ -61,6 +61,18 @@
         .background-size(550px 240px); // Half of physical retina sprite image
     }
 
+    // IE8 — Conditional hack needs only on !important rules
+    .no-backgroundsize {
+        .gui-retina,
+        .alert:first-child:before, .warning-gl EM,
+        .a-logo,
+        .btn-back, .btn-close, .btn-menu, .btn-menu-secd,
+        .f-search BUTTON, I.co,
+        .on-demand H3 I {
+            background-image: url(@base-graphics) !important;
+        }
+    }
+
     .ico-flag {
         background-image: url(/a/img/gui/flags-x2.png);
         .background-size(16px 4991px);
@@ -77,6 +89,7 @@
     }
 }
 
+
 /*
 |---------------------------------------
 | High resolution XGA monitors
@@ -90,4 +103,8 @@
             background-image: url(@base-graphics-x2) !important;
             .background-size(400px 240px);
         }
+
+        // IE8 — Conditional hack needs only on !important rules
+        .no-backgroundsize .a-logo { background-image: url(@base-graphics) !important; }
 }
+
