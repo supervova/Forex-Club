@@ -168,12 +168,22 @@ $(function() {
     });
 
     contentPanel.click(function() {
-        if (Modernizr.mq('only screen and (max-width: 767px)') && soRight.attr('style')) {
-            soRight.animate({
-                right: '-270px'
-            }, 400, function() {
-                soRight.removeAttr('style');
-            });
+        if (Modernizr.mq('only screen and (max-width: 767px)')) {
+            if(soRight.attr('style')) {
+                soRight.animate({
+                    right: '-270px'
+                }, 400, function() {
+                    soRight.removeAttr('style');
+                });
+            }
+
+            if(menuStatus === true) {
+                contentPanel.animate({
+                    marginLeft: '0'
+                }, 400, function() {
+                    menuStatus = false;
+                });
+            }
         }
         return false;
     });
