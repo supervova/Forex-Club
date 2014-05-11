@@ -65,7 +65,7 @@ var Chart=function(e){function t(e,t,n){e=s((e-t.graphMin)/(t.steps*t.stepValue)
 $(function(){
     var label = $('.dropdown-toggle');
     var allDropDowns = $('.dropdown-menu, .rmb-popup');
-
+    var el = $(this);
 
     label.click(function() {
         if(Modernizr.mq('only screen and (min-width: 768px)')) {
@@ -120,7 +120,7 @@ $(function() {
     var soLeft = $('.slide-out-left');
     var soRight = $('.slide-out-right');
 
-    $('.btn-menu').click(function() {
+    $('.btn-menu').click(function(event) {
         if (Modernizr.mq('only screen and (max-width: 767px)')) {
             if (menuStatus !== true) {
 
@@ -148,7 +148,7 @@ $(function() {
 
             }
         }
-        return false;
+        event.preventDefault();
     });
 
     $('.btn-menu-secd').click(function() {
@@ -161,6 +161,7 @@ $(function() {
         return false;
     });
 
+    // FIXME: 01
     $(document).click(function() {
         if (Modernizr.mq('only screen and (max-width: 767px)')) {
             if(soRight.attr('style')) {
@@ -179,7 +180,6 @@ $(function() {
                 });
             }
         }
-        return false;
     });
 
 
@@ -214,8 +214,8 @@ $(function() {
     var el = $('.rmb-enabled');
     var popup = $('.rmb-popup');
 
-    el.on('contextmenu', function () {
-        return false;
+    el.on('contextmenu', function(event) {
+        event.preventDefault();
     });
 
     el.mousedown(function(e) {
