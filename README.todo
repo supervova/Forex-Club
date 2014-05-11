@@ -17,14 +17,14 @@ I. Reminders:
 
 II. Todos:
     ☐ Slide-out click event on .btn-menu-secd in modal version
-    ☐ Test on Android @Sonya
-    <link rel="apple-touch-icon" href="/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-57x57.png">
-    Or Twitter Bootstrap solution
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+
+    ☐ scripts:fixme-01 — Function closing don't execute. Function closing drop-downs execute instead.
 
     ☐ Set cookie to show smart banner only once
     <meta name="apple-itunes-app" content="app-id=684181266">
+
+    ✔ Test on Android @Sonya
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
 
     ✔ Slide-out and dropdown function. Fix some errors
     Dropdowns doesn't close on click outside if click outside has used in
@@ -36,10 +36,6 @@ II. Todos:
     ✘ local variable
     ✘ .on('click', function(event) {
     ✘ mediaMatch
-
-
-
-    ☐ Test on Android @Sonya
 
     ✔ Test media queries w and w/o respond.js @done (14-05-05 18:36)
 
