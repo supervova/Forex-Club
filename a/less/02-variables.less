@@ -65,6 +65,8 @@
 | To set margin and padding use formula
 | [multiplier] * @bl / @b + 0em;
 | 2) Baseline in pixels (13pb - 20px)
+| 3) Keep these parentheses to avoid compiling errors
+| in shortcut proprties like font:
 |
 */
 
@@ -77,39 +79,39 @@
 @baseline-mob:              @blm / @bm + 0em;
 
 @small:                     13;
-@font-size-small:           @small / @b * 100%;
-@line-height-small:         (4 / 5) * @bl / @small + 0em; // 4/5 of baseline
+@font-size-small:           (@small / @b * 100%); // 3
+@line-height-small:         (4 / 5 * @bl / @small + 0em); // 4/5 of baseline
 
 
 /* Headings ----------------------------
 
-1) Keep these functions here to avoid compiling errors
+1) Keep these functions and parentheses here to avoid compiling errors
 2) baseline
 */
 @font-family-h1:            'Roboto', sans-serif;
 @font-weight-h1:            300;
 @color-h1:                  #000;
 @h1:                        42;
-@font-size-h1:              @h1 / @b * 100%; // 1
-@line-height-h1:            2 * @bl / @h1 + 0em; // 2
+@font-size-h1:              (@h1 / @b * 100%); // 1
+@line-height-h1:            (2 * @bl / @h1 + 0em); // 2
 
 @h1m:                       24;
-@font-size-h1-mob:          @h1m / @bm * 100%;
-@line-height-h1-mob:        @blm / @h1m + 0em;
+@font-size-h1-mob:          (@h1m / @bm * 100%);
+@line-height-h1-mob:        (@blm / @h1m + 0em);
 
 @font-family-h2:            @font-family-h1;
 @font-weight-h2:            @font-weight-h1;
 @color-h2:                  #000;
 @h2:                        26;
-@font-size-h2:              @h2 / @b * 100%;
-@line-height-h2:            @bl / @h2 + 0em;
+@font-size-h2:              (@h2 / @b * 100%);
+@line-height-h2:            (@bl / @h2 + 0em);
 
 @h2m:                       20;
-@font-size-h2-mob:          @h2m / @bm * 100%;
-@line-height-h2-mob:       @blm / @h2m + 0em;
+@font-size-h2-mob:          (@h2m / @bm * 100%);
+@line-height-h2-mob:        (@blm / @h2m + 0em);
 
-@font-size-h3sharp:         @b + @h2 / 2 / @b * 100%;
-@font-size-h2sharp:         @h2 + @h1 / 2 / @b * 100%;
+@font-size-h3sharp:         (@b + @h2 / 2 / @b * 100%);
+@font-size-h2sharp:         (@h2 + @h1 / 2 / @b * 100%);
 
 
 /*
@@ -174,7 +176,7 @@
 
 @state-danger-text:         @brand-danger;
 @state-danger-border:       lighten(@brand-danger, 50%);
-@state-danger-bg:          lighten(@brand-danger, 80%);
+@state-danger-bg:           lighten(@brand-danger, 80%);
 
 @state-success-text:        @brand-success;
 @state-success-border:      lighten(@brand-success, 60%);

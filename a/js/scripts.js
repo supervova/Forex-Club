@@ -77,17 +77,8 @@ $(function(){
         }
     });
 
-    $(document).click(function() {
-        allDropDowns.hide();
-        label.removeClass('active');
-    });
-
-    // Close dropdowns on Esc
-    $(document).keydown(function(e) {
-        if(e.keyCode == 27) {
-            allDropDowns.hide();
-            label.removeClass('active');
-        }
+    allDropDowns.click(function(event) {
+        event.stopPropagation();
     });
 
     // @TEST
@@ -97,14 +88,26 @@ $(function(){
         });
     }
 
-    allDropDowns.click(function(event) {
-        event.stopPropagation();
+    // Close dropdowns
+    $(document).click(function() {
+        closeDropdowns();
     });
 
-    // Hide open Dropdown on window resize
-    $(window).resize(function(){
-        allDropDowns.hide();
+    $(document).keydown(function(e) {
+        if(e.keyCode == 27) {
+            closeDropdowns();
+        }
     });
+
+    $(window).resize(function(){
+        closeDropdowns();
+    });
+
+
+    function closeDropdowns(){
+        allDropDowns.hide();
+        label.removeClass('active');
+    }
 });
 
 

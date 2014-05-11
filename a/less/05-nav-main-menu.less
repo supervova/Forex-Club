@@ -292,7 +292,6 @@
         bottom: 0;
         height: 100%;
         width: @so-width;
-        z-index: 1; // It's need for tooltip appeas above main content
     }
 
     // Main menu
@@ -300,6 +299,7 @@
         background: #1f2226;
         color: @main-menu-link-color;
         left: 0;
+        z-index: 1; // It's need for tooltip appeas above main content
 
         LI A {
             border: 0 none;
@@ -430,7 +430,7 @@
     .p-about .mm-about .sm,
     .p-help .mm-help .sm,
     .p-user .mm-user .sm {
-        display: block;
+        display: block !important; // To reassign styles which has been setting by .hide();
     }
 
     .p-products,

@@ -4,21 +4,23 @@
 /* Billboard (Jumbotron) ------------ */
 
 @jumbotron-padding:         30px;
-@jumbotron-color:           inherit;
+@jumbotron-color:           #fff;
 @jumbotron-bg:              #ff8000;
 @jumbotron-heading-color:   #fff;
 // @jumbotron-font-size:       ;
 
 // Jumbotron in Twitter Bootstrap
 .sec-billboard {
-    margin: 0 0 @baseline 280px;
+    text-align: left;
+    margin: 0 0 0 280px;
     padding: 0 @jumbotron-padding 0;
     position: relative;
     min-height: 800px;
     *height: 800px;
+    z-index: 2;
     *zoom: 1;
 
-    H1, .h1 { color: ; }
+    // H1, .h1 { color: ; }
 }
 
 .p-branded-header .sec-billboard {
