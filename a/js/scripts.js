@@ -77,10 +77,6 @@ $(function(){
         }
     });
 
-    // var ua = navigator.userAgent,
-        // event = ((ua.match(/iPad/i)) || (ua.match(/iPhone/i))) ? "touchstart" : "click";
-
-    // $(document).bind(event, function() {
     $(document).click(function() {
         allDropDowns.hide();
         label.removeClass('active');
@@ -94,11 +90,11 @@ $(function(){
         }
     });
 
-    // @FIXME: this did not work
+    // @TEST
     if (label.hasClass('active')) {
-        $('.sec-billboard a').click(function(e) {
-                e.preventDefault();
-            });
+        $('.sec-billboard a').click(function() {
+            eventObject.preventDefault();
+        });
     }
 
     allDropDowns.click(function(event) {
@@ -142,8 +138,6 @@ $(function() {
                     });
                 }
 
-                return false;
-
             } else {
 
                 contentPanel.animate({
@@ -152,9 +146,9 @@ $(function() {
                     menuStatus = false;
                 });
 
-                return false;
             }
         }
+        return false;
     });
 
     $('.btn-menu-secd').click(function() {
@@ -163,11 +157,11 @@ $(function() {
                 right: 0
             }, 400);
             // soRight.animate({right: '0'}, 400, 'easeOutBounce');
-            return false;
         }
+        return false;
     });
 
-    contentPanel.click(function() {
+    $(document).click(function() {
         if (Modernizr.mq('only screen and (max-width: 767px)')) {
             if(soRight.attr('style')) {
                 soRight.animate({
@@ -188,6 +182,10 @@ $(function() {
         return false;
     });
 
+
+    soLeft.add(soRight).click(function(event) {
+        event.stopPropagation();
+    });
 
     // Restore on window resize
     $(window).resize(function() {
@@ -216,7 +214,7 @@ $(function() {
     var el = $('.rmb-enabled');
     var popup = $('.rmb-popup');
 
-    el.bind('contextmenu', function () {
+    el.on('contextmenu', function () {
         return false;
     });
 
@@ -308,15 +306,13 @@ return isNaN(t)?d:t},g=p(l[0]),m=Math.max(g,p(l[1]||"")),g=a?Math.max(g,a.getFul
 | After the DOM is loaded
 |
 */
-$(document).ready(function(){
-
+$(function(){
     $('ol:not(.bcol), ul:not(.bcol)').prev('p').css('margin-bottom', '0'); //lists captions
 
     // $('.sec-gallery').tinycarousel();
 
     // SNIPPET:jsfluidvideold - Fluid Width Video Old Style
     // SNIPPET:jsmbphelp - Mobile Bolilerplate Helpers
-
 });
 
 /*

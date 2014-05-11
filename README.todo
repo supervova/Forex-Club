@@ -16,7 +16,7 @@ I. Reminders:
 --- ✄ -----------------------
 
 II. Todos:
-    ☐ Fix click event on .btn-menu-secd in modal version
+    ☐ Slide-out click event on .btn-menu-secd in modal version
     ☐ Test on Android @Sonya
     <link rel="apple-touch-icon" href="/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-57x57.png">
@@ -25,6 +25,19 @@ II. Todos:
 
     ☐ Set cookie to show smart banner only once
     <meta name="apple-itunes-app" content="app-id=684181266">
+
+    ✔ Slide-out and dropdown function. Fix some errors
+    Dropdowns doesn't close on click outside if click outside has used in
+    slide-outs function
+    ✔ $(document).click + soLeft.add(soRight).click(function(event) {event.stopPropagation();
+    ✘ event.stopPropagation()
+    ✘ пространство имен для обработчика событий
+    ✘ .on / .off
+    ✘ local variable
+    ✘ .on('click', function(event) {
+    ✘ mediaMatch
+
+
 
     ☐ Test on Android @Sonya
 
