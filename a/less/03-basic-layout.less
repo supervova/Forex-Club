@@ -37,7 +37,7 @@ Solution for modern browsers is :first-child margin-left: 0;
 |---------------------------------------
 */
 
-// .row > [class*='col-'], .cfx > [class*='col-'] - die6
+// .row > [class*='col-'], .group > [class*='col-'] - die6
 .col, // For custom layouts
 .col-1of12, .col-2of12, .col-3of12, .col-4of12, .col-5of12, .col-6of12,
 .col-7of12, .col-8of12, .col-9of12, .col-10of12, .col-11of12,
@@ -63,7 +63,7 @@ Solution for modern browsers is :first-child margin-left: 0;
 
 .col-first { margin-left: 0; }
 
-.row > [class*='col-']:first-child, .cfx > [class*='col-']:first-child { margin-left: 0; }
+.row > [class*='col-']:first-child, .group > [class*='col-']:first-child { margin-left: 0; }
 
 .col-1of12 { #grid > .col(1); }
 .col-2of12 { #grid > .col(2); } // sixth
@@ -83,7 +83,7 @@ Webkit rounding bug. There are two solutions
 1) This is the first and the second is...
 2) .row > [class*='col-']:last-child { float: right; }
 */
-.row > [class*='col-']:last-child, .cfx > [class*='col-']:last-child { // 1
+.row > [class*='col-']:last-child, .group > [class*='col-']:last-child { // 1
     float: none;
     overflow: hidden;
     width: auto;
@@ -169,7 +169,7 @@ Webkit rounding bug. There are two solutions
 
     .left, .right { max-width: 50%; }
 
-    // .row > [class*='col-'], .cfx > [class*='col-'] - die6
+    // .row > [class*='col-'], .group > [class*='col-'] - die6
     .col, .col-1of12, .col-1of6, .col-1of4, .col-1of3,
     .col-1of2, .col-2of3, .col-3of4 {
         float: none;

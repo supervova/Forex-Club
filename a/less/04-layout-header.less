@@ -7,7 +7,6 @@
 @search-button-width:       42px;
 
 .doc-header {
-    // background: #FCC;
     text-align: left;
     margin: 0 auto;
     padding: 39px 20px 0;
@@ -41,15 +40,6 @@
     .tel {
         color: #797c80;
         font-family: 'Roboto', sans-serif;
-
-        .co {
-            background-position: -370px -70px;
-            .inline-block();
-            vertical-align: middle;
-            margin: -4px 8px 0 0;
-            height: 14px;
-            width: 9px;
-        }
     }
 
     // Flag
@@ -122,14 +112,29 @@
     }
 }
 
-// Front page Billboard Customization
+// Phone ---------------------------- */
+.doc-header .tel, .doc-header-mob .tel {
+
+     .co {
+        .inline-block();
+        vertical-align: middle;
+        margin: -4px 8px 0 0;
+        height: 14px;
+        width: 9px;
+    }
+}
+
+.doc-header .tel .co { background-position: -370px -70px; }
+
+.p-branded-header .tel .co,
+.doc-header-mob .tel .co
+{ background-position: -400px -70px; }
+
 .p-branded-header .sec-regional {
     .tel {
         color: #fff;
-
-        .co { background-position: -400px -70px; }
+        // cursor: pointer; // uncomment after phone model will be implemented
     }
-
     .dropdown-toggle:after { border-top-color: rgba(255, 255, 255, .44); }
 }
 
@@ -251,15 +256,15 @@ INPUT[type="search"]::-webkit-search-decoration {
     }
 
     .sec-regional {
-
         padding-bottom: 11em / @b;
 
-        .dropdown-menu {
+    .dropdown-menu {
             .border-radius(@border-radius-base);
             margin-top: -11em / @b;
 
             &:before, &:after { display: none; }
         }
+
     }
 }
 
@@ -273,6 +278,14 @@ INPUT[type="search"]::-webkit-search-decoration {
 @media only screen and (max-width: 767px) {
 
     .doc-header {
+        margin: 0;
+        padding: 0;
+        height: 44px;
+        max-width: 980px;
+        width: 100%;
+    }
+
+    .doc-header-mob {
         #gradient > .vertical(#33363a, #1f2226);
         border-top: 1px solid #3d4044;
         border-bottom: 1px solid #15181c;
@@ -286,12 +299,28 @@ INPUT[type="search"]::-webkit-search-decoration {
         width: 100%;
         z-index: 444;
         *zoom: 1;
+
+        .tel {
+            color: #65686c;
+            font-family: @font-family-sans-serif;
+            font-size: 13px;
+            line-height: 1;
+            padding-top: 17px;
+            position: absolute;
+            top: 0;
+            right: 60px;
+            height: 42px;
+        }
+
     }
 
     // Logo / Menu Button
     .btn-menu {
         background-position: 0 -140px;
+        cursor: pointer;
         .ir;
+        font-size: 100%;
+        line-height: 1;
         padding: 0;
         position: absolute;
         top: 0;
@@ -316,21 +345,10 @@ INPUT[type="search"]::-webkit-search-decoration {
     }
 
     .sec-regional {
-
-        padding-top: 0;
+        padding: 0;
         position: static;
 
-        .tel {
-            color: #65686c !important;
-            font-family: @font-family-sans-serif;
-            font-size: 13px;
-            line-height: 1;
-            padding-top: 17px;
-            position: absolute;
-            top: 0;
-            right: 60px;
-            height: 42px;
-        }
+        .tel { display: none; }
 
         .dropdown-menu {
             display: block;
@@ -338,6 +356,5 @@ INPUT[type="search"]::-webkit-search-decoration {
 
             &:before, &:after { display: none; }
         }
-
     }
 }

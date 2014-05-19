@@ -16,9 +16,8 @@ I. Reminders:
 --- ✄ -----------------------
 
 II. Todos:
-    ☐ Slide-out click event on .btn-menu-secd in modal version
-
-    ☐ scripts:fixme-01 — Function closing don't execute. Function closing drop-downs execute instead.
+    ☐ Сlick events of dropdowns and slideout functions after changing viewport.
+        They work only after reload
 
     ☐ Set cookie to show smart banner only once
     <meta name="apple-itunes-app" content="app-id=684181266">
