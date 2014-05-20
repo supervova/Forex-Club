@@ -1,0 +1,622 @@
+@media screen and (min-width:768px) {
+    .doc-header {
+        background: #ff8000
+    }
+
+    .sec-regional .hdr-tel {
+        color: #fff
+    }
+
+    .sec-regional .hdr-tel:before {
+        background-position: 0 0
+    }
+
+    .sec-regional .lang-current:after {
+        background-image: url("data:image/gif;base64,R0lGODlhCAAEAKIEAPyYM/yZNvyYNPmyagAAAAAAAAAAAAAAACH5BAEAAAQALAAAAAAIAAQAAAMNCLMMJGwIQqGkOAScAAA7")
+    }
+}
+
+.lt-ie9 .doc-header {
+    background: #ff8000
+}
+
+.lt-ie9 .sec-regional .hdr-tel {
+    color: #fff
+}
+
+.lt-ie9 .sec-regional .hdr-tel:before {
+    background-position: 0 0
+}
+
+.lt-ie9 .sec-regional .lang-current:after {
+    background-image: url("data:image/gif;base64,R0lGODlhCAAEAKIEAPyYM/yZNvyYNPmyagAAAAAAAAAAAAAAACH5BAEAAAQALAAAAAAIAAQAAAMNCLMMJGwIQqGkOAScAAA7")
+}
+
+.f-search {
+    border-color: rgba(255,255,255,0.44)
+}
+
+.f-search .i-search {
+    color: #fff
+}
+
+.f-search .i-search::-webkit-input-placeholder {
+    color: #fff;
+    opacity: .44
+}
+
+.f-search .i-search:-moz-placeholder {
+    color: #fff;
+    opacity: .44
+}
+
+.f-search .i-search::-moz-placeholder {
+    color: #fff;
+    opacity: .44
+}
+
+.f-search .i-search:-ms-input-placeholder {
+    color: #fff;
+    opacity: .44
+}
+
+.f-search .btn-search {
+    background-position: 50% -72px;
+    border-left-color: rgba(255,255,255,0.44)
+}
+
+.lt-ie9 .f-search {
+    border-color: #ffb870
+}
+
+.lt-ie9 .f-search .btn-search {
+    border-left-color: #ffb870
+}
+
+.sec-billboard {
+    font: normal 15px/22px Arial,sans-serif
+}
+
+.sec-billboard .billboard-slider {
+    margin: 0;
+    padding: 0
+}
+
+.sec-billboard .billboard-slide {
+    display: none
+}
+
+.sec-billboard .billboard-slide.active {
+    display: list-item
+}
+
+.sec-billboard .billboard-slide-content {
+    position: relative;
+    padding: 85px 9.48275862% 50px;
+    height: 575px
+}
+
+.sec-billboard .billboard-slide-title {
+    margin-top: 0;
+    font: 200 40px/44px Roboto,Arial,sans-serif;
+    letter-spacing: -0.04em
+}
+
+.sec-billboard .billboard-slide-summary {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 40px 20px;
+    background: rgba(255,115,0,0.71);
+    text-align: right;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.lt-ie9 .sec-billboard .billboard-slide-summary {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA9JREFUeNpi+F/MsBUgwAAGDwIor0HnNgAAAABJRU5ErkJggg==") repeat
+}
+
+.sec-billboard .manage-cash {
+    background: #ff8000 url(../../img/content/front/chart.png) 0 330px no-repeat;
+    color: #fff
+}
+
+.sec-billboard .manage-cash .billboard-slide-content {
+    padding-right: 590px;
+    background: url(../../img/content/front/ilya-smirnov.png) 100% 100% no-repeat
+}
+
+.sec-billboard .btn-open-acc {
+    padding-right: 4em;
+    padding-left: 4em;
+    margin-bottom: 1em
+}
+
+.sec-billboard .a-play-video {
+    margin-left: 15px;
+    color: #fff;
+    white-space: nowrap
+}
+
+.sec-billboard .a-play-video:after {
+    display: inline-block;
+    margin-left: 8px;
+    width: 16px;
+    height: 16px;
+    background: url(../../img/global/icons/video-arr.png) 0 0 no-repeat;
+    content: "";
+    vertical-align: middle
+}
+
+.main-entries {
+    display: table;
+    width: 100%;
+    table-layout: fixed
+}
+
+.main-entries-row {
+    display: table-row
+}
+
+.main-entries-row>section {
+    display: table-cell;
+    width: 50%;
+    vertical-align: top;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.main-entries-row>section>h2 {
+    margin-top: 1.75em;
+    padding: 0 35px 0 40px;
+    font: 300 24px/33px Roboto,Arial,sans-serif;
+    letter-spacing: -0.04em
+}
+
+.main-entries-row .main-entries-more {
+    margin: .8em 0;
+    padding: 0 35px 0 40px
+}
+
+.sec-fxclub-assist {
+    padding-left: 9.48275862%;
+    background: #f1f4f8 url("data:image/gif;base64,R0lGODlhAQABAIAAAOrt8QAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==") 0 0 no-repeat;
+    -webkit-background-size: 18.96551724% 100%;
+    -moz-background-size: 18.96551724% 100%;
+    background-size: 18.96551724% 100%;
+    border-bottom: 1px solid #d3d6da
+}
+
+.main-entries-row>.sec-fxclub-assist>h2 {
+    font-weight: 400
+}
+
+.fxclub-assist-list {
+    padding: 0
+}
+
+.fxclub-assist-list>li {
+    padding: .8em 35px .8em 40px;
+    list-style: none;
+    background: url(../../img/global/lists/o-bull.png) 27px 20px no-repeat
+}
+
+.fxclub-assist-list>li.active {
+    position: relative;
+    margin-right: -1px;
+    background-color: #fafbfd;
+    border: 1px solid #e0e4e8
+}
+
+.fxclub-assist-list>li.active:before,.fxclub-assist-list>li.active:after {
+    position: absolute;
+    top: 50%;
+    margin-top: -8px;
+    content: ""
+}
+
+.fxclub-assist-list>li.active:before {
+    right: -16px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 7.5px 8px;
+    border-color: transparent transparent transparent #e0e4e8
+}
+
+.fxclub-assist-list>li.active:after {
+    right: -15px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 7.5px 8px;
+    border-color: transparent transparent transparent #fafbfd
+}
+
+.sec-fxclub-benefits {
+    padding-right: 9.48275862%;
+    background: #fff url("data:image/gif;base64,R0lGODlhAQABAIAAAOrt8QAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==") 100% 0 no-repeat;
+    -webkit-background-size: 18.96551724% 100%;
+    -moz-background-size: 18.96551724% 100%;
+    background-size: 18.96551724% 100%;
+    border-bottom: 1px solid #d3d6da
+}
+
+.fxclub-benefit-list {
+    margin-top: 60px
+}
+
+.fxclub-benefit-list>li {
+    margin: .8em 0
+}
+
+.sec-top-rating {
+    padding-left: 9.48275862%
+}
+
+.main-entries-row>.sec-top-rating>h2 {
+    padding-left: 20px
+}
+
+.top-rating-wrap {
+    border: 1px solid #e5e6ea;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px
+}
+
+.top-rating {
+    width: 100%
+}
+
+.top-rating thead {
+    -webkit-box-shadow: 0 1px 4px 0 rgba(0,0,0,0.08);
+    -moz-box-shadow: 0 1px 4px 0 rgba(0,0,0,0.08);
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.08)
+}
+
+.top-rating tr.even {
+    background: #fafbfd
+}
+
+.top-rating th {
+    padding: 12px 22px;
+    width: 25px;
+    background: #edf0f4;
+    background: url(data:image/svg+xml;
+    base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VkZjBmNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjcxJSIgc3RvcC1jb2xvcj0iI2UxZTRlOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijg1JSIgc3RvcC1jb2xvcj0iI2UxZTRlOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNmU5ZWQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #edf0f4),color-stop(71%, #e1e4e8),color-stop(85%, #e1e4e8),color-stop(100%, #e6e9ed));
+    background: -moz-linear-gradient(top, #edf0f4 0,#e1e4e8 71%,#e1e4e8 85%,#e6e9ed 100%);
+    background: -webkit-linear-gradient(top, #edf0f4 0,#e1e4e8 71%,#e1e4e8 85%,#e6e9ed 100%);
+    background: -o-linear-gradient(top, #edf0f4 0,#e1e4e8 71%,#e1e4e8 85%,#e6e9ed 100%);
+    background: -ms-linear-gradient(top, #edf0f4 0,#e1e4e8 71%,#e1e4e8 85%,#e6e9ed 100%);
+    background: linear-gradient(to bottom, #edf0f4 0,#e1e4e8 71%,#e1e4e8 85%,#e6e9ed 100%);
+    -webkit-box-shadow: 0 1px 0 0 #f3f5f8 inset;
+    -moz-box-shadow: 0 1px 0 0 #f3f5f8 inset;
+    box-shadow: 0 1px 0 0 #f3f5f8 inset;
+    font-weight: normal;
+    text-align: right;
+    text-shadow: 0 1px 0 #fff
+}
+
+.lt-ie9 .top-rating th {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#edf0f4", endColorstr="#e6e9ed", GradientType=0)
+}
+
+.top-rating th:first-child {
+    width: auto;
+    border-right: 1px solid #d3d6da;
+    border-left: none;
+    text-align: left
+}
+
+.top-rating th:first-child:before {
+    display: inline-block;
+    margin: 0 25px 0 12px;
+    width: 17px;
+    height: 18px;
+    background: url(../../img/global/icons/main-nav-icons.png) -88px -5px no-repeat;
+    content: "";
+    vertical-align: middle
+}
+
+.top-rating th:last-child {
+    -webkit-box-shadow: 0 1px 0 0 #f3f5f8 inset,1px 0 0 0 rgba(255,255,255,0.75) inset;
+    -moz-box-shadow: 0 1px 0 0 #f3f5f8 inset,1px 0 0 0 rgba(255,255,255,0.75) inset;
+    box-shadow: 0 1px 0 0 #f3f5f8 inset,1px 0 0 0 rgba(255,255,255,0.75) inset
+}
+
+.top-rating td {
+    padding: 11px 20px 11px 15px;
+    text-align: right;
+    border-top: 1px solid #edf0f4
+}
+
+.top-rating td:first-child {
+    padding-left: 20px;
+    border-right: 1px solid #e5e6ea;
+    text-align: left
+}
+
+.top-rating tbody tr:first-child td {
+    border-top-color: #d3d6da
+}
+
+.top-rating .trader-ava {
+    margin-right: 15px;
+    max-width: 30px;
+    max-height: 30px;
+    border: 1px solid #e5e6ea;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+    vertical-align: middle
+}
+
+.sec-bonuses {
+    padding-right: 9.48275862%
+}
+
+.main-entries-row .sec-bonuses>h2 {
+    margin-top: .8em
+}
+
+.bonuses-pict {
+    margin: 0;
+    background: #fafbfd;
+    border-left: 1px solid #edf0f4;
+    border-bottom: 1px solid #edf0f4;
+    text-align: right
+}
+
+.bonuses-pict .bonuses-num {
+    padding-right: 10px;
+    color: #ffac58;
+    font: 400 24px/3 Roboto,Arial,sans-serif
+}
+
+.bonuses-pict img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom
+}
+
+.quote-charts {
+    margin: 0 9.48275862%;
+    padding: 70px 0 50px;
+    border-bottom: 1px solid #d3d6da
+}
+
+.quote-chart-list {
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+
+.quote-chart-list>li {
+    display: inline-block;
+    float: left;
+    margin: 0 2.1276% 20px 0;
+    min-width: 140px;
+    min-height: 132px;
+    background: #f1f4f8;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px
+}
+
+.quote-chart-list .quote-link {
+    position: relative;
+    display: block;
+    padding: 10px 10px 5px;
+    text-decoration: none
+}
+
+.quote-chart-list .quote-link:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: ""
+}
+
+.quote-chart-list figcaption {
+    font-size: 13px
+}
+
+.quote-chart-list figure {
+    margin: 0
+}
+
+.quote-chart-list iframe {
+    width: 120px;
+    height: 90px
+}
+
+.quote-chart-list .quotes-market-review {
+    margin-right: 0
+}
+
+.quote-chart-list .quotes-market-review a {
+    display: block;
+    padding: 100px 0 0 10px;
+    height: 32px
+}
+
+.quote-chart-list .quotes-market-review a:after {
+    margin-left: 22px
+}
+
+@media screen and (min-width:768px) and (max-width:1199px) {
+    .sec-billboard .manage-cash .billboard-slide-content {
+        padding-right: 190px;
+        padding-left: 5.88235294%;
+        background-position: right -337px bottom
+    }
+
+    .sec-billboard .billboard-slide-summary {
+        text-align: left;
+        padding-left: 5.88235294%
+    }
+
+    .main-entries {
+        display: block
+    }
+
+    .main-entries-row {
+        display: block
+    }
+
+    .main-entries-row.row-first {
+        display: table
+    }
+
+    .main-entries-row.row-first>section {
+        display: table-cell
+    }
+
+    .main-entries-row>section {
+        display: block
+    }
+
+    .main-entries-row>section>h2 {
+        padding-right: 5.88235294%;
+        padding-left: 11.76470588%
+    }
+
+    .sec-fxclub-assist,.sec-fxclub-benefits {
+        padding: 0;
+        background-image: none
+    }
+
+    .fxclub-assist-list>li,.fxclub-benefit-list {
+        padding-right: 5.88235294%;
+        padding-left: 11.76470588%
+    }
+
+    .main-entries-row .sec-top-rating {
+        padding: 0 5.88235294%;
+        width: 100%
+    }
+
+    .quote-charts {
+        margin: 0 5.88235294%
+    }
+}
+
+@media screen and (max-width:767px) {
+    .sec-billboard .billboard-slide-title {
+        margin: 1em 0;
+        font-size: 22px;
+        font-weight: 300
+    }
+
+    .sec-billboard .manage-cash {
+        background: none;
+        color: #515458
+    }
+
+    .sec-billboard .manage-cash .billboard-slide-content {
+        padding: 0;
+        height: auto;
+        background: none
+    }
+
+    .sec-billboard .manage-cash .billboard-slide-content>* {
+        padding-right: 6.25%;
+        padding-left: 6.25%
+    }
+
+    .sec-billboard .manage-cash .billboard-slide-summary {
+        position: relative;
+        top: 0;
+        left: 0;
+        padding: 80px 170px 40px 6.25%;
+        background: #ff8000 url(../../img/content/front/ilya-smirnov.png) 100% 100% no-repeat;
+        -webkit-background-size: contain;
+        -moz-background-size: contain;
+        background-size: contain;
+        color: #fff;
+        text-align: left
+    }
+
+    .sec-billboard .manage-cash .billboard-slide-summary:after {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        display: block;
+        width: 100%;
+        height: 7px;
+        background: rgba(255,115,0,0.71);
+        content: ""
+    }
+
+    .sec-billboard .billboard-slide-buttons {
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 400px;
+        text-align: center
+    }
+
+    .sec-billboard .btn-open-acc {
+        display: block;
+        margin: 3em 0 1em;
+        padding-right: 4em;
+        padding-left: 4em
+    }
+
+    .sec-billboard .a-play-video {
+        margin-left: auto;
+        color: #7380d9
+    }
+
+    .sec-billboard .a-play-video:after {
+        background-position: -16px 0
+    }
+
+    .main-entries {
+        display: block
+    }
+
+    .main-entries .main-entries-row {
+        display: block
+    }
+
+    .main-entries .main-entries-row>section {
+        display: block;
+        padding-top: 1px;
+        width: auto
+    }
+
+    .main-entries .main-entries-row>section>h2 {
+        padding: 0 6.25%
+    }
+
+    .main-entries .sec-fxclub-assist {
+        padding: 0;
+        background-image: none
+    }
+
+    .main-entries .fxclub-assist-list>li {
+        padding-right: 6.25%;
+        padding-left: 6.25%;
+        background-position: 3.125% 20px
+    }
+
+    .main-entries .fxclub-assist-list>li.active:before,.main-entries .fxclub-assist-list>li.active:after {
+        content: none
+    }
+
+    .main-entries .sec-top-rating {
+        padding: 0;
+        width: 100%
+    }
+
+    .quote-charts {
+        margin: 0 0 0 6.25%
+    }
+}

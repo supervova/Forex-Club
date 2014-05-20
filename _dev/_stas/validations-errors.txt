@@ -1,0 +1,151 @@
+
+line 270: The frameborder attribute on the iframe element is obsolete. Use CSS instead. VM4606:1
+line 278: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 278: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 278: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 278: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 278: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 278: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 278: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 278: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 278: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 278: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 278: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 278: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 278: The element iframe must not appear as a descendant of the a element. VM4606:1
+line 278: Bad value  for attribute src on element iframe: Illegal character in query: not a URL code point. VM4606:1
+line 278: The frameborder attribute on the iframe element is obsolete. Use CSS instead. VM4606:1
+line 278: The scrolling attribute on the iframe element is obsolete. Use CSS instead. VM4606:1
+line 286: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 286: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 286: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 286: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 286: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 286: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 286: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 286: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 286: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 286: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 286: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 286: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 286: The scrolling attribute on the iframe element is obsolete. Use CSS instead. VM4606:1
+line 286: The frameborder attribute on the iframe element is obsolete. Use CSS instead. VM4606:1
+line 286: The element iframe must not appear as a descendant of the a element. VM4606:1
+line 286: Bad value  for attribute src on element iframe: Illegal character in query: not a URL code point. VM4606:1
+line 294: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 294: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 294: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 294: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 294: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 294: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 294: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 294: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 294: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 294: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 294: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 294: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 294: The scrolling attribute on the iframe element is obsolete. Use CSS instead. VM4606:1
+line 294: The element iframe must not appear as a descendant of the a element. VM4606:1
+line 294: Bad value  for attribute src on element iframe: Illegal character in query: not a URL code point. VM4606:1
+line 294: The frameborder attribute on the iframe element is obsolete. Use CSS instead. VM4606:1
+line 302: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 302: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 302: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 302: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 302: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 302: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 302: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 302: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 302: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 302: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 302: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 302: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4606:1
+line 302: The frameborder attribute on the iframe element is obsolete. Use CSS instead. VM4606:1
+line 302: The scrolling attribute on the iframe element is obsolete. Use CSS instead. VM4606:1
+line 302: The element iframe must not appear as a descendant of the a element. VM4606:1
+line 302: Bad value  for attribute src on element iframe: Illegal character in query: not a URL code point. VM4606:1
+GET http://org.trunk.vazhenin.web2.dev.fxclub.org/STATIC_MARKUP/a/css/content/front-quote-chart.css 503 (Service Unavailable) www.fxclub.org/:7
+81 validation errors VM4855:1
+line 8: Bad value X-UA-Compatible for attribute http-equiv on element meta. VM4855:1
+line 264: Section lacks heading. Consider using h2-h6 elements to add identifying headings to all sections. VM4855:1
+Using Direct Input mode: UTF-8 character encoding assumed VM4855:1
+line 270: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 270: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 270: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 270: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 270: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 270: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 270: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 270: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 270: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 270: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 270: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 270: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 270: Bad value  for attribute src on element iframe: Illegal character in query: not a URL code point. VM4855:1
+line 270: The scrolling attribute on the iframe element is obsolete. Use CSS instead. VM4855:1
+line 270: The element iframe must not appear as a descendant of the a element. VM4855:1
+line 270: The frameborder attribute on the iframe element is obsolete. Use CSS instead. VM4855:1
+line 278: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 278: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 278: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 278: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 278: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 278: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 278: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 278: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 278: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 278: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 278: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 278: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 278: The element iframe must not appear as a descendant of the a element. VM4855:1
+line 278: Bad value  for attribute src on element iframe: Illegal character in query: not a URL code point. VM4855:1
+line 278: The frameborder attribute on the iframe element is obsolete. Use CSS instead. VM4855:1
+line 278: The scrolling attribute on the iframe element is obsolete. Use CSS instead. VM4855:1
+line 286: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 286: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 286: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 286: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 286: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 286: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 286: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 286: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 286: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 286: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 286: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 286: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 286: The scrolling attribute on the iframe element is obsolete. Use CSS instead. VM4855:1
+line 286: The frameborder attribute on the iframe element is obsolete. Use CSS instead. VM4855:1
+line 286: The element iframe must not appear as a descendant of the a element. VM4855:1
+line 286: Bad value  for attribute src on element iframe: Illegal character in query: not a URL code point. VM4855:1
+line 294: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 294: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 294: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 294: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 294: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 294: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 294: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 294: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 294: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 294: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 294: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 294: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 294: The scrolling attribute on the iframe element is obsolete. Use CSS instead. VM4855:1
+line 294: The element iframe must not appear as a descendant of the a element. VM4855:1
+line 294: Bad value  for attribute src on element iframe: Illegal character in query: not a URL code point. VM4855:1
+line 294: The frameborder attribute on the iframe element is obsolete. Use CSS instead. VM4855:1
+line 302: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 302: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 302: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 302: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 302: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 302: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 302: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 302: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 302: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 302: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 302: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 302: & did not start a character reference. (& probably should have been escaped as &amp;.) VM4855:1
+line 302: The frameborder attribute on the iframe element is obsolete. Use CSS instead. VM4855:1
+line 302: The scrolling attribute on the iframe element is obsolete. Use CSS instead. VM4855:1
+line 302: The element iframe must not appear as a descendant of the a element. VM4855:1
+line 302: Bad value  for attribute src on element iframe: Illegal character in query: not a URL code point. VM4855:1

@@ -32,13 +32,9 @@ ARTICLE, ASIDE, DETAILS, FIGCAPTION, FIGURE, FOOTER, HEADER, HGROUP, MAIN, NAV, 
 |---------------------------------------
 */
 
-* {
+*, *:before, *:after {
     .box-sizing(border-box);
     *behavior: url(/a/js/boxsizing.htc);
-}
-
-*:before, *:after {
-    .box-sizing(border-box);
 }
 
 :focus { outline: none; }
