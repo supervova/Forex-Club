@@ -8,6 +8,8 @@ _notes/
 
 # Auxiliary Files
 *.esproj
+*.min.css
+a/css/_test.css
 *.zip
 a/img/_grid-bl22.png
 404.html
