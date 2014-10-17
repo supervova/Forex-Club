@@ -4,18 +4,35 @@
 
 
 
-.btn-white {
-    background: #dde0e4;
-    .reset-filter();
-    .border-radius(24px);
-    border: 0 none;
-    .box-shadow(inset 0 1px 0 rgba(255, 255, 255, .72), 0 4px 4px #fb6200);
-    color: #515458;
-    font: 100 24px / 55px 'Roboto', sans-serif;
-    text-shadow: 0 1px #fff;
-    .transition(background .2s ease-in-out);
-    height: 55px;
+/*
+|-------------------------------------------------------------------------------
+| LANDSCAPE TABLETS and OLD SCHOOL DESKTOP MONITORS (XGA: 1024x768) + RETINA
+|-------------------------------------------------------------------------------
+|
+|
+*/
+// Nested Media Queries Are not Supported by Most Browsers
+@media  only screen and (max-width: 1024px) and (-o-min-device-pixel-ratio: 5/4),
+        only screen and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 1.25),
+        only screen and (max-width: 1024px) and (min-resolution: 120dpi) {
+
+    .td-top IMG { visibility: hidden; }
+    .td-top FIGURE {
+            background: transparent url(/a/img/main-pic-x2.png) no-repeat;
+            .background-size(100% 100%);
+    }
 }
+
+
+/*
+|-------------------------------------------------------------------------------
+| PORTRAIT TABLETS: 768–979px
+|-------------------------------------------------------------------------------
+*/
+
+@media only screen and (min-width: 321px) and (max-width: 979px) {
+}
+
 
 
 
