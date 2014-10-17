@@ -11,7 +11,7 @@ _notes/
 *.min.css
 a/css/_test.css
 *.zip
-a/img/_grid-bl22.png
+# a/img/_grid-bl22.png
 404.html
 
 # Editors / IDE Files
