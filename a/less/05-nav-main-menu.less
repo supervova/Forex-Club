@@ -1,8 +1,12 @@
 @import '02-variables.less';
 @import '02-mixins.less';
 
-@main-menu-link-color:      #66c;
-@main-menu-link-hover-color:darken(@main-menu-link-color, 16%);
+@main-menu-link-color:      #74777b;
+@main-menu-link-hover-color:#c9ccd0;
+
+// Slide Out
+@so-width:                  270px;
+@so-link-padding:           12px 10px 10px;
 
 /*
 |---------------------------------------
@@ -11,22 +15,19 @@
 */
 .main-menu { // Container
     background: #1f2226;
-    color: #74777b;
-    overflow: hidden;
+    color: @main-menu-link-color;
+    text-align: left;
     .fixed-on-top;
     left: 0;
     .transition(width .2s);
     height: 100%;
     width: 280px;
+    z-index: 1; // It's need for tooltip appeas above main content
 
     A {
-        color: @main-menu-link-color;
-        text-decoration: none;
         display: block;
-
-        &:hover { color: @main-menu-link-hover-color;}
+        &.active, &:hover, A:focus  { text-decoration: none; }
     }
-
 }
 
 /*
@@ -54,47 +55,175 @@
 | Main Menu
 |---------------------------------------
 */
-.nav { //  UL
-    display: table;
-    *display: block;
-    float: ;
-    padding: ;
-    position: relative;
-    width: ;
-    *zoom: 1;
 
-    A {
-        display: block;
-        padding: ;
-        width: 100%;
+.main-menu {
+
+    .nav { //  UL
+        display: table;
+        *display: block;
+        padding: 45px 20px 88px;
+        position: relative;
+        width: 280px;
+        *zoom: 1;
     }
 
-    A.active, A:hover, A:focus { // Hover state
-        color: ;
-        background: ;
-        text-decoration: none;
+    // First Level A
+    .dropdown-toggle, .dropdown-toggle:visited,
+    .mm-label, .mm-label:visited { // First Level A
+        color: @main-menu-link-color;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
+        .transition(color .2s);
+
+        &.active, &:hover, A:focus  {
+            color: @main-menu-link-hover-color;
+        }
+    }
+
+    .dropdown {
+        &.active .dropdown-toggle, &:hover .dropdown-toggle  {
+            color: @main-menu-link-hover-color;
+        }
+    }
+
+
+    // First Level A w/o Sign In / Sign Up
+    .dropdown-toggle, .mm-home .mm-label {
+        position: relative;
+        padding: (11em / @b) 0 (11em / @b) 40px;
+        *zoom: 1;
     }
 }
 
-.mm-menu { // First Level LI
-    display: table-cell;
-    *display: block;
-    *float: left;
-    margin: ;
-    z-index: 4;
+// Sign In / Sign Up
+.mm-sign-in, .mm-sign-up {
+    .inline-block();
+    margin-bottom: 5em / @b;
+
+    .mm-label {
+        background: #25282c;
+        border-radius: @border-radius-small;
+        text-align: center;
+        padding: (5em / @b) 0 (6em / @b);
+        .transition(background-color .2s);
+
+        &:hover { background-color: #2f3236; }
+    }
 }
 
-// SNIPPET:lemmlabel — First Level Menu Item Label
+.mm-sign-in {
+    float: left;
+    margin-right: 1px;
+    width: 75px;
+}
+
+.mm-sign-up { width: 164px; }
+
+// Bonus
+/*
+|---------------------------
+| BONUS
+|---------------------------
+*/
+.main-menu .mm-bonus {
+    background-color: #25282c;
+    color: #fff;
+    display: none;
+    padding: 28px 0 0 60px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    .transition(background-color .2s);
+    height: 66px;
+    width: 280px;
+
+    .ico-d {
+        line-height: 0;
+        top: 37em / @b;
+        left: 20px;
+    }
+
+    &:hover { background-color: #2f3236; }
+}
+
+.main-menu FOOTER .tooltip {
+    bottom: 55px;
+    left: 20px;
+}
+
+// Show only on
+@media  only screen and (min-height: 740px),
+        only screen and (min-height: 460px) and (max-width: 320px) ,
+        only screen and (min-height: 570px) and (min-width: 1200px)  {
+
+        .main-menu .mm-bonus { display: block; }
+}
 
 // There is the dropdown menu in the secondary menus file
 
 /*
 |-------------------------------------------------------------------------------
-| OLD SCHOOL DESKTOP MONITORS (XGA: 1024x768)
+| LANDSCAPE TABLETS and OLD SCHOOL DESKTOP MONITORS (XGA: 1024x768)
 |-------------------------------------------------------------------------------
 */
-@media only screen and (max-width: 1199px) {
-    .main-menu { width: 88px; }
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+
+    .main-menu {
+        width: 88px;
+
+        .nav { //  UL
+            padding: 0 0 66px;
+            width: 88px;
+        }
+
+        .dropdown { width: 88px; }
+
+        // First Level A
+        .dropdown-toggle, .mm-bonus, .mm-label {
+            float: none;
+            font-size: 13px;
+            text-align: center;
+            padding: 0;
+            height: 66px;
+            margin: 0;
+            width: 88px;
+        }
+
+        .dropdown-toggle {
+            border-top: 1px solid #25282c;
+            border-bottom: 1px solid #15181c;
+            padding: 35px 4px 0;
+        }
+
+        .mm-bonus {
+            border-top: 1px solid #25282c;
+            padding: 35px 4px 0;
+        }
+
+        .ico-d, .mm-bonus .ico-d {
+            left: 50%;
+            margin: 0 0 0 -15px;
+            top: 9px;
+        }
+    }
+
+
+    // Sign In / Sign Up
+    .mm-sign-in, .mm-sign-up {
+        margin-bottom: 0;
+
+        .mm-label {
+            .border-radius(none);
+            border-top: 1px solid #2f3236;
+            border-bottom: 1px solid #1b1e22;
+        }
+    }
+
+    .main-menu .mm-sign-in A { padding: 25px 4px 0; }
+    .main-menu .mm-sign-up A {
+        line-height: normal;
+        padding: 16px 4px 0;
+    }
+
 
     .a-logo {
         // @see background in 02-sprites
@@ -105,7 +234,42 @@
         IMG { display: none; }
     }
 
+    // Company Card Tooltip
+    .tt-company { top: 55em / 13; }
+
 }
+
+
+/*
+|-------------------------------------------------------------------------------
+| TABLETS AND DESKTOPS: 768px and up
+|-------------------------------------------------------------------------------
+*/
+
+@media only screen and (min-width: 768px) {
+    .tt-company { // Company Card Tooltip
+        top: 33em / 13;
+        width: 400px;
+
+        H1, H2 {
+            font-size: 100%;
+            display: inline-block;
+            letter-spacing: normal;
+            line-height: inherit;
+            padding: 0 0 (5em / 13);
+        }
+
+        H1:after { content: '.'; }
+
+        ADDRESS, P { margin-bottom: 0;}
+
+        I {
+            font-style: normal;
+            color: #000;
+        }
+    }
+}
+
 
 /*
 |-------------------------------------------------------------------------------
@@ -115,49 +279,274 @@
 
 @media only screen and (max-width: 767px) {
 
-    /* Main menu had transformed to Slide out */
 
-    @so-bg:                     #4E5053;
-    @so-width:                  240px;
+/*  Slide Outs ---------------------- */
 
-    @so-link-color:             #5B5E62;
-    @so-link-hover-color:       lighten(@so-link-color, 16%);
-    @so-link-hover-bg:          #33363a;
-    @so-link-shadow:            0 1px 1px rgba(0,0,0,.84);
-
-    @so-link-brd-t:             0 1px 0 rgba(255, 255, 255, .2); // Inset Border Shadow
-    @so-link-brd-b:             1px solid #33363a;
-    @so-link-padding:           12px 10px 10px;
-
-    .main-menu {
-        background: @so-bg;
-        padding-top: 1px;
+    .slide-out, .sec-regional .slide-out-right {
+        border: 0 none;
+        text-align: left;
+        overflow: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
         .fixed-on-top;
-        right: 0;
         bottom: 0;
-        left: 0;
-        visibility: hidden;
         height: 100%;
         width: @so-width;
+    }
 
-        UL { width: inherit; }
+    // Main menu
+    .slide-out {
+        background: #1f2226;
+        color: @main-menu-link-color;
+        left: 0;
+        z-index: 1; // It's need for tooltip appeas above main content
 
         LI A {
-            color: @so-link-color;
-            border-bottom: @so-link-brd-b;
-            box-shadow: @so-link-brd-t;
+            border: 0 none;
+            color: @main-menu-link-color;
             display: block;
-            text-decoration: none;
-            text-shadow: @so-link-shadow;
-            padding: @so-link-padding;
-            width: @so-width;
+            width: 100%;
 
-            &:visited { color: @so-link-color; }
-
-            &:hover, &:active {
-                background-color: @so-link-hover-bg;
-                color: @so-link-hover-color;
+            &:visited, &:hover, &:active {
+                color: @main-menu-link-color;
+                text-decoration: none;
             }
         }
+
+        .mm-sign-up { width: 154px; }
+
+        // Transform Dropdowns to Static Submenus
+        .sm {
+            background: transparent;
+            border: 0 none;
+            .box-shadow(none);
+            margin: 0;
+            padding: 0;
+            position: static;
+            top: auto;
+            left: auto;
+            width: auto !important;
+
+            .col {
+                margin-right: 0;
+                width: auto;
+            }
+
+
+            // Carets, HRs, icons
+            HR, &:before, &:after, .ico-l { display: none; }
+
+            // Links
+            A, A:visited {
+                background-image: url(/a/img/gui/b-a-grey.png);
+                background-position: 0 (5em / @b);
+                text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+                padding: (11em / @b) 0 (11em / @b) 40px;
+            }
+
+            A:hover, A:visited:hover {
+                background-color: transparent;
+                color: #C9CCD0;
+                .transition(color .2s);
+            }
+
+            H4 A {
+                background-image: url(/a/img/gui/b-a.png);
+                font-weight: normal;
+            }
+
+            .active {
+                // background: darken(@dropdown-bg, 4%);
+            }
+        }
+    }
+
+    // Main menu UL
+    .main-menu .nav { padding: 23px 20px 88px; }
+
+    // Locale menu
+    .sec-regional .slide-out-right {
+        border-left: @brd;
+        .border-radius(0);
+        margin-top: 0;
+        right: -@so-width;
+        padding: 13px 11px 19px;
+
+        .col {
+            margin: 0;
+            width: auto;
+
+            H4 { padding: 22em / @b 0 6px 22px; }
+        }
+
+        H3, H4 {
+            color: #515458;
+
+            .ico-flag {
+                margin: 0;
+                top: auto;
+                left: 0;
+                bottom: 12em / @b;
+            }
+        }
+
+        H3 { padding: 0 0 4px 22px; }
+
+        HR { margin-bottom: 0; }
+
+        UL {
+            padding: 0;
+            margin: 0;
+        }
+
+        LI, LI:first-child {
+            border: 0 none;
+            display: block;
+            float: none;
+            margin: 0 0 1px;
+            padding: 0;
+        }
+
+        A, EM { padding: 5px 22px; }
+
+        A, {
+            background-image: url(/a/img/gui/b.png);
+            background-position: 0 (9em / @b);
+            background-repeat:  no-repeat;
+
+            &:hover {
+                background-color: @submenu-link-hover-bg;
+                .border-radius(@border-radius-base);
+            }
+        }
+    }
+
+/*  Customization  ------------------ */
+
+    .p-products .mm-products .sm,
+    .p-benefits .mm-benefits .sm,
+    .p-analytics .mm-analytics .sm,
+    .p-education .mm-education .sm,
+    .p-about .mm-about .sm,
+    .p-help .mm-help .sm,
+    .p-user .mm-user .sm {
+        display: block !important; // To reassign styles which has been setting by .hide();
+    }
+
+    .p-products,
+    .p-benefits,
+    .p-analytics,
+    .p-education,
+    .p-about,
+    .p-help,
+    .p-user {
+        .main-menu .mm-bonus {
+            position: relative;
+            bottom: auto;
+            left: auto;
+        }
+
+        .main-menu .nav { padding-bottom: 12em / @b; }
+    }
+
+
+
+/*  Main menu scrollbar  ------------ */
+
+    // .slide-out::-webkit-scrollbar { // Entire scrollbar
+    //     height: 100%;
+    //     width: 10px;
+    // }
+
+    // .slide-out::-webkit-scrollbar-track { // Track. We can use .scrollbar-track class for jQuery solutions
+    //     background-color: #15181c;
+    //     -webkit-border-radius: 10px;  // We can use mixin for jQuery solutions
+    //     pointer-events: none; // Prevents all click, state and cursor options on the specified HTML element
+    //     -webkit-user-select: none;  // We can use mixin for jQuery solutions
+    //     width: 10px; // it will be increase on hover
+    //     z-index: 4;
+    // }
+
+    // .slide-out::-webkit-scrollbar-thumb { // Handle. We can use .scrollbar-handle for jQuery solutions
+    //     background-color: #292c30;
+    //     // border: 1px solid rgba(85, 85, 85, 0.6);
+    //     border-radius: 7px; // We can use mixin for jQuery solutions
+    //     width: 8px;
+    // }
+
+/* Search --------------------------- */
+    .main-menu .f-search {
+        border: 0 none !important; // Reset Google inline styles @see sms-roman & polylog
+        height: 44px;
+        width: @so-width;
+
+        // Search Button
+        BUTTON {
+            /* Main sprite */
+            background-position: -490px -60px;
+            border-left: 1px solid #a8abb0;
+            position: absolute;
+            top: 3px;
+            right: 0;
+            height: 38px;
+            width: 43px;
+        }
+    }
+
+    // Input
+    INPUT[type="search"] {
+        background: #33363a;
+        .box-shadow(inset 0 12px 24px rgba(0, 0, 0, .24));
+        color: #fff;
+        padding: 10px 48px 5px 19px;
+        height: 44px;
+    }
+
+    // Search Placeholder
+    .search-placeholder(#abaeb2, #d3d6da);
+
+    INPUT[type="search"]:-moz-placeholder {
+        font-size: 13px;
+        padding-top: 2px;
+    }
+
+    INPUT[type="search"]:-ms-input-placeholder {
+        font-size: 13px;
+        padding-top: 2px;
+    }
+
+    INPUT[type="search"]::-webkit-input-placeholder {
+        font-size: 13px;
+        padding-top: 2px;
+    }
+
+/* Bonus ---------------------------- */
+    .main-menu .mm-bonus {
+        padding: 21px 0 0 60px;
+        height: 60px;
+        width: @so-width;
+
+        .ico-d { top: 30em / @b; }
+    }
+}
+
+/*
+|---------------------------------------
+| High resolution devices
+|---------------------------------------
+*/
+
+@media  only screen and (max-width: 767px) and (-o-min-device-pixel-ratio: 5/4),
+        only screen and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.25),
+        only screen and (max-width: 767px) and (min-resolution: 120dpi) {
+
+    // Submenu links
+    .slide-out .sm A, .slide-out .sm A:visited {
+        background-image: url(/a/img/gui/b-a-grey-x2.png);
+        .background-size(24px 24px);
+    }
+    .slide-out .sm H4 A  {
+        background-image: url(/a/img/gui/b-a-x2.png);
+        .background-size(24px 24px);
     }
 }

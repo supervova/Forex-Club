@@ -1,4 +1,5 @@
 User-agent: *
 Disallow: /
 
-# @TODO — check robots.txt template before push site to production
+# TODO — check robots.txt template before push site to production
+# README.todo

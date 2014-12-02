@@ -11,10 +11,10 @@
 @dropdown-caret-offset:     20px;
 
 // Background and border has benn set in variables
-@dropdown-padding:          19px 19px;
+@dropdown-padding:          19px;
 @dropdown-width-small:      120px;
 @dropdown-width-base:       220px;
-@dropdown-width-large:      400px;
+@dropdown-width-large:      420px;
 @dropdown-width-xl:         640px;
 
 
@@ -28,18 +28,14 @@
 }
 
 //  Label Caret
-.dropdown-toggle:after {
-    #caret > .to-bottom(@label-caret-width-base, @label-caret-color);
+.dropdown-toggle-b:after, .dropdown-toggle-t:after {
     #caret > .body();
     margin-left: 4px;
     vertical-align: middle;
 }
 
-// Dropups arrows
-.dropdown-tr .dropdown-toggle:after, .dropdown-tl .dropdown-toggle:after {
-    border-bottom: @label-caret-width-base solid;
-    border-top: 0;
-}
+.dropdown-toggle-b:after { #caret > .to-bottom(@label-caret-width-base, @label-caret-color); }
+.dropdown-toggle-t:after { #caret > .to-top(@label-caret-width-base, @label-caret-color); }
 
 // Dropdown menu - ul or div-container for mega dropdowns
 .dropdown-menu {
@@ -60,15 +56,50 @@
     // SNIPPET:ledddiv — Dropdown Divider
 }
 
-UL.dropdown-menu, .dropdown-menu UL {
+// Entitled Dropdown
+.dropdown-menu-entitled {
+    padding: 0;
+
+    .dropdown-header {
+        #gradient > .vertical-three-colors(#edf0f4; #e1e4e8; 76%; #e7eaee);
+        border-bottom: 1px solid #d3d6da;
+        .box-shadow(0 1px 4px rgba(0, 0, 0, .08));
+        text-shadow: 0 1px 0 #FFF;
+        padding: (17em / @b) 29px 0;
+        height: 53px;
+    }
+
+    .dropdown-body { padding: @dropdown-padding; }
+}
+
+.dropdown-body .f-actions .btn { margin-bottom: 0; }
+
+// Dropdown List
+UL.dropdown-menu {
     list-style-image: none;
     list-style-type: none;
 }
 
 // The dropdowns sizes. Extra classes
-.dropdown-menu-width-small{ width: @dropdown-width-small; }
-.dropdown-menu-width-large { width: @dropdown-width-large; }
-.dropdown-menu-width-xl { width: @dropdown-width-xl; }
+.dropdown-small{ width: @dropdown-width-small; }
+.dropdown-large, .main-menu .dropdown-menu  {
+    width: @dropdown-width-large;
+
+    .col {
+        margin-left: 0;
+        width: 170px;
+    }
+
+    .col-first { margin-right: 20px; }
+}
+.dropdown-xl { width: @dropdown-width-xl; }
+
+// The dropdowns dividers
+.dropdown-menu HR {
+    .box-shadow(0 1px 0 #fff);
+    margin: (16em / @b) 0 (15em / @b) ;
+}
+
 
 /* Menu carets  */
 .dropdown-menu {
@@ -123,7 +154,119 @@ UL.dropdown-menu, .dropdown-menu UL {
     }
 }
 
-// SNIPPET:leddbr — Bottom Right Position
+// Menu and caret positioning — right
+.dropdown-menu-r {
+    margin: 0 0 0 (@dropdown-caret-width + 1);
+    top: -16px;
+    left: 100%;
+
+    &:before { // Caret border
+        #caret > .to-left((@dropdown-caret-width + 1), @dropdown-border);
+        top: @dropdown-caret-offset + 9;
+        right: 100%;
+        left: auto;
+    }
+
+    &:after { // Caret body
+        #caret > .to-left(@dropdown-caret-width, @dropdown-bg);
+        top: @dropdown-caret-offset + 10;
+        right: 100%;
+        left: auto;
+    }
+}
+
+.dropdown-menu-r.dropdown-menu-entitled { // Caret body
+
+    &:before { // Caret border
+        top: @dropdown-caret-offset;
+    }
+
+    &:after { // Caret body
+        top: @dropdown-caret-offset + 1;
+        border-right-color: #e4e7eb;
+    }
+}
+
+/*
+|---------------------------
+| Customization
+|---------------------------
+*/
+.dropdown-sign-in {
+    top: -13px;
+}
+
+.mm-products .dropdown-menu, .mm-benefits .dropdown-menu,
+.mm-about .dropdown-menu {
+    top: -148px;
+
+    &:before { // Caret border
+        top: 160px;
+    }
+
+    &:after { // Caret body = Caret border + 1
+        top: 161px;
+    }
+
+}
+
+.mm-help .dropdown-menu {
+    top: -280px;
+
+    &:before { // Caret border
+        top: 292px;
+    }
+
+    &:after { // Caret body = Caret border + 1
+        top: 293px;
+    }
+
+}
+
+
+/*
+|-------------------------------------------------------------------------------
+| LANDSCAPE TABLETS and OLD SCHOOL DESKTOP MONITORS (XGA: 1024x768)
+|-------------------------------------------------------------------------------
+*/
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+
+
+    .dropdown-sign-in {
+        top: 7px;
+    }
+
+    .mm-products .dropdown-menu,
+    .mm-benefits .dropdown-menu,
+    .mm-analytics  .dropdown-menu,
+    .mm-about .dropdown-menu,
+    .mm-education .dropdown-menu{
+        top: -123px;
+
+        &:before { // Caret border
+            top: 157px;
+        }
+
+        &:after { // Caret body = Caret border + 1
+            top: 158px;
+        }
+
+    }
+
+    .mm-about .dropdown-menu,
+    .mm-help .dropdown-menu {
+        top: -256px;
+
+        &:before { // Caret border
+            top: 290px;
+        }
+
+        &:after { // Caret body = Caret border + 1
+            top: 291px;
+        }
+
+    }
+}
 
 // SNIPPET:leddl — Left Position
 

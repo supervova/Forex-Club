@@ -38,6 +38,7 @@
 
 @dropdown-bg:               @gray-lighter; // use in dropdowns, secondary menus etc
 @dropdown-border:           #e5e6ea;
+@submenu-link-hover-bg:     darken(@dropdown-bg, 4%);
 
 @clear-close-bg:            #abaeb2;
 
@@ -51,7 +52,7 @@
 |---------------------------------------
 */
 
-@font-family-sans-serif:    'Helvetica Neue', Helvetica, Arial, sans-serif;
+@font-family-sans-serif:    'Helvetica Neue', Helvetica, Arial, Roboto, sans-serif;
 @font-family-serif:         Georgia, 'Times New Roman', Times, serif;
 @font-family-monospace:     Monaco, 'Courier New', monospace;
 
@@ -64,6 +65,8 @@
 | To set margin and padding use formula
 | [multiplier] * @bl / @b + 0em;
 | 2) Baseline in pixels (13pb - 20px)
+| 3) Keep these parentheses to avoid compiling errors
+| in shortcut proprties like font:
 |
 */
 
@@ -76,39 +79,39 @@
 @baseline-mob:              @blm / @bm + 0em;
 
 @small:                     13;
-@font-size-small:           @small / @b * 100%;
-@line-height-small:         (4 / 5) * @bl / @small + 0em; // 4/5 of baseline
+@font-size-small:           (@small / @b * 100%); // 3
+@line-height-small:         (4 / 5 * @bl / @small + 0em); // 4/5 of baseline
 
 
 /* Headings ----------------------------
 
-1) Keep these functions here to avoid compiling errors
+1) Keep these functions and parentheses here to avoid compiling errors
 2) baseline
 */
 @font-family-h1:            'Roboto', sans-serif;
 @font-weight-h1:            300;
 @color-h1:                  #000;
-@h1:                        42;
-@font-size-h1:              @h1 / @b * 100%; // 1
-@line-height-h1:            2 * @bl / @h1 + 0em; // 2
+@h1:                        40;
+@font-size-h1:              (@h1 / @b * 100%); // 1
+@line-height-h1:            (2 * @bl / @h1 + 0em); // 2
 
 @h1m:                       24;
-@font-size-h1-mob:          @h1m / @bm * 100%;
-@line-height-h1-mob:        @blm / @h1m + 0em;
+@font-size-h1-mob:          (@h1m / @bm * 100%);
+@line-height-h1-mob:        (@blm / @h1m + 0em);
 
 @font-family-h2:            @font-family-h1;
 @font-weight-h2:            @font-weight-h1;
 @color-h2:                  #000;
 @h2:                        26;
-@font-size-h2:              @h2 / @b * 100%;
-@line-height-h2:            @bl / @h2 + 0em;
+@font-size-h2:              (@h2 / @b * 100%);
+@line-height-h2:            (@bl / @h2 + 0em);
 
 @h2m:                       20;
-@font-size-h2-mob:          @h2m / @bm * 100%;
-@line-height-h2-mob:       @blm / @h2m + 0em;
+@font-size-h2-mob:          (@h2m / @bm * 100%);
+@line-height-h2-mob:        (@blm / @h2m + 0em);
 
-@font-size-h3sharp:         @b + @h2 / 2 / @b * 100%;
-@font-size-h2sharp:         @h2 + @h1 / 2 / @b * 100%;
+@font-size-h3sharp:         (@b + @h2 / 2 / @b * 100%);
+@font-size-h2sharp:         (@h2 + @h1 / 2 / @b * 100%);
 
 
 /*
@@ -173,7 +176,7 @@
 
 @state-danger-text:         @brand-danger;
 @state-danger-border:       lighten(@brand-danger, 50%);
-@state-danger-bg:          lighten(@brand-danger, 80%);
+@state-danger-bg:           lighten(@brand-danger, 80%);
 
 @state-success-text:        @brand-success;
 @state-success-border:      lighten(@brand-success, 60%);
@@ -182,7 +185,6 @@
 // @state-info-text:                       @brand-info;
 // @state-info-bg:                         lighten(@brand-info, 60%);
 // @state-info-border:                     darken(spin(@state-info-bg, -10), 6%);
-
 
 /*
 |---------------------------------------
@@ -220,36 +222,6 @@
 // @line-height-large:         1.33;
 // @line-height-small:         1.5;
 
-/* Buttons -------------------------- */
-
-// @btn-font-weight:           normal;
-
-// @btn-default-color:         #333;
-// @btn-default-bg:            #fff;
-// @btn-default-border:        #ccc;
-
-// @btn-primary-color:         #fff;
-// @btn-primary-bg:            @brand-primary;
-// @btn-primary-border:        darken(@btn-primary-bg, 5%);
-
-// @btn-success-color:         #fff;
-// @btn-success-bg:            @brand-success;
-// @btn-success-border:        darken(@btn-success-bg, 5%);
-
-// @btn-info-color:            #fff;
-// @btn-info-bg:               @brand-info;
-// @btn-info-border:           darken(@btn-info-bg, 5%);
-
-// @btn-warning-color:         #fff;
-// @btn-warning-bg:            @brand-warning;
-// @btn-warning-border:        darken(@btn-warning-bg, 5%);
-
-// @btn-danger-color:          #fff;
-// @btn-danger-bg:             @brand-danger;
-// @btn-danger-border:         darken(@btn-danger-bg, 5%);
-
-// @btn-link-disabled-color:   @gray-light;
-
 
 /* Forms ----------------------------
 |
@@ -276,7 +248,7 @@
 |
 | 1) Extra small screen / phone
 | 2) Small screen / tablet
-| 3) Old School desktop monitors (XGA: 1024x768)
+| 3) LANDSCAPE TABLETS and OLD SCHOOL DESKTOP MONITORS (XGA: 1024x768)
 | 4) Large widescreen monitors
 | 5) So media queries don't overlap when required, provide a maximum
 |

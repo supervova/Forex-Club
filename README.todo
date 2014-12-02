@@ -1,0 +1,63 @@
+I. Reminders:
+    ☐ Use Emmet to write code
+    http://coding.smashingmagazine.com/2013/03/26/goodbye-zen-coding-hello-emmet/
+
+    ☐ Use landmark roles attributes
+    application
+    banner
+    complementary
+    contentinfo
+    form
+    main
+    navigation
+    search
+    http://www.w3.org/TR/wai-aria/roles
+
+--- ✄ -----------------------
+
+II. Todos:
+    ☐ Сlick events of dropdowns and slideout functions after changing viewport.
+        They work only after reload
+
+    ☐ Set cookie to show smart banner only once
+    <meta name="apple-itunes-app" content="app-id=684181266">
+
+    ✔ Test on Android @Sonya
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
+
+    ✔ Slide-out and dropdown function. Fix some errors
+    Dropdowns doesn't close on click outside if click outside has used in
+    slide-outs function
+    ✔ $(document).click + soLeft.add(soRight).click(function(event) {event.stopPropagation();
+    ✘ event.stopPropagation()
+    ✘ пространство имен для обработчика событий
+    ✘ .on / .off
+    ✘ local variable
+    ✘ .on('click', function(event) {
+    ✘ mediaMatch
+
+    ✔ Test media queries w and w/o respond.js @done (14-05-05 18:36)
+
+
+
+III. Has Been Removed:
+
+    1) Rambler Top 100
+    2) Trilan counter
+    3) Invalid schema.org in <header>
+
+
+IV. @WTF:
+    1) legacy.js functions
+    2) Gde slon
+    3) Google Code for Entire website
+    4) Partner Cookie
+    5) WTF-39
+    6) WTF-42
+    7) WTF-98: Kavanga.AdEngine
+    8) WTF-104: AdRiver
+    9) WTF: Gemius SA
+    10) WTF: Chats
+
+PlainTasks (.todo) Plugin Usage
+https://github.com/aziz/PlainTasks

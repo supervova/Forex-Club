@@ -4,24 +4,25 @@
 /* Billboard (Jumbotron) ------------ */
 
 @jumbotron-padding:         30px;
-@jumbotron-color:           inherit;
+@jumbotron-color:           #fff;
 @jumbotron-bg:              #ff8000;
 @jumbotron-heading-color:   #fff;
 // @jumbotron-font-size:       ;
 
 // Jumbotron in Twitter Bootstrap
 .sec-billboard {
-    margin: 0 0 @baseline 280px;
+    text-align: left;
+    margin: 0 0 0 280px;
     padding: 0 @jumbotron-padding 0;
     position: relative;
     min-height: 800px;
     *height: 800px;
     *zoom: 1;
 
-    H1, .h1 { color: ; }
+    // H1, .h1 { color: ; }
 }
 
-.p-front .sec-billboard {
+.p-branded-header .sec-billboard {
     background: @jumbotron-bg;
     color: @jumbotron-color;
 
@@ -45,7 +46,7 @@
 
 /*
 |-------------------------------------------------------------------------------
-| OLD SCHOOL DESKTOP MONITORS (XGA: 1024x768)
+| LANDSCAPE TABLETS and OLD SCHOOL DESKTOP MONITORS (XGA: 1024x768)
 |-------------------------------------------------------------------------------
 */
 @media only screen and (max-width: 1199px) {
@@ -68,6 +69,9 @@
 */
 
 @media only screen and (max-width: 767px) {
-    .sec-billboard { margin-left: 0;}
+    .sec-billboard {
+        margin-left: 0;
+        z-index: 2;
+    }
 
 }

@@ -10,11 +10,9 @@ HTML: <div title="tooltip text" class="dfn"></div>
 @tooltip-border:            @gray;
 @tooltip-color:             @text-color;
 
-@tooltip-max-width:         200px;
-@tooltip-width-large:       440px;
+@tooltip-max-width:         240px;
+@tooltip-width-large:       400px;
 @tooltip-width-small:       120px;
-
-@tooltip-opacity:           90;
 
 @tooltip-arrow-width:       8px;
 @tooltip-arrow-brd-width:   9px;
@@ -36,8 +34,7 @@ HTML: <div title="tooltip text" class="dfn"></div>
     line-height: @line-height-small;
     text-align: left;
     margin: 0 0 @tooltip-arrow-brd-width 0;
-    padding: 20px;
-    .opacity(@tooltip-opacity);
+    padding: 19px;
     position: absolute;
     bottom: 100%;
     left: 0;
@@ -68,14 +65,42 @@ HTML: <div title="tooltip text" class="dfn"></div>
 }
 
 // The tooltip sizes. Extra classes
-.tooltip-width-large { width: @tooltip-width-large; }
-.tooltip-width-small{ width: @tooltip-width-small; }
+.tooltip-large { width: @tooltip-width-large; }
+.tooltip-small{ width: @tooltip-width-small; }
+
+
+// Tooltip and caret positioning — right
+.dfn-r .tooltip, .tooltip-r {
+    margin: 0 0 0 @tooltip-arrow-brd-width;
+    top: 0;
+    bottom: auto;
+    left: 100%;
+
+    &:before { /* Caret border */
+        border-top: @tooltip-arrow-brd-width solid transparent;
+        border-right: @tooltip-arrow-brd-width solid @tooltip-border;
+        border-bottom: @tooltip-arrow-brd-width solid transparent;
+        border-left: 0 none;
+        top: @tooltip-arrow-offset;
+        right: 100%;
+        left: auto;
+    }
+
+    &:after { /* Caret body */
+        border-top: @tooltip-arrow-width solid transparent;
+        border-right: @tooltip-arrow-width solid @tooltip-bg;
+        border-bottom: @tooltip-arrow-width solid transparent;
+        border-left: 0 none;
+        top: @tooltip-arrow-offset + 1;
+        right: 100%;
+        left: auto;
+    }
+}
+
 
 // SNIPPET:letttr — Top Right Position
 
 // SNIPPET:lettl — Left Position
-
-// SNIPPET:lettr — Right Position
 
 // SNIPPET:lettbl — Bottom Left Position
 

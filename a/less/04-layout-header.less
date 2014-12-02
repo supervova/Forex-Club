@@ -7,7 +7,6 @@
 @search-button-width:       42px;
 
 .doc-header {
-    // background: #FCC;
     text-align: left;
     margin: 0 auto;
     padding: 39px 20px 0;
@@ -26,8 +25,6 @@
       &:after { clear: both; }
 }
 
-    .p-front .doc-header H1 A { cursor: default}
-
 /*
 |---------------------------------------
 | Locale Menu
@@ -40,7 +37,7 @@
     padding-top: 11em / @b;
     width: 180px;
 
-    .tel, .tel:hover {
+    .tel {
         color: #797c80;
         font-family: 'Roboto', sans-serif;
     }
@@ -56,7 +53,7 @@
         *zoom: 1;
 
         &:after {
-            #caret > .to-bottom(4px, rgba(255, 255, 255, .44));
+            #caret > .to-bottom(4px, @gray);
             #caret > .body();
             margin-top: -3px;
             position: absolute;
@@ -65,30 +62,81 @@
         }
     }
 
+    //Languages and Branches
     .dropdown-menu {
+        .border-radius(@border-radius-base 0 @border-radius-base @border-radius-base);
+        padding: 30px 34px 19px;
         right: 10px;
         text-align: left;
-        .border-radius(@border-radius-base 0 @border-radius-base @border-radius-base);
 
-    &:before {
-        #caret > .to-top-right(8px, @dropdown-border);
-        right: -1px;
+        &:before {
+            #caret > .to-top-right(12px, @dropdown-border);
+            top: -12px;
+            right: -1px;
+        }
+
+        &:after {
+            #caret > .to-top-right(11px, @dropdown-bg);
+            top: -11px;
+            right: 0;
+        }
     }
 
-    &:after {
-        #caret > .to-top-right(7px, @dropdown-bg);
-        right: 0;
-        top: -7px;
+    .inline {
+        LI { padding: 0 14px;
+
+            &:first-child { margin-left: -14px; }
+        }
     }
 
+    H4 {
+        color: @text-color;
+        position: relative;
+        *zoom: 1;
+
+        .ico-flag {
+            position: absolute;
+            margin-top: -5px;
+            top: 50%;
+            left: -20px;
+        }
+    }
+
+    HR { margin: (11em / @b) 0 (14em / @b);}
+
+    .col {
+        margin-left: 30px;
+        width: 120px;
+
+        A { padding: 0; }
     }
 }
 
+// Phone ---------------------------- */
+.doc-header .tel, .doc-header-mob .tel {
 
-.p-front .sec-regional {
-    .tel, .tel:hover { color: #fff; }
+     .co {
+        .inline-block();
+        vertical-align: middle;
+        margin: -4px 8px 0 0;
+        height: 14px;
+        width: 9px;
+    }
 }
 
+.doc-header .tel .co { background-position: -370px -70px; }
+
+.p-branded-header .tel .co,
+.doc-header-mob .tel .co
+{ background-position: -400px -70px; }
+
+.p-branded-header .sec-regional {
+    .tel {
+        color: #fff;
+        // cursor: pointer; // uncomment after phone model will be implemented
+    }
+    .dropdown-toggle:after { border-top-color: rgba(255, 255, 255, .44); }
+}
 
 /*
 |---------------------------------------
@@ -108,12 +156,8 @@
     BUTTON {
         /* Main sprite */
         background-position: @search-btn-bg-position;
-        .reset-filter();
         .ir;
-        border: 0;
         border-left: 1px solid #b5bac1;
-        .border-radius(0);
-        .box-shadow(none);
         display: block;
         padding: 0;
         .opacity(60);
@@ -175,7 +219,7 @@ INPUT[type="search"]::-webkit-search-decoration {
 }
 
 // Search in Billboard
-.p-front .f-search {
+.p-branded-header .f-search {
     border: 1px solid rgba(255, 255, 255, .44);
 
     BUTTON {
@@ -186,12 +230,44 @@ INPUT[type="search"]::-webkit-search-decoration {
     .search-placeholder(rgba(255, 255, 255, .44), rgba(255, 255, 255, .24));
 }
 
-.p-front .doc-header {
+.p-branded-header .doc-header {
 
     INPUT[type="search"] {
         color: #fff;
         background: transparent; }
 }
+
+
+/*
+|-------------------------------------------------------------------------------
+| PORTRAIT TABLETS: 768–979px
+|-------------------------------------------------------------------------------
+*/
+
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+
+    .doc-header { padding: 17px 20px 0; }
+
+    .sec-regional, .doc-header FORM {
+        float: none;
+        text-align: left;
+        width: 100%;
+        *width: auto;
+    }
+
+    .sec-regional {
+        padding-bottom: 11em / @b;
+
+    .dropdown-menu {
+            .border-radius(@border-radius-base);
+            margin-top: -11em / @b;
+
+            &:before, &:after { display: none; }
+        }
+
+    }
+}
+
 
 /*
 |-------------------------------------------------------------------------------
@@ -202,28 +278,83 @@ INPUT[type="search"]::-webkit-search-decoration {
 @media only screen and (max-width: 767px) {
 
     .doc-header {
-        #gradient > .vertical(#4E5053, #282A2D);
-        border-top: 1px solid #707275;
-        border-bottom: 1px solid #000;
-        .box-shadow(0 1px 2px rgba(0,0,0,.44));
-        text-align: center;
-        margin-bottom: 0;
+        margin: 0;
+        padding: 0;
+        height: 44px;
+        max-width: 980px;
+        width: 100%;
+    }
+
+    .doc-header-mob {
+        #gradient > .vertical(#33363a, #1f2226);
+        border-top: 1px solid #3d4044;
+        border-bottom: 1px solid #15181c;
+        .box-shadow(0 1px 0 rgba(255, 255 , 255, .12));
         padding: 0;
         position: fixed;
         right: 0;
         left: 0;
-        height: 42px; // Since box sizing remains default
+        height: 44px;
         width: 100%;
         z-index: 444;
         *zoom: 1;
+
+        .tel {
+            color: #65686c;
+            font-family: @font-family-sans-serif;
+            font-size: 13px;
+            line-height: 1;
+            text-align: right;
+            padding-top: 17px;
+            position: absolute;
+            top: 0;
+            right: 44px;
+            height: 42px;
+        }
+
     }
 
-    /* Search --------------------------- */
+    // Logo / Menu Button
+    .btn-menu {
+        background-position: 0 -140px;
+        cursor: pointer;
+        .ir;
+        font-size: 100%;
+        line-height: 1;
+        padding: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 42px;
+        width: 126px;
+    }
 
-    .f-search BUTTON { display: none; }
+    // Flag / Language Selector
+    .btn-menu-secd {
+        background-position: -420px -50px;
+        line-height: 1;
+        text-align: left;
+        padding: 9px 0 0 12px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 42px;
+        width: 42px;
 
-    /* Search — Hide for SMS novel. Remove it after implementation */
+        .ico-flag { vertical-align: top; }
+    }
 
-    .f-search { display: none; }
+    .sec-regional {
+        padding: 0;
+        position: static;
 
+        .tel { display: none; }
+
+        .dropdown-menu {
+            display: block;
+            .border-radius(none);
+
+            &:before, &:after { display: none; }
+        }
+    }
 }

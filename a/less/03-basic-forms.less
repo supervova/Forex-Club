@@ -36,8 +36,18 @@ INPUT::-moz-focus-inner { // Inner padding and border oddities in FF3/4
 }
 
 // SNIPPET:lefcontainers — Form Containers: FIEDLSET + LEGEND, .group
-// SNIPPET:lebtncontainer — Buttons container: .f-actions
 
+
+/*
+|---------------------------------------
+| Buttons container
+|---------------------------------------
+*/
+
+.f-actions {
+    position: relative;
+    *zoom: 1;
+}
 
 /*
 |---------------------------------------
@@ -46,9 +56,13 @@ INPUT::-moz-focus-inner { // Inner padding and border oddities in FF3/4
 */
 
 LABEL {
+    color: @gray-dark;
     cursor: pointer;
     display: block;
-    margin: 5/4*@baseline 0 @baseline/4;
+    margin: 5/4*@baseline 0 (5em / @b);
+    padding: 0 0 0 12px;
+    position: relative;
+    *zoom: 1;
 
     B {
         display: inline; // Show labels text on big screens
@@ -58,6 +72,12 @@ LABEL {
 
     LABEL.first, FORM > LABEL:first-child, FORM > .group:first-child LABEL, LEGEND + LABEL { margin-top: 0 ; }
     .help + LABEL, .with-tip + LABEL, .with-tip + .group LABEL { margin-top: @baseline; }
+
+.first-aid {
+    top: -5em / @b;
+    right: 0;
+    position: absolute;
+}
 
 // We have to use few rules, because browsers ignore a rule with an unknown selector.
 :-moz-placeholder { color: @input-bg; } // Placeholder isn't supported in Firefox 3.6
@@ -70,12 +90,15 @@ LABEL {
 |---------------------------------------
 */
 
+INPUT[type="email"],
+INPUT[type="password"],
+INPUT[type="tel"],
 INPUT[type="text"], /*.i-uneditable, */
-
+INPUT[type="url"],
 SELECT, TEXTAREA {
     background: @input-bg;
     border: @brd;
-    .border-radius(@brd-radius);
+    .border-radius(@border-radius-small);
     display: inline-block;
     font-family: inherit;
     margin: 0;
@@ -84,9 +107,13 @@ SELECT, TEXTAREA {
     width: 100%;
 }
 
-INPUT[type="text"], TEXTAREA {
-    font-weight: bold;
-    padding: (@baseline/4 - 1em/@b) 7px;
+INPUT[type="email"],
+INPUT[type="password"],
+INPUT[type="tel"],
+INPUT[type="text"], /*.i-uneditable, */
+INPUT[type="url"],
+TEXTAREA {
+    padding: (@baseline/3) 11px;
     outline: none;
 }
 
@@ -96,7 +123,7 @@ INPUT, TEXTAREA {
 
      // Focus state
     &:focus {
-        border-color: darken(@brd-color, 24%);
+        border-color: #4cb2ff;
         outline: 0;
         outline: thin dotted \9; // IE6-9
     }
@@ -132,9 +159,7 @@ INPUT[type="radio"] { vertical-align: text-bottom; }
 
 .cbx, .rb { // Labels-containers
     padding-left: @baseline;
-    position: relative;
     width: 100%;
-    *zoom: 1;
 }
 
 // SNIPPET:leformcbx — .cbx and .rb Extra Properties: Nested and Inline Structures
@@ -203,6 +228,20 @@ SELECT[multiple], SELECT[size] { height: auto; }
 
 /*
 |-------------------------------------------------------------------------------
+| Customization
+|-------------------------------------------------------------------------------
+*/
+
+.cbx-stay-signed-in {
+    .inline-block();
+    position: absolute;
+    top: -8em / @b;
+    right: 0;
+    width: auto;;
+}
+
+/*
+|-------------------------------------------------------------------------------
 | DESKTOPS: 980px and up
 |-------------------------------------------------------------------------------
 */
@@ -211,6 +250,17 @@ SELECT[multiple], SELECT[size] { height: auto; }
 .msg { // System message appear next to the input (on the right)
     right: ; //  -440px: Message Width + Margin
     max-width: ; } // 420px
+}
+
+
+/*
+|-------------------------------------------------------------------------------
+| LANDSCAPE TABLETS and OLD SCHOOL DESKTOP MONITORS (XGA: 1024x768)
+|-------------------------------------------------------------------------------
+*/
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+
+    .first-aid { top: -25em / @b; }
 }
 
 /*
@@ -254,12 +304,23 @@ SELECT[multiple], SELECT[size] { height: auto; }
 
     /* Text inputs and textareas -------- */
 
-    INPUT[type="text"], /*.i-uneditable, */ SELECT, TEXTAREA {
+    INPUT[type="email"],
+    INPUT[type="password"],
+    INPUT[type="tel"],
+    INPUT[type="text"], /*.i-uneditable, */
+    INPUT[type="url"],
+    SELECT,
+    TEXTAREA {
         margin: @baseline-mob/4 0;
         padding: (@baseline-mob/2 - 1em/@bm) 7px;
     }
 
-    INPUT[type="text"], TEXTAREA { font-weight: normal; }
+    INPUT[type="email"],
+    INPUT[type="password"],
+    INPUT[type="tel"],
+    INPUT[type="text"], /*.i-uneditable, */
+    INPUT[type="url"],
+    TEXTAREA { font-weight: normal; }
 
     /* Checkboxes, radiobuttons, input-images nad input-files ------------------- */
 

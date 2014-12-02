@@ -1,12 +1,12 @@
 @import '02-variables.less';
 @import '02-mixins.less';
 
-@submenu-padding:           9px 19px;
-@submenu-link-color:        #9d8582;
+@submenu-padding:           20px 29px 22px;
+@submenu-link-color:        @text-color;
 @submenu-link-hover-color:  @text-color;
-@submenu-link-hover-bg:     darken(@dropdown-bg, 4%);
-@submenu-link-padding:      5px 10px 6px;
-@submenu-link-border-radius: @border-radius-base;
+// @submenu-link-hover-bg:  darken(@dropdown-bg, 4%); // set in global vars
+@submenu-link-padding:      6px 10px 5px 28px;
+@submenu-link-border-radius: @border-radius-small;
 
 
 /*
@@ -20,16 +20,57 @@
     padding: @submenu-padding;
 
     A, A:visited { // Dropdown menu links
+        background-image: url(/a/img/gui/b-a.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
         .border-radius(@submenu-link-border-radius);
         color: @submenu-link-color;
         padding: @submenu-link-padding;
 
         // Hover state
         &:focus, &:hover {
-            background: @submenu-link-hover-bg;
+            background-color: @submenu-link-hover-bg;
             color: @submenu-link-hover-color;
             text-decoration: none;
         }
+    }
+
+    H4 A { background-image: none; }
+}
+
+/*
+|---------------------------------------
+| High resolution devices
+|---------------------------------------
+*/
+ @media print,
+        (-o-min-device-pixel-ratio: 5/4),
+        (-webkit-min-device-pixel-ratio: 1.25),
+        (min-resolution: 120dpi) {
+
+    .sm  A, .sm A:visited { // Dropdown menu links
+        background-image: url(/a/img/gui/b-a-x2.png);
+        .background-size(24px 24px);
+    }
+
+}
+
+// Accounts Menu Items
+.sm .sm-trader, .sm .sm-money-manager, .sm .sm-investor {
+    position: relative;
+    background-image: none;
+    *zoom: 1;
+}
+
+
+.sm-trader, .sm-money-manager, .sm-investor {
+
+    .ico-l {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 24px;
     }
 }
 

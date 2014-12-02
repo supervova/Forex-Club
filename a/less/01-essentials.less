@@ -32,13 +32,9 @@ ARTICLE, ASIDE, DETAILS, FIGCAPTION, FIGURE, FOOTER, HEADER, HGROUP, MAIN, NAV, 
 |---------------------------------------
 */
 
-* {
+*, *:before, *:after {
     .box-sizing(border-box);
-    behavior: url(/a/js/boxsizing.htc);
-}
-
-*:before, *:after {
-    .box-sizing(border-box);
+    *behavior: url(/a/js/boxsizing.htc);
 }
 
 :focus { outline: none; }
@@ -57,19 +53,28 @@ HTML, BODY {
     height: 100%; }
 
 BODY {
-    background: @body-bg-w-img;
-    // counter-reset: section;
+    background: @body-bg;
     font-size: 100% * @b / 16;
     line-height: @baseline;
     text-align: center;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     margin: 0;
     padding: 0;
 }
 
 // SNIPPET:leie8bgcrush — IE8 BODY Image Background Crush Cure
 
-// SNIPPET:lepage — Page Conainer for Slide Out Model at Mobiles
+.page {
+    background: @body-bg; // Repeat body background for slide out manipulation
+    text-align: left;
+    position: relative;
+    margin: 0 0 0 280px;
+    min-height: 100%;
+    height: auto;
+    *height: 100%;
+    *zoom: 1;
+}
 
 
 /*
@@ -80,7 +85,7 @@ BODY {
 
 // SNIPPET:lefont — @font-face Rule
 
-BODY, BUTTON, INPUT, LABEL, SELECT, TEXTAREA {
+BODY, BUTTON, INPUT, SELECT, TEXTAREA {
     color: @text-color;
     font-family: @font-family-base;
 }
@@ -137,13 +142,13 @@ H1, H2, H3, H4,
 H1, .h1 {
     color: @color-h1;
     font: @font-weight-h1 @font-size-h1 @font-family-h1;
-    letter-spacing: -.04em;
+    letter-spacing: -.03em;
     line-height: @line-height-h1; // Shortcut rule causes bugs in old IEs
     padding-top: 32em/@h1; // 32px
     padding-bottom: 21em/@h1;
 }
 
-    H1 B, .h1 B { line-height: .9; } // Some fonts add extra line height to bold lines, so @todo — test
+    H1 B, .h1 B { line-height: .9; } // Some fonts add extra line height to bold lines, so TODO — test
 
 H2, .h2 {
     font: @font-weight-h2 @font-size-h2 @font-family-h2;
@@ -174,7 +179,14 @@ HEADER {
 |---------------------------------------
 */
 
-// SNIPPET:letypoext — Extended Typography: ABBR, ADDRESS, DFN, INS, MARK, Q
+// SNIPPET:letypoext — Extended Typography: ABBR, DFN, INS, MARK, Q
+
+ADDRESS {
+    display: block;
+    font-style: normal;
+    margin-bottom: @baseline;
+}
+
 
 // SNIPPET:lealign - Text Alignment Classes
 
@@ -187,20 +199,19 @@ B, STRONG { font-weight: bold; }
 .byline { margin-bottom: 0; }
 
 HR {
-    background: transparent;
+    border: 0;
     border-top: @brd;
-    .box-sizing(content-box);
     clear: both;
     display: block;
     margin: (7/4 * @baseline - 1/@b) 0 (9/4 * @baseline - 1/@b); /* 4 (16/4) empty lines */
     padding: 0;
+    height: 1px;
 
     &.compact {
         background: @brd-color;
         border: 0;
         .box-sizing(border-box);
         margin: 0;
-        height: 1px;
     }
 
     // &.dashed { border-top-style: dashed; }
@@ -269,7 +280,7 @@ OL {
 }
 
 UL {
-    list-style-image: url(/a/img/b.gif);
+    list-style-image: url(/a/img/gui/b.png);
     margin: 0 0 @baseline;
     padding: 0;
     *padding-left: 20px;
@@ -287,14 +298,14 @@ NAV UL, NAV OL, FOOTER UL {
     padding: 0;
 }
 
-
 OL.unstyled, UL.unstyled {
-    padding-left: 0;
-    list-style: none;
+    *padding-left: 0;
+    list-style-type: none;
+    list-style-image: none;
 }
 
 UL.inline {
-    .cfx();
+    .clearfix();
     list-style: none;
     list-style-image: none;
     padding: 0;
@@ -357,7 +368,7 @@ I.co { .ir; }
 
     .ir BR { display: none; }
 
-// @TODO. Test it. Responsive images require to remove the media's height and width attributes from the HTML
+// TODO. Test it. Responsive images require to remove the media's height and width attributes from the HTML
 IMG {
     border: 0;
     display: block;
@@ -448,7 +459,7 @@ TABLE > TR:last-child TH, TABLE > TR:last-child TD, TBODY TR:last-child TH, TBOD
 |-------------------------------------------------------------------------------
 */
 
-.cfx, .doc-header, .doc-body, .doc-footer, .row, .row-limited {
+.doc-header, .doc-body, .doc-footer, .group, .row, .row-limited {
 
     *zoom: 1;
 
@@ -460,6 +471,16 @@ TABLE > TR:last-child TH, TABLE > TR:last-child TD, TBODY TR:last-child TH, TBOD
 
     &:after { clear: both; }
 }
+
+/*
+|-------------------------------------------------------------------------------
+| LANDSCAPE TABLETS and OLD SCHOOL DESKTOP MONITORS (XGA: 1024x768)
+|-------------------------------------------------------------------------------
+*/
+@media only screen and (max-width: 1199px) {
+    .page { margin-left: 88px;}
+}
+
 
 /*
 |-------------------------------------------------------------------------------
@@ -487,11 +508,21 @@ TABLE > TR:last-child TH, TABLE > TR:last-child TD, TBODY TR:last-child TH, TBOD
     In emergency case move it in slideOut function.
     On the other hand, if these styles can prove their worth, to rewrite the rules above. */
     BODY {
-        background: @body-bg none;
+        background: @body-bg;
         font-size: 100% * @bm / 16;
         line-height: @baseline-mob;
         overflow-x: hidden;
     }
+
+.page {
+    margin-left: 0;
+    padding: 0 20px;
+    max-width: none;
+    width: 100%;
+    z-index: 2;
+}
+
+
 
 /*
 |---------------------------------------

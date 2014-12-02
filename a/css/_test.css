@@ -1,15 +1,22 @@
-.ir,.btn-back,.btn-close,.btn-menu:before,.btn-search:before,.doc-header H1 A,.f-search BUTTON,I.co,.on-demand H3 I,.sys-message P:before,.warning-gl EM,.tbn-next:before,.tbn-next .before,.tbn-prev:before,.tbn-prev .before,.a .a {
-    background-color: transparent;
-    background-image: url('/a/img/gui/base-graphics.png') !important;
-    background-repeat: no-repeat
-}
+/*
+|-------------------------------------------------------------------------------
+| LANDSCAPE TABLETS and OLD SCHOOL DESKTOP MONITORS (XGA: 1024x768) + RETINA
+|-------------------------------------------------------------------------------
+*/
 
-@media print,(-o-min-device-pixel-ratio:5/4),(-webkit-min-device-pixel-ratio:1.25),(min-resolution:120dpi) {
-    .ir-retina,.btn-back,.btn-close,.btn-menu:before,.btn-search:before,.doc-header H1 A,.f-search BUTTON,I.co,.on-demand H3 I,.sys-message P:before,.warning-gl EM,.tbn-next:before,.tbn-next .before,.tbn-prev:before,.tbn-prev .before {
-        background-image: url('/a/img/gui/base-graphics-x2.png') !important;
-        -webkit-background-size: 340px 200px;
-        -moz-background-size: 340px 200px;
-        -o-background-size: 340px 200px;
-        background-size: 340px 200px
+@media  only screen and (max-width: 1024px) and (-o-min-device-pixel-ratio: 5/4),
+        only screen and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 1.25),
+        only screen and (max-width: 1024px) and (min-resolution: 120dpi) {
+
+    .td-top IMG { visibility: hidden; }
+
+    .td-top FIGURE {
+        background: transparent url(/a/img/main-pic-x2.png) no-repeat;
+        -webkit-background-size: 100% 100%;
+        -moz-background-size: 100% 100%;
+        -o-background-size: 100% 100%;
+        background-size: 100% 100%
     }
 }
+
+

@@ -1,0 +1,111 @@
+@import '02-variables.less';
+@import '02-mixins.less';
+
+/*
+|---------------------------------------
+| Light Icons
+|---------------------------------------
+*/
+
+// Sizing and position
+.ico-email, .ico-tel {
+    margin-right: .4em;
+    vertical-align: middle;
+    height: 16px;
+    width: 16px;
+}
+
+.tooltip {
+    .ico-email, .ico-tel {
+        margin-top: -.2em;
+    }
+}
+
+// Background Positions
+.ico-email { background-position: -210px 0; }
+.ico-tel { background-position: -240px 0; }
+
+.sm-trader .ico-l { background-position: -310px 0; }
+.sm-money-manager .ico-l { background-position: -270px 0; }
+.sm-investor .ico-l { background-position: -350px 0; }
+
+/*
+|---------------------------------------
+| Dark Icons
+|---------------------------------------
+*/
+// Sizing and position
+.main-menu .ico-d {
+    margin-top: -15px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 30px;
+    width: 30px;
+}
+
+// Background Positions
+.mm-products:hover .ico-d, .active .ico-d { background-position: -40px 0; }
+
+.mm-benefits {
+
+    .ico-d { background-position: 0 -40px; }
+    &:hover .ico-d, .active .ico-d { background-position: -40px -40px; }
+}
+
+.mm-analytics {
+
+    .ico-d { background-position: 0 -80px; }
+    &:hover .ico-d, .active .ico-d { background-position: -40px -80px; }
+}
+
+.mm-education {
+
+    .ico-d { background-position: 0 -120px; }
+    &:hover .ico-d, .active .ico-d { background-position: -40px -120px; }
+}
+
+.mm-about {
+
+    .ico-d { background-position: 0 -160px; }
+    &:hover .ico-d, .active .ico-d { background-position: -40px -160px; }
+}
+
+.mm-help {
+
+    .ico-d { background-position: 0 -200px; }
+    &:hover .ico-d, .active .ico-d { background-position: -40px -200px; }
+}
+
+.mm-bonus {
+
+    .ico-d { background-position: 0 -240px; }
+    &:hover .ico-d, .active .ico-d { background-position: -40px -240px; }
+}
+
+.mm-home {
+
+    .ico-d { background-position: 0 -280px; }
+    &:hover .ico-d, .active .ico-d { background-position: -40px -280px; }
+}
+
+
+/*
+|-------------------------------------------------------------------------------
+| LANDSCAPE TABLETS and OLD SCHOOL DESKTOP MONITORS (XGA: 1024x768)
+|-------------------------------------------------------------------------------
+*/
+@media only screen and (max-width: 1199px) {
+
+    /* Hide */
+    .pc, .pc-inl, .pc-mob, .pc-mob-inl, .tbl, .tbl-inl { display: none !important; }
+
+    /* Show */
+    .xga, .xga-tbl, .xga-pc { display: block !important; }
+    .xga-inl, .xga-pc-inl, .xga-tbl-inl  {
+        display: inline-block !important;
+        *display: inline !important; /* IE7 inline-block hack */
+        *zoom: 1;
+    }
+
+}
