@@ -1,0 +1,112 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Анимированный интерфейс и видео в модальном окне</title>
+
+        <!-- ===================================================================
+
+        @TODO
+        1) Добавить стиль для абсолютно-позиционированной gif-ки. Лучше —
+        классом .forex-rotor-animated-interface в основные стили или хотя бы
+        в раздел <head>
+        2) Проверить наличие скриптов и стилей плагина FancyBox.
+        Добавить, если нет.
+        3) Добавить первой ссылке в .central-content-banner класс
+        .fancybox-media
+        4) Добавить изображение на сервер и в код первой ссылки «карусели»
+        изображение animated-libertex-deal.gif
+
+        ==================================================================== -->
+
+        <style type="text/css" media="screen">
+            /* Demo Styles */
+            .central-view-blocks { display: none; }
+            .central-content-banner { position: relative; }
+
+            /* 1) Gif CSS */
+            #nid0 .forex-rotor-animated-interface {
+                position: absolute;
+                top: 52px;
+                left: 350px;
+            }
+
+
+            /* Hide on phones */
+            @media only screen and (max-width: 479px) {
+                #nid0 .forex-rotor-animated-interface { display: none; }
+            }
+
+        </style>
+
+        <!-- 2) fancyBox CSS -->
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" type="text/css" media="screen" />
+
+    </head>
+    <body>
+        <div class="forex-rotor-content" id="nid0">
+            <div class="forex-rotor-content-detail">
+                <div class="central-content-banner">
+
+                    <!--
+                    3) Ссылка первого кадра «карусели» помечена классом
+                    .fancybox-media
+                    -->
+                    <a class="fancybox-media" href="https://www.youtube.com/watch?v=olS_j-yLUZo">
+                        <!-- <img alt="Терминал Libertex. Новый. Уникальный." src="//st3.fxclub.org/sites/fxorg/files/files2/images/forex-rotor/org-libertex-1-960x304.jpg"> -->
+                        <img alt="Терминал Libertex. Новый. Уникальный." src="/a/img/_dev/org-libertex-1-960x304.jpg">
+
+                        <!-- 4) Gif — анимированный интерфейс -->
+                        <img class="forex-rotor-animated-interface" src="/a/img/_dev/animated-libertex-deal.gif" alt="Сделка на рынке форекс">
+                    </a>
+
+                    <!-- Правая панель открытия счетов -->
+                    <ul class="central-view-blocks">
+                        <li class="cv-top-block png">
+                            <div class="cv-top-block-in png">
+                                <div class="cv-block-header">
+                                    Открыть реальный счет
+                                </div>
+                                <p>
+                                    Зарегистрируйтесь и получите&nbsp;бонус до&nbsp;$500
+                                </p>
+                                <p class="cv-block-actions">
+                                    <a class="orn-btn30" href="http://www.fxclub.org/open-account/?fxbank_account_type=invest&amp;icid=hero-lbx-real-easy"><span class="btn-end"><span class="btn-arrow">Открыть реальный счет</span></span></a>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="cv-bottom-block png">
+                            <div class="cv-bottom-block-in png">
+                                <div class="cv-block-header">
+                                    Открыть демо-счет
+                                </div>
+                                <p>
+                                    Зарегистрируйтесь и получите виртуальные $5000 для&nbsp;обучения
+                                </p>
+                                <p class="cv-block-actions">
+                                    <a class="orn-btn30" href="http://www.fxclub.org/lp/investitsionnie-scheta/demo-account/?icid=hero-lbx-demo-easy"><span class="btn-end"><span class="btn-arrow">Начать бесплатно</span></span></a>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    <!-- jQuery -->
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <!-- 2) fancyBox Main JS, Media Helper and Plugin Call -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/helpers/jquery.fancybox-media.js"></script>
+    <script>
+    $(function() {
+        $('.fancybox-media').attr('rel', 'media-gallery').fancybox({
+            helpers: {
+                media: {},
+                buttons: {}
+            }
+        });
+    });
+    </script>
+</body>
+</html>
